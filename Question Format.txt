@@ -1,0 +1,520 @@
+/* Categories:
+    1   Discrete Structures
+    2   Programming
+    3   Algorithms and Complexity
+    4   Systems / architecture
+    5   Software Engineering
+    6   Information Management
+    7   Other, including Graphics, Human-Computer Interaction, Web, and 
+        Social / Professional Issues
+    
+TAGS:   k       Question ID, key
+        cit     attribution, citation
+        ctg     category according to list above
+        q       question text
+        aa      correct answer
+        af      incorrect answer...may be three or four per question
+        con     condition / explanation paragraph
+        fig     path to image
+        
+        
+=============================================================================*/
+k 001
+cit 180E1F06_1
+ctg 5
+con
+q Which of the following represents the life-cycle of software development?
+aa Analysis -> Design -> Coding -> Testing -> Operation and Maintenance
+af Design -> Analysis -> Coding -> Testing -> Operation and Maintenance
+af Design -> Analysis -> Coding -> Testing
+af Analysis -> Design -> Coding -> Operation and Maintenance
+
+k 002
+cit 180E1F06_2
+ctg 2
+con
+q Defining a class so that the implementation of the data and methods of the class are not known to the programmers who use the class is called:
+aa Encapsulation
+af Data Binding
+af Polymorphism
+af Inheritance
+
+k 003
+cit 180E1F06_3
+ctg 2
+con
+q Which of the following is an incorrect identifier?
+aa 3theValue
+af THE_IDENTIFIER
+af a_b_
+af neolithic123FOUR
+
+k 004
+cit 180E1F06
+ctg 2
+con public class Test
+    {
+        private static final int value = 5;
+        public static void main( String[] args )
+        {
+            int total, value = 4;
+            total = value + value;
+            total = total + someMethod( total );
+            System.out.println( total );
+        }
+        public static int someMethod( int val )
+        {
+        return value;
+        }
+    }
+    
+q What is printed by the code listed above?
+aa 13
+af None of these
+af 16
+af 15
+
+k005
+cit ETS Sample Test
+ctg 1
+con 
+fig .\\images\\img_k005.png
+q If D is the accepting state of the nondeterministic finite automaton above, which of the following does the automoton accept?
+aa 100100
+af 001
+af 1101
+af 01100
+af 000110
+
+
+k 006
+cit ETS Sample Test
+ctg 1
+con 
+fig .\\images\\img_k006.png
+q If a node in the binary search tree above is to be located by binary tree search, what is the expected number of comparisons required to locate one of the items (nodes) in the tree chosen at random?
+aa 2.75
+af 2
+af 3
+af 1.75
+af 3.25
+
+k 007
+cit ETS Sample Test
+ctg 2
+con If the variables are suitably initialized, and if i remains within appropriate bounds, then the following code implements the stack operations Push and Pop when the stack is represented as an array V[1..N] with an index variable i. Push: begin V[i]: = x; i: = i+1; end  Pop: begin i: = i -1; x: = V[i]; end
+fig 
+q Which of the following gives the correct initialization for this stack implementation?
+aa i: = 1
+af i: = 0
+af i: = N - 1
+af i: = N
+af i: = N / 2
+
+k 008
+cit ETS Sample Test
+ctg 2
+con If the variables are suitably initialized, and if i remains within appropriate bounds, then the following code implements the stack operations Push and Pop when the stack is represented as an array V[1..N] with an index variable i. Push: begin V[i]: = x; i: = i+1; end  Pop: begin i: = i -1; x: = V[i]; end
+fig 
+q If it is assumed that suitable changes in the initialization code were also made, which of the following changes to Push and Pop would yield a correct implementation of the stacks? I. Replacing the code for Push with that for Pop and vice versa II. Making Push decrement i and Pop increment i III. Reversing the order of the statements in both Push and Pop
+aa II and III only
+af I only
+af II only
+af III only
+af I and II only
+
+k 009
+cit ETS Sample Test
+ctg 4
+con In a computer with cache memory interposed between the processor and the primary memory, the cache is k-way assossiative (for some fixed k); i.e., each location in primary memory "maps to" (can be cached in) any of k locations in the cache. Let there be P locations in primary memory and C locations in the cache.
+fig 
+q On the average, how many different locations in primary memory map to a particular location in the cache if k = 2?
+aa 2P / C
+af 1
+af 2
+af P / C
+af P
+
+k 010
+cit ETS Sample Test
+ctg 1
+con I. (1 + €)(01 + 0)*  II. (01 + 10)*  III. (0 + 1)*(0 + €)
+fig 
+q Which of the following regular expressions generate(s) no string with two consecutive 1's?
+aa I only
+af II only
+af III only
+af I and II only
+af II and III only
+
+k 011
+cit ETS Sample Test
+ctg 2
+con 
+fig 
+q Which of the following C++ expressions does NOT always correctly compute the mathematical average of the integer variables a, b, c, and d?
+aa (a + b + c + d) / 4
+af float((a + b + c + d) / 4.0) 
+af (float(a + b + c + d)) / 4
+af (a + b + c + d) / 4.0
+af (a + float(b) + c + d) / 4
+
+k 012
+cit ETS Sample Test
+ctg 2
+con Consider the following recursive function.  int Fun( int n ) { if ( n == 4 ) return 2;  else return 2 * Fun (n + 1 ); }
+fig 
+q What is the value returned by the function call Fun ( 2 ) ?
+aa 8
+af 2
+af 16
+af 24
+af 4
+
+k 013
+cit ETS Sample Test
+ctg 2
+con If A is an array with n elements and procedure Swap exchanges its arguments, the the following code segment sorts A in descending order. // for (int j = 0; j < n - 1; j++) for (int k = 0; k < n - j - 1; k++) if ( A[k] < A[k + 1] ) Swap (A[k], A[k + 1]);
+fig 
+q How many calls to Swap are made if initially, A[i] = i, for i = 0, 1, 2,...,n-1?
+aa n(n - 1)/2
+af n - 1
+af n
+af (n - 1)(n - 2)
+af n(n - 1)
+
+k 014
+cit ETS Sample Test
+ctg 4
+con 
+fig 
+q Which of the following statements about static RAM (SRAM) and / or dynamic RAM (DRAM) is true?
+aa DRAM is less expensive than SRAM.
+af SRAM is implemented using transistors and capacitors that must be periodically refreshed.
+af DRAM has a faster access time than SRAM.
+af SRAM is capable of operating at speeds closely approximating processors.
+af DRAM is capable of operating at speeds closely approximating processors.
+
+k 015
+cit ETS Sample Test
+ctg 1
+con Suppose that {S1, S2, ..., SN} is a set of N fixed-length strings ordered alphabetically so that S1 < S2...<SN.
+fig 
+q If these strings are held, in order, in an array of N elements, the the time required to find the location of Si+1, 1 <= i <= N, has complexity of order
+aa 1
+af log N
+af N
+af N log N
+af N squared
+ 
+k 016
+cit ETS Sample Test
+ctg 4
+con Suppose that V is a vector with indices from a to b and that each element of V occupies two words.
+fig 
+q If the elements of V are stored in consecutive words of memory and @V[a] is the address of word 1 of V[a], the the address of word 1 of V[i], where a <= i <= b, is
+aa (@V[a] - 2a) + 2i
+af (@V[a] - a) + i
+af 2(@V[a] - a) + 2i
+af (@V[a] - 2a) + i
+af (@V[a] - a) + 2i
+
+k 017
+cit ETS Sample Test_13
+ctg 1
+con 
+fig 
+q If A, B, and C are Boolean variables, and if "^" and "v" denote the Boolean "and" and "or," respectively, which of the following is / are true? I. A^(B v C) = (A ^ B) v (A ^ C) II. A v (B ^ C) = (A v B) ^ (A v C)  III. (B ^ A) v C = C v (A ^ B)
+aa I, II, and III
+af II only
+af I only
+af I and III only
+af II and III only
+
+k 018
+cit ETSMFT2_1
+ctg 2
+con Consider the following pseudocode fragment, where x is an integer variable tha has been initialized. 
+fig .\\images\\img_k018.png
+q Which of the following statments is / are true at the end of the WHILE loop? I. (i == 10) or (i == x)  II. If x > 10, then i == 10.  III. If j == 6, then x == 4.
+aa I, II, and III
+af None
+af I only
+af III only
+af II and III only
+
+k 019
+cit ETSMFT2_9
+ctg 3
+con 
+fig 
+q A personal identification number (PIN) that opens a certain lock consists of a sequence of 3 DIFFERENT digits from 0 through 9, inclusive. How many possible PINs are there?
+aa 720
+af 120
+af 360
+af 729
+af 1000
+
+k 020
+cit ETSMFT2_10
+ctg 1
+con 
+fig .\\images\\img_k020.png
+q Consider the statement "Every connected graph has one or more vertices of degree 2." Which of the five graphs above is a counterexample to that statement?
+aa C
+af A
+af B
+af D
+af E
+
+k 021
+cit SWENGST
+ctg 5
+con 
+fig 
+q Which one of these statements is false?
+aa In an agile softwere process, project planning and testing are eliminated.
+af In an agile software process, only essential work products are produced.
+af In an agile software process, the team can streamline tasks.
+af In an agile software process, an incremental product delivery strategy can be used.
+af In an agile software process, the customer is involved continually.
+
+k 022
+cit SWENGST
+ctg 5
+con I. Point out ways for the producer to improve his or her skills  II. Fix Issues  III. Social and Team-Building Activities  IV. Document Issues
+fig 
+q What should be done in a review?
+aa II and IV
+af II and III
+af I and IV
+af I only 
+af IV only
+
+k 023
+cit SWENGST
+ctg 5
+con I. car: convertible  II. person: student III. team: player  IV. car: driver V. student: sophomore
+fig 
+q Which of these represent(s) and inheritance relationship?
+aa I, II, and V
+af I only 
+af I and IV
+af III and IV
+af V only
+
+k 024
+cit SWENGST
+ctg 5
+con I. car: convertible  II. person: student III. team: player  IV. car: driver V. student: sophomore
+fig 
+q Which of these represent(s) an aggregation relationship?
+aa III only
+af I only
+af II only
+af I, II, and III
+af III and IV
+
+k 025
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 5
+con I. encapsulation  II. inheritance  III. Recursion
+fig 
+q The object-oriented paradigm includes which of these properties?
+aa I and II only
+af I only
+af II only
+af II and III only
+af I, II, and III
+
+k 026
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 2
+con Consider the following pseudocode:
+fig .\\images\\img_k026.png
+q What is the value of i at the end of the pseudocode?
+aa 5
+af 4
+af 6
+af 7
+af 8
+ 
+k 027
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 1
+con Consider the binary tree T below:
+fig .\\images\\img_k027.png
+q Which of the following represents a postorder traversal of T?
+aa X Z U W Y Q V P
+af P Q U W X V Y Z
+af U Q X W P V Z Y
+af U X W Q Z Y V P
+af U X Z Q W Y V P
+
+k 028
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 4
+con I. The virtual address space can be larger than the amount of physical memory  II. Programs must be resident in main memory throughout their execution  III. Pages correspond to semantic characteristics of the program
+fig 
+q Which of the following is (are) true about virtual memory systems that use pages?
+aa I only
+af II only
+af I and II
+af I and III
+af II and III
+
+k 029
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 1
+con 
+fig 
+q Hash tables can contribute to an efficient average-case solution for all of the problems described below EXCEPT:
+aa Range search: Given values a and b, find all the records whose key value is in the range a, b .
+af Counting distinct values: Given a set of n keys, determine the number of distinct key values.
+af Dynamic dictionary: Support the operations of insert, delete, and search in a dictionary.
+af Symbol table lookup: Given a program identifier, find its type and address.
+af Finding intersections: Given two sets of keys, find all key values in common to both sets.
+
+k 030
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 7
+con 
+fig 
+q In the Internet Protocol (IP) suite of protocols, which of the following best describes the purpose of the Address Resolution Protocol?
+aa To determine the hardware address of a given IP address
+af To translate Web addresses to host names
+af To determine the IP address of a given host name
+af To determine the hardware address of a given host name
+af To determine the appropriate route for a datagram
+
+k 031
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 2
+con Consider the following procedures:
+fig .\\images\\img_k031_2.png
+q Suppose that the parameters are passed by value. Which of the following values are output when procedure mystery is called?
+aa 14  16
+af  2	7
+af  2	9
+af  9  14
+af 30  30
+
+k 032
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 2
+con Consider the following procedures:
+fig .\\images\\img_k031_2.png
+q Suppose that all parameters are passed by reference. Which of the following values are output when procedure mystery is called?
+aa 30  30
+af  2	7
+af  2   9
+af 14  16
+af  9  14
+
+k 033
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 3
+con I. a singly linked list  II. A doubly linked list  III. An array
+fig 
+q Mergesort works by splitting a list of n numbers in half, sorting each half recursively, and merging the two halves. Which of the following data structures will allow mergesort to work in O(n log n) time?
+aa I, II, and III
+af None
+af III only
+af I and II only
+af II and III only
+
+k 034
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 7
+con 
+fig 
+q Which of the following is not a property of bitmap graphics?
+aa All line segments can be displayed as straight.
+af Realistic lighting and shading can be done.
+af Fast hardware exists to move blocks of pixels efficiently.
+af Polygons can be filled with solid colors and textures.
+af The complexity of the image representation is independent of the image.
+
+k 035
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 4
+con I. Increasing the clock cycle rate  II. Disallowing any forwarding in the pipeline  III. Doubling the sizes of the instruction cache and the data cache without changing the clock cycle time
+fig 
+q In a pipelined RISC computer where all arithmetic instructions have the same CPI (cycles per instruction), which of the following actions would improve the execution time of a typical program?
+aa I and III
+af I only
+af II only
+af III only
+af I and II
+
+k 036
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 7
+con 
+fig 
+q Which of the following comes closest to being a perfectly secure encryption scheme?
+aa One-time pad
+af The Caesar Cipher, a substitution cipher
+af DES (Data Encryption Standard), a symmetric-key algorithm
+af Enigma, a transposition cipher
+af RSA, a public-key algorithm
+
+k 037
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 1
+con Consider the binary tree T below:
+fig .\\images\\img_k027.png
+q If T is a binary search tree with the smaller elements in the left subtree, which of the following nodes contains the fourth smallest element in T?
+aa W
+af V
+af Q
+af X
+af Z
+
+k 038
+cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
+ctg 4
+con 
+fig 
+q One approach to handling fuzzy logic data might be to design a computer using ternary (base-3) logic so that data could be stored as “true,” “false,” and “unknown.” If each ternary logic element is called a flit, how many flits are required to represent at least 256 different values?
+aa 6
+af 4
+af 5
+af 7
+af 8
+
+k 039
+cit CMPS4113
+ctg 5
+con 
+fig 
+q This transforms the initial system concept into a running operation system in the target environment; involves requirements analysis, design, implementation, testing and deployment.
+aa Software development process
+af Software quality assurance
+af Software project management
+af Software allocation process
+af Unit testing
+
+k 040
+cit CMPS4113
+ctg 5
+con 
+fig 
+q This oversees control and administration of activities; involves effort estimation, project planning and scheduling, and risk management.
+aa Software project management
+af Software quality assurance
+af Software development process
+af Software allocation process
+af Unit testing
+
+k 041
+cit CMPS4113
+ctg 5
+con 
+fig 
+q This ensures that activities are performed properly and software artifacts meet requirements and standards.
+aa Software quality assurance
+af Software project management
+af Software development process
+af Project marketing team
+af Software allocation process
