@@ -8,11 +8,15 @@ namespace XPS.Models
 {
     public class Test
     {
+        #region Private Fields
+
         private int _testID;
         private int _userID;
         private string _correctAnswer;
         private float _time;
         private int _attempted;
+
+        #endregion
 
         public Test()
         {
@@ -22,6 +26,8 @@ namespace XPS.Models
             _time = 0;
             _attempted = 0;
         }
+
+        #region Public Properties
 
         public int TestID
         {
@@ -78,5 +84,7 @@ namespace XPS.Models
                 _attempted = value;
             }
         }
+
+        #endregion
     }
 }

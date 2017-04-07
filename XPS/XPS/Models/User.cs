@@ -8,12 +8,16 @@ namespace XPS.Models
 {
     public class User
     {
+        #region Private Fields
+
         private int _userID;
         private String _firstName;
         private String _lastName;
         private String _userName;
         private String _passWord;
         private Char _userType;
+
+        #endregion
 
         public User()
         {
@@ -24,6 +28,8 @@ namespace XPS.Models
             _passWord = "";
             _userType = 'S';
         }
+
+        #region Public Properties
 
         public int UserID
         {
@@ -139,5 +145,7 @@ namespace XPS.Models
                 }
             }
         }
+
+        #endregion
     }
 }

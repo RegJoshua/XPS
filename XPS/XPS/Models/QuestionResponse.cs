@@ -8,10 +8,14 @@ namespace XPS.Models
 {
     public class QuestionResponse
     {
+        #region Private Fields
+
         private int _questionResponseID;
         private int _userID;
         private int _quesitonID;
         private bool _correct;
+
+        #endregion
 
         public QuestionResponse()
         {
@@ -20,6 +24,8 @@ namespace XPS.Models
             _quesitonID = 0;
             _correct = false;
         }
+
+        #region Public Properties
 
         public int QuestionResponseID
         {
@@ -65,5 +71,7 @@ namespace XPS.Models
                 _correct = value;
             }
         }
+
+        #endregion
     }
 }
