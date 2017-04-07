@@ -18,15 +18,19 @@ namespace XPS.Forms
             InitializeComponent();
         }
 
-        public ExamForm(User user)
+        public ExamForm(User user, int numQuest)
         {
             InitializeComponent();
+            dateLabel.Text = "Date: " + DateTime.Now.ToLongDateString();
             examUserLabel.Text = "User: " + user.FirstName + " " + user.LastName;
+            
         }
 
         private void ExamForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
+
+      
     }
 }

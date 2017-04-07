@@ -54,3 +54,18 @@ C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\obj\Debug\XPS.Forms.LoginForm.resources
 C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
 C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
 C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.exe.config
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.exe
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.pdb
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.exe
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.pdb
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\bin\Debug\MySql.Data.dll
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.AddUserForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.AdminForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.DeleteUserForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.LoginForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache

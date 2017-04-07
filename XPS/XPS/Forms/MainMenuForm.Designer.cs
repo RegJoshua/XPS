@@ -41,7 +41,9 @@
             this.aboutButton = new System.Windows.Forms.Button();
             this.profileButton = new System.Windows.Forms.Button();
             this.takeTestButton = new System.Windows.Forms.Button();
+            this.generateTestButton = new System.Windows.Forms.Button();
             this.numGroupBox = new System.Windows.Forms.GroupBox();
+            this.questionComboBox = new System.Windows.Forms.ComboBox();
             this.timedGroupBox = new System.Windows.Forms.GroupBox();
             this.noRadioButton = new System.Windows.Forms.RadioButton();
             this.yesRadioButton = new System.Windows.Forms.RadioButton();
@@ -57,8 +59,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.questionComboBox = new System.Windows.Forms.ComboBox();
-            this.generateTestButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sideMenu)).BeginInit();
             this.sideMenu.Panel1.SuspendLayout();
             this.sideMenu.Panel2.SuspendLayout();
@@ -245,6 +245,18 @@
             this.takeTestButton.UseVisualStyleBackColor = false;
             this.takeTestButton.Click += new System.EventHandler(this.takeTestButton_Click);
             // 
+            // generateTestButton
+            // 
+            this.generateTestButton.BackColor = System.Drawing.Color.Maroon;
+            this.generateTestButton.ForeColor = System.Drawing.Color.White;
+            this.generateTestButton.Location = new System.Drawing.Point(364, 176);
+            this.generateTestButton.Name = "generateTestButton";
+            this.generateTestButton.Size = new System.Drawing.Size(90, 30);
+            this.generateTestButton.TabIndex = 13;
+            this.generateTestButton.Text = "Generate Test";
+            this.generateTestButton.UseVisualStyleBackColor = false;
+            this.generateTestButton.Click += new System.EventHandler(this.generateTestButton_Click);
+            // 
             // numGroupBox
             // 
             this.numGroupBox.Controls.Add(this.questionComboBox);
@@ -254,6 +266,20 @@
             this.numGroupBox.TabIndex = 12;
             this.numGroupBox.TabStop = false;
             this.numGroupBox.Text = "Number of Questions";
+            // 
+            // questionComboBox
+            // 
+            this.questionComboBox.FormattingEnabled = true;
+            this.questionComboBox.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25",
+            "30"});
+            this.questionComboBox.Location = new System.Drawing.Point(39, 20);
+            this.questionComboBox.Name = "questionComboBox";
+            this.questionComboBox.Size = new System.Drawing.Size(45, 21);
+            this.questionComboBox.TabIndex = 0;
             // 
             // timedGroupBox
             // 
@@ -407,30 +433,6 @@
             this.mainMenuStrip.Size = new System.Drawing.Size(689, 24);
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "menuStrip1";
-            // 
-            // questionComboBox
-            // 
-            this.questionComboBox.FormattingEnabled = true;
-            this.questionComboBox.Items.AddRange(new object[] {
-            "30",
-            "45",
-            "60"});
-            this.questionComboBox.Location = new System.Drawing.Point(39, 20);
-            this.questionComboBox.Name = "questionComboBox";
-            this.questionComboBox.Size = new System.Drawing.Size(45, 21);
-            this.questionComboBox.TabIndex = 0;
-            // 
-            // generateTestButton
-            // 
-            this.generateTestButton.BackColor = System.Drawing.Color.Maroon;
-            this.generateTestButton.ForeColor = System.Drawing.Color.White;
-            this.generateTestButton.Location = new System.Drawing.Point(364, 176);
-            this.generateTestButton.Name = "generateTestButton";
-            this.generateTestButton.Size = new System.Drawing.Size(90, 30);
-            this.generateTestButton.TabIndex = 13;
-            this.generateTestButton.Text = "Generate Test";
-            this.generateTestButton.UseVisualStyleBackColor = false;
-            this.generateTestButton.Click += new System.EventHandler(this.generateTestButton_Click);
             // 
             // MainMenuForm
             // 

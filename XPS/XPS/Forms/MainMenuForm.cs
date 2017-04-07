@@ -87,8 +87,14 @@ namespace XPS
 
         private void generateTestButton_Click(object sender, EventArgs e)
         {
+            //get whatever string is selected from the combobox (Num of questions user wants)
+            string selected = this.questionComboBox.GetItemText(this.questionComboBox.SelectedItem);
+            //show in message box for testing purposes
+            MessageBox.Show(selected);
+            //parse the string into an int and pass it as a parameter to the examForm.
+            int num = Int32.Parse(selected);
             this.Hide();
-            ExamForm ef = new Forms.ExamForm(mainUser);
+            ExamForm ef = new Forms.ExamForm(mainUser, num);
             ef.Show();
         }
     }

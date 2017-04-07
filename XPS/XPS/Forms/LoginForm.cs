@@ -47,8 +47,11 @@ namespace XPS.Forms
                 catch(Exception ex)
                 {
                     MessageBox.Show("Trouble connecting to database. Try again later.");
+                    Application.Exit(); //want the form to close if error is thrown after
+                                        //user chooses "ok" on messagebox.
                 }
 
+                //db.ValidateUser() returns null if not authenticated.
                 if(user == null)
                 {
                     MessageBox.Show("Username/Password is incorrect. Try again.");
