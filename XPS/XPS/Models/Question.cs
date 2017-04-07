@@ -12,11 +12,11 @@ namespace XPS.Models
         private int _questionID;
         private int _questionCategory;
         private string _questionText;
-        private string _answer;
-        private string _incorrect1;
-        private string _incorrect2;
-        private string _incorrect3;
-        private string _incorrect4;
+        private string _correctAnswer;
+        private string _incorrectAnswer1;
+        private string _incorrectAnswer2;
+        private string _incorrectAnswer3;
+        private string _incorrectAnswer4;
         private string _hint;
 
         public Question()
@@ -24,11 +24,11 @@ namespace XPS.Models
             _questionID = 0;
             _questionCategory = 0;
             _questionText = "";
-            _answer = "";
-            _incorrect1 = "";
-            _incorrect2 = "";
-            _incorrect3 = "";
-            _incorrect4 = "";
+            _correctAnswer = "";
+            _incorrectAnswer1 = "";
+            _incorrectAnswer2 = "";
+            _incorrectAnswer3 = "";
+            _incorrectAnswer4 = "";
             _hint = "";
         }
 
@@ -73,59 +73,59 @@ namespace XPS.Models
                 _questionText = value;
             }
         }
-        public string Answer
+        public string CorrectAnswer
         {
             get
             {
-                return _answer;
+                return _correctAnswer;
             }
             set
             {
-                _answer = value;
+                _correctAnswer = value;
             }
         }
-        public string Incorrect1
+        public string IncorrectAnswer1
         {
             get
             {
-                return _incorrect1;
+                return _incorrectAnswer1;
             }
             set
             {
-                _incorrect1 = value;
+                _incorrectAnswer1 = value;
             }
         }
-        public string Incorrect2
+        public string IncorrectAnswer2
         {
             get
             {
-                return _incorrect2;
+                return _incorrectAnswer2;
             }
             set
             {
-                _incorrect2 = value;
+                _incorrectAnswer2 = value;
             }
         }
-        public string Incorrect3
+        public string IncorrectAnswer3
         {
             get
             {
-                return _incorrect3;
+                return _incorrectAnswer3;
             }
             set
             {
-                _incorrect3 = value;
+                _incorrectAnswer3 = value;
             }
         }
-        public string Incorrect4
+        public string IncorrectAnswer4
         {
             get
             {
-                return _incorrect4;
+                return _incorrectAnswer4;
             }
             set
             {
-                _incorrect4 = value;
+                _incorrectAnswer4 = value;
             }
         }
         public string Hint

@@ -31,7 +31,9 @@ namespace TestClient
             Console.WriteLine("3. Delete User");
             Console.WriteLine("4. Validate User");
             Console.WriteLine("5. Get User");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("6. Get Questions");
+            Console.WriteLine("7. Insert Question Response");
+            Console.WriteLine("8. Exit");
 
             try
             {
@@ -56,6 +58,12 @@ namespace TestClient
                         GetUserTest();
                         break;
                     case 6:
+                        GetQuestionsTest();
+                        break;
+                    case 7:
+                        InsertQuestionResponseTest();
+                        break;
+                    case 8:
                         Environment.Exit(0);
                         break;
                 }
@@ -263,6 +271,69 @@ namespace TestClient
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Green;
             }
+        }
+
+        public static void GetQuestionsTest()
+        {
+            Console.WriteLine("**********************************************************************************");
+            Console.WriteLine("GET QUESTIONS TEST");
+            Console.WriteLine("**********************************************************************************");
+
+            DatabaseManager db = new DatabaseManager();
+            List<Question> temp = db.GetQuestions(1, new int[] {1, 2, 3});
+            Console.WriteLine("Done");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public static void InsertQuestionResponseTest()
+        {
+            int questionID = 0;
+            int userID = 0;
+            string input = "";
+            DatabaseManager db = new DatabaseManager();
+
+            Console.WriteLine("**********************************************************************************");
+            Console.WriteLine("INSERT QUESTION RESPONSE TEST");
+            Console.WriteLine("**********************************************************************************");
+            Console.WriteLine("QuestionID:");
+            questionID = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("UserID: ");
+            userID = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Correct? (Y/N)");
+            input = Console.ReadLine();
+
+            while (!new string[] { "y", "Y", "n", "N" }.Contains(input))
+            {
+                Console.WriteLine("Invalid input.");
+                input = Console.ReadLine();
+            }
+
+            try
+            { 
+                QuestionResponse qr = new QuestionResponse()
+                {
+                    QuestionID = questionID
+                    , UserID = userID
+                    , Correct = (input == "y" || input == "Y")
+                };
+
+                if (db.InsertQuestionResponse(qr))
+                {
+                    Console.WriteLine("Question Response Inserted");
+                }
+                else
+                {
+                    Console.WriteLine("Failure");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }

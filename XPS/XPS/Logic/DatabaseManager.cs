@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XPS.Models;
 using MySql.Data.MySqlClient;
 
 namespace XPS.Logic
@@ -60,7 +61,7 @@ namespace XPS.Logic
         /// The result is the user object. If the method returns null, the user
         /// was not validated.
         /// </returns>
-        public XPS.Models.User ValidateUser(String userName, String passWord)
+        public User ValidateUser(String userName, String passWord)
         {
             XPS.Models.User result = null;
             //This query will select the entire row from the user table wiht the given username and password.
@@ -119,7 +120,7 @@ namespace XPS.Logic
         /// </summary>
         /// <param name="userID"> The userID</param>
         /// <returns>The User object</returns>
-        public XPS.Models.User GetUser(int userID)
+        public User GetUser(int userID)
         {
             XPS.Models.User result = null;
             //This query will return the row in the User table for the userID.
@@ -173,12 +174,59 @@ namespace XPS.Logic
             return result;
         }
 
+        public List<Question> GetQuestions(int n, int[] categories)
+        {
+            List<Question> result = new List<Question>();
+            string query = @"
+                SELECT * 
+
+                FROM       
+                    Question;
+            ";
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlCommand command = new MySqlCommand(query, _connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Question question = new Question()
+                            {
+                                QuestionID = Int32.Parse(reader.GetString("QuestionID"))
+                                , QuestionCategory = Int32.Parse(reader.GetString("Category"))
+                                , QuestionText = reader.GetString("QuestionText")
+                                , CorrectAnswer = reader.GetString("CorrectAnswer")
+                                , IncorrectAnswer1 = reader.GetString("IncorrectAnswer1")
+                                , IncorrectAnswer2 = reader.GetString("IncorrectAnswer2")
+                                , IncorrectAnswer3 = reader.GetString("IncorrectAnswer3")
+                                , IncorrectAnswer4 = reader.GetString("IncorrectAnswer4")
+                            };
+
+                            result.Add(question);
+                        }
+                    }
+                }
+
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// This method inserts a user into the user table.
         /// </summary>
         /// <param name="user">The user object that will be inserted into the database</param>
         /// <returns>The return value indicates whether the operation was successful</returns>
-        public bool InsertUser(XPS.Models.User user)
+        public bool InsertUser(User user)
         {
             bool result = false;
             String query = @"
@@ -229,7 +277,12 @@ namespace XPS.Logic
             return result;
         }
 
-        public bool InsertQuestionResponse(XPS.Models.QuestionResponse qr)
+        /// <summary>
+        /// This method inserts a Question Response object into the database.
+        /// </summary>
+        /// <param name="qr">The Question Response object being inserted.</param>
+        /// <returns>The return result indicates the success of the insert.</returns>
+        public bool InsertQuestionResponse(QuestionResponse qr)
         {
             bool result = false;
             string query = @"
