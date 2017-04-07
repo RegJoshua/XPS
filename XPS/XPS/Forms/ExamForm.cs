@@ -36,6 +36,7 @@ namespace XPS.Forms
                     Button button = new Button();
                     button.Text = (num).ToString();
                     button.BackColor = Color.Gray;
+                    button.ForeColor = Color.White;
                     button.Location = pt;
                     button.Width = 30;
                     button.Height = 30;
