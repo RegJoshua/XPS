@@ -169,7 +169,7 @@
             this.Controls.Add(this.dMustangIDLabel);
             this.Name = "DeleteUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeleteUserForm";
+            this.Text = "s";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DeleterUserForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

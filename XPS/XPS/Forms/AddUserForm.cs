@@ -14,10 +14,10 @@ namespace XPS.Forms
 {
     public partial class AddUserForm : Form
     {
-        User addUser;
+        User adminUser;
         public AddUserForm(User user)
         {
-            addUser = user;
+            adminUser = user;
             InitializeComponent();
         }
 
@@ -29,7 +29,7 @@ namespace XPS.Forms
         private void adminMenuButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm af = new AdminForm(addUser);
+            AdminForm af = new AdminForm(adminUser);
             af.Show();
         }
 

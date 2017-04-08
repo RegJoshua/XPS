@@ -16,11 +16,11 @@ namespace XPS.Forms
     {
         DatabaseManager thisOne;
         User deleteMe;
-        User deleteUser;
+        User adminUser;
 
         public DeleteUserForm(User user)
         {
-            deleteUser = user;
+            adminUser = user;
             //DeleteUserForm.Text = user.FirstName + " " + user.LastName;
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace XPS.Forms
         private void dAdminMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm af = new AdminForm(deleteUser);
+            AdminForm af = new AdminForm(adminUser);
             af.Show();
         }
 
