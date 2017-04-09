@@ -26,7 +26,7 @@ namespace XPS.Forms
 
         private void AddUserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
             _AdminForm.Show();
         }
 

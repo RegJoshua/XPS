@@ -191,7 +191,7 @@
             this.Name = "DeleteUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete User";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DeleterUserForm_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DeleteUserForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

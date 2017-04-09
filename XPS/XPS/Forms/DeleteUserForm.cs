@@ -30,9 +30,9 @@ namespace XPS.Forms
             InitializeComponent();
         }
 
-        private void DeleterUserForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void DeleteUserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
             _AdminForm.Show();
         }
 
