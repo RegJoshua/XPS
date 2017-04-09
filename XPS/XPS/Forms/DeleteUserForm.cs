@@ -14,13 +14,18 @@ namespace XPS.Forms
 {
     public partial class DeleteUserForm : Form
     {
-        DatabaseManager thisOne;
-        User deleteMe;
-        User adminUser;
+        private DatabaseManager _thisOne;
+        private User _deleteMe;
+        //User adminUser;
+        private AdminForm _AdminForm;
 
-        public DeleteUserForm(User user)
+
+
+        public DeleteUserForm(AdminForm anAdminForm)
         {
-            adminUser = user;
+            //adminUser = user;
+
+            _AdminForm = anAdminForm;
             
             InitializeComponent();
         }
@@ -28,13 +33,17 @@ namespace XPS.Forms
         private void DeleterUserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+            _AdminForm.Show();
         }
 
         private void dAdminMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm af = new AdminForm(adminUser);
-            af.Show();
+            //AdminForm af = new AdminForm(adminUser);
+            //af.Show();
+
+            _AdminForm.Show();
+
         }
 
         private void dGetUserButton_Click(object sender, EventArgs e)
@@ -42,10 +51,10 @@ namespace XPS.Forms
 
             try
             {
-                thisOne = new DatabaseManager();
-                deleteMe = thisOne.GetUser(Int32.Parse(dMustangBox.Text));
-                dFirstnameBox.Text = deleteMe.FirstName;
-                dLastnameBox.Text = deleteMe.LastName;
+                _thisOne = new DatabaseManager();
+                _deleteMe = _thisOne.GetUser(Int32.Parse(dMustangBox.Text));
+                dFirstnameBox.Text = _deleteMe.FirstName;
+                dLastnameBox.Text = _deleteMe.LastName;
                 dInstructionBox.Hide();
                 dVerifyBox.Show();
                 dDeleteUserButton.Show();
@@ -61,26 +70,23 @@ namespace XPS.Forms
                 MessageBox.Show("No record found for that Mustang ID.");
                 dMustangBox.Text = "";
             }
-
-            
-            
         }
 
         private void dDeleteUserButton_Click(object sender, EventArgs e)
         {
            
             DialogResult result1 = MessageBox.Show("Do you want to delete " +
-                deleteMe.FirstName + " " + deleteMe.LastName + "?",
+                _deleteMe.FirstName + " " + _deleteMe.LastName + "?",
                 "About to delete", MessageBoxButtons.YesNo);
             if (result1 == DialogResult.Yes)
             {
                 try
                 {
-                    bool deleteSuccessful = thisOne.DeleteUser(deleteMe.UserID);
+                    bool deleteSuccessful = _thisOne.DeleteUser(_deleteMe.UserID);
                     if (deleteSuccessful)
                     {
-                        MessageBox.Show(deleteMe.FirstName +
-                       " " + deleteMe.LastName + " deleted from users table.");
+                        MessageBox.Show(_deleteMe.FirstName +
+                       " " + _deleteMe.LastName + " deleted from users table.");
 
                         dMustangBox.Text = "";
                         dFirstnameBox.Text = "";

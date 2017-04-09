@@ -38,14 +38,14 @@ namespace XPS.Forms
         private void addUserButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddUserForm auf = new Forms.AddUserForm(adminUser);
+            AddUserForm auf = new Forms.AddUserForm(this);
             auf.Show();
         }
 
         private void deleteUserButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DeleteUserForm duf = new DeleteUserForm(adminUser);
+            DeleteUserForm duf = new DeleteUserForm(this);
             duf.Show();
         }
     }

@@ -15,16 +15,24 @@ namespace XPS.Forms
     public partial class AddUserForm : Form
     {
         // addUser is the admin using the form, not the user to be added
-        User addUser;
-        public AddUserForm(User user)
+        //User addUser;
+
+        private AdminForm _AdminForm = null;
+
+
+        public AddUserForm(AdminForm anAdminForm)
         {
-            addUser = user;
+            //addUser = user;
+
+            _AdminForm = anAdminForm;
+
             InitializeComponent();
         }
 
         private void AddUserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+            _AdminForm.Show();
         }
 
         // creates a new admin form which recognizes addUser, which is not the user to be
@@ -32,8 +40,12 @@ namespace XPS.Forms
         private void adminMenuButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm af = new AdminForm(addUser);
-            af.Show();
+
+            //AdminForm af = new AdminForm(addUser);
+
+            _AdminForm.Show();
+
+            //af.Show();
         }
 
         private void aufAddUserButton_Click(object sender, EventArgs e)
