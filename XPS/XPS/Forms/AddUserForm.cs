@@ -87,7 +87,15 @@ namespace XPS.Forms
                 {
                 bool success = thisOne.InsertUser(theNewUser);
                 if (success)
-                    MessageBox.Show(theNewUser.FirstName + " " + theNewUser.LastName + " added to database.");
+                    {
+                        MessageBox.Show(theNewUser.FirstName + " " + theNewUser.LastName + " added to database.");
+                        auffirstNameBox.Text = "";
+                        aufLastNameBox.Text = "";
+                        aufUserNameBox.Text = "";
+                        aufPasswordBox.Text = "";
+                        aufMustangBox.Text = "";
+                    }
+                    
                 else
                     MessageBox.Show("User not added.");
                 }

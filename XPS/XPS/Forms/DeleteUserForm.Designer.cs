@@ -34,11 +34,12 @@
             this.dMustangBox = new System.Windows.Forms.TextBox();
             this.dFirstnameBox = new System.Windows.Forms.TextBox();
             this.dLastnameBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dVerifyBox = new System.Windows.Forms.TextBox();
             this.dGetUserButton = new System.Windows.Forms.Button();
             this.dDeleteUserButton = new System.Windows.Forms.Button();
             this.dAdminMenu = new System.Windows.Forms.Button();
             this.dCancelButton = new System.Windows.Forms.Button();
+            this.dInstructionBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // dMustangIDLabel
@@ -58,6 +59,7 @@
             this.dFirstnameLabel.Size = new System.Drawing.Size(57, 13);
             this.dFirstnameLabel.TabIndex = 1;
             this.dFirstnameLabel.Text = "First Name";
+            this.dFirstnameLabel.Visible = false;
             // 
             // dLastnameLabel
             // 
@@ -67,6 +69,7 @@
             this.dLastnameLabel.Size = new System.Drawing.Size(58, 13);
             this.dLastnameLabel.TabIndex = 2;
             this.dLastnameLabel.Text = "Last Name";
+            this.dLastnameLabel.Visible = false;
             // 
             // dMustangBox
             // 
@@ -81,6 +84,7 @@
             this.dFirstnameBox.Name = "dFirstnameBox";
             this.dFirstnameBox.Size = new System.Drawing.Size(203, 20);
             this.dFirstnameBox.TabIndex = 4;
+            this.dFirstnameBox.Visible = false;
             // 
             // dLastnameBox
             // 
@@ -88,19 +92,21 @@
             this.dLastnameBox.Name = "dLastnameBox";
             this.dLastnameBox.Size = new System.Drawing.Size(203, 20);
             this.dLastnameBox.TabIndex = 5;
+            this.dLastnameBox.Visible = false;
             // 
-            // textBox1
+            // dVerifyBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(58, 201);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(203, 82);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "If this is the user  to delete, click the \"Deleter User\" button. Otherwise, click" +
-    " the \"Cancel\" button.";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dVerifyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dVerifyBox.Location = new System.Drawing.Point(58, 201);
+            this.dVerifyBox.Multiline = true;
+            this.dVerifyBox.Name = "dVerifyBox";
+            this.dVerifyBox.ReadOnly = true;
+            this.dVerifyBox.Size = new System.Drawing.Size(203, 82);
+            this.dVerifyBox.TabIndex = 6;
+            this.dVerifyBox.Text = "If this is the user  to delete, click the \"Delete User\" button. Otherwise, click " +
+    "the \"Cancel\" button.";
+            this.dVerifyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dVerifyBox.Visible = false;
             // 
             // dGetUserButton
             // 
@@ -124,6 +130,7 @@
             this.dDeleteUserButton.TabIndex = 8;
             this.dDeleteUserButton.Text = "Delete User";
             this.dDeleteUserButton.UseVisualStyleBackColor = false;
+            this.dDeleteUserButton.Visible = false;
             this.dDeleteUserButton.Click += new System.EventHandler(this.dDeleteUserButton_Click);
             // 
             // dAdminMenu
@@ -150,17 +157,31 @@
             this.dCancelButton.UseVisualStyleBackColor = false;
             this.dCancelButton.Click += new System.EventHandler(this.dCancelButton_Click);
             // 
+            // dInstructionBox
+            // 
+            this.dInstructionBox.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dInstructionBox.Location = new System.Drawing.Point(58, 79);
+            this.dInstructionBox.Multiline = true;
+            this.dInstructionBox.Name = "dInstructionBox";
+            this.dInstructionBox.ReadOnly = true;
+            this.dInstructionBox.Size = new System.Drawing.Size(203, 104);
+            this.dInstructionBox.TabIndex = 11;
+            this.dInstructionBox.Text = "To delete a user, first enter the MustangID, without the \'M\' prefix, in the Musta" +
+    "ngID box. Then click \"Get User\" to display the user\'s name.";
+            this.dInstructionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // DeleteUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(323, 366);
+            this.Controls.Add(this.dInstructionBox);
             this.Controls.Add(this.dCancelButton);
             this.Controls.Add(this.dAdminMenu);
             this.Controls.Add(this.dDeleteUserButton);
             this.Controls.Add(this.dGetUserButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dVerifyBox);
             this.Controls.Add(this.dLastnameBox);
             this.Controls.Add(this.dFirstnameBox);
             this.Controls.Add(this.dMustangBox);
@@ -184,10 +205,11 @@
         private System.Windows.Forms.TextBox dMustangBox;
         private System.Windows.Forms.TextBox dFirstnameBox;
         private System.Windows.Forms.TextBox dLastnameBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox dVerifyBox;
         private System.Windows.Forms.Button dGetUserButton;
         private System.Windows.Forms.Button dDeleteUserButton;
         private System.Windows.Forms.Button dAdminMenu;
         private System.Windows.Forms.Button dCancelButton;
+        private System.Windows.Forms.TextBox dInstructionBox;
     }
 }
