@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.firstNameLabel = new System.Windows.Forms.Label();
-            this.firstNameBox = new System.Windows.Forms.TextBox();
+            this.auffirstNameBox = new System.Windows.Forms.TextBox();
             this.lastNameBox = new System.Windows.Forms.Label();
             this.aufLastNameBox = new System.Windows.Forms.TextBox();
             this.aufUserLabel = new System.Windows.Forms.Label();
@@ -56,12 +56,12 @@
             this.firstNameLabel.TabIndex = 0;
             this.firstNameLabel.Text = "First Name";
             // 
-            // firstNameBox
+            // auffirstNameBox
             // 
-            this.firstNameBox.Location = new System.Drawing.Point(85, 40);
-            this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(203, 20);
-            this.firstNameBox.TabIndex = 1;
+            this.auffirstNameBox.Location = new System.Drawing.Point(85, 40);
+            this.auffirstNameBox.Name = "auffirstNameBox";
+            this.auffirstNameBox.Size = new System.Drawing.Size(203, 20);
+            this.auffirstNameBox.TabIndex = 1;
             // 
             // lastNameBox
             // 
@@ -145,13 +145,13 @@
             this.adminRadioButton.Name = "adminRadioButton";
             this.adminRadioButton.Size = new System.Drawing.Size(54, 17);
             this.adminRadioButton.TabIndex = 1;
-            this.adminRadioButton.TabStop = true;
             this.adminRadioButton.Text = "Admin";
             this.adminRadioButton.UseVisualStyleBackColor = true;
             // 
             // studentRadioButton
             // 
             this.studentRadioButton.AutoSize = true;
+            this.studentRadioButton.Checked = true;
             this.studentRadioButton.Location = new System.Drawing.Point(7, 20);
             this.studentRadioButton.Name = "studentRadioButton";
             this.studentRadioButton.Size = new System.Drawing.Size(62, 17);
@@ -207,7 +207,7 @@
             this.Controls.Add(this.aufUserLabel);
             this.Controls.Add(this.aufLastNameBox);
             this.Controls.Add(this.lastNameBox);
-            this.Controls.Add(this.firstNameBox);
+            this.Controls.Add(this.auffirstNameBox);
             this.Controls.Add(this.firstNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddUserForm";
@@ -224,7 +224,7 @@
         #endregion
 
         private System.Windows.Forms.Label firstNameLabel;
-        private System.Windows.Forms.TextBox firstNameBox;
+        private System.Windows.Forms.TextBox auffirstNameBox;
         private System.Windows.Forms.Label lastNameBox;
         private System.Windows.Forms.TextBox aufLastNameBox;
         private System.Windows.Forms.Label aufUserLabel;
