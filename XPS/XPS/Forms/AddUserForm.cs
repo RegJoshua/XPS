@@ -14,18 +14,13 @@ namespace XPS.Forms
 {
     public partial class AddUserForm : Form
     {
-        // addUser is the admin using the form, not the user to be added
-        //User addUser;
-
+        // a reference to the user's open admin form...
         private AdminForm _AdminForm = null;
 
-
+        //.. is passed as an argument so we can go back to the form
         public AddUserForm(AdminForm anAdminForm)
         {
-            //addUser = user;
-
             _AdminForm = anAdminForm;
-
             InitializeComponent();
         }
 
@@ -35,19 +30,14 @@ namespace XPS.Forms
             _AdminForm.Show();
         }
 
-        // creates a new admin form which recognizes addUser, which is not the user to be
-        // added, but the admin user using the form
+        // closes this form and returns to (shows) the admin form
         private void adminMenuButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            //AdminForm af = new AdminForm(addUser);
-
             _AdminForm.Show();
-
-            //af.Show();
+            this.Hide();
         }
-
+        // when the user button is clicked, a new user is created and data in the 
+        // text boxes is applied to it.
         private void aufAddUserButton_Click(object sender, EventArgs e)
         {
             // Create new user
@@ -62,8 +52,7 @@ namespace XPS.Forms
                 catch(Exception ex)
                 { MessageBox.Show("Please leave off the 'M' from M number.");
                     aufMustangBox.Text = "";
-                }
-            
+                }            
             else MessageBox.Show("Please enter the Mustang ID without the 'M'");
 
             // ensure first name box not blank

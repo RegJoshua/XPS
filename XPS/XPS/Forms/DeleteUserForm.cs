@@ -39,8 +39,6 @@ namespace XPS.Forms
         private void dAdminMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //AdminForm af = new AdminForm(adminUser);
-            //af.Show();
 
             _AdminForm.Show();
 
