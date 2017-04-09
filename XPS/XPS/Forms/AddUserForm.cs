@@ -43,7 +43,15 @@ namespace XPS.Forms
 
             // ensure mustang id box is not blank
             if (aufMustangBox.Text != "" )
-            { theNewUser.UserID = Int32.Parse(aufMustangBox.Text); }
+                try
+                {
+                    { theNewUser.UserID = Int32.Parse(aufMustangBox.Text); }
+                }
+                catch(Exception ex)
+                { MessageBox.Show("Please leave off the 'M' from M number.");
+                    aufMustangBox.Text = "";
+                }
+            
             else MessageBox.Show("Please enter the Mustang ID without the 'M'");
 
             // ensure first name box not blank
