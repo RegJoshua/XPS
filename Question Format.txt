@@ -343,7 +343,7 @@ k 027
 cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
 ctg 1
 con Consider the binary tree T below:
-fig .\\images\\img_k027.png
+fig .\\images\\img_k027_37.png
 q Which of the following represents a postorder traversal of T?
 aa X Z U W Y Q V P
 af P Q U W X V Y Z
@@ -463,7 +463,7 @@ k 037
 cit http://faculty.cse.tamu.edu/walker/Quals/GRE_CompSci_PracticeBook.pdf
 ctg 1
 con Consider the binary tree T below:
-fig .\\images\\img_k027.png
+fig .\\images\\img_k027_37.png
 q If T is a binary search tree with the smaller elements in the left subtree, which of the following nodes contains the fourth smallest element in T?
 aa W
 af V
@@ -518,3 +518,234 @@ af Software project management
 af Software development process
 af Project marketing team
 af Software allocation process
+
+k 042
+cit http://www.sanfoundry.com/operating-system-questions-answers-basics/ 
+ctg 4
+con 
+fig 
+q To access the services of operating system, the interface is provided by:
+aa system calls
+af API
+af library
+af OS link
+af assembly instructions
+
+k 043
+cit http://www.sanfoundry.com/computer-organization-mcqs-memory-locations-addresses/
+ctg 4
+con 
+fig 
+q If a system is 64 bit machine , then the length of each word will be ____ .
+aa 8 bytes
+af 4 bytes
+af 16 bytes
+af 12 bytes
+af 32 bites
+
+k 044
+cit http://www.sanfoundry.com/computer-organization-mcqs-memory-locations-addresses/
+ctg 4
+con 
+fig 
+q The type of memory assignment used in Intel processors is _____ .
+aa Little Endian
+af Big Endian
+af Medium Endian
+af Recursive
+af None of the above
+
+k 045
+cit http://www.sanfoundry.com/computer-organization-mcqs-memory-locations-addresses/
+ctg 4
+con 
+fig 
+q When using the Big Endian assignment to store a number, the sign bit of the number is stored in _____ .
+aa The higher order byte of the word
+af The lower order byte of the word
+af The virtual bit, which is not visible
+af Location is varies according to manufacturer
+af None of the above
+
+k 046
+cit http://www.sanfoundry.com/computer-organization-mcqs-memory-locations-addresses/
+ctg 4
+con 
+fig 
+q _____ method is used to map logical addresses of variable length onto physical memory.
+aa Segmentation
+af Paging
+af Overlays
+af Paging with segmentation
+af All of the above
+
+k 047
+cit 
+ctg 4
+con 
+fig 
+q Physical memory is divided into sets of finite size called as ______ .
+aa Frames
+af Pages
+af Blocks
+af Vectors
+af Bytes
+
+k 048
+cit http://www.sanfoundry.com/computer-graphics-mcqs-graphics-hardware-display-devices/
+ctg 7
+con I. Input devices  II. Output devices  III. Pointing devices  
+fig 
+q Which devices provides positional information to the graphics system ?
+aa Both I and III
+af I only
+af II only
+af III only
+af None of the above
+
+k 049
+cit http://www.sanfoundry.com/database-mcqs-relational-database-schema/
+ctg 6
+con 
+fig 
+q A relational database consists of a collection of
+aa Tables
+af Fields
+af Records
+af Keys
+af Queries
+
+k 050
+cit http://www.sanfoundry.com/database-mcqs-relational-database-schema/
+ctg 6
+con 
+fig 
+q A ________ in a table represents a relationship among a set of values.
+aa Row
+af Column
+af Key
+af Rank
+af Entry
+
+k 051
+cit http://www.sanfoundry.com/database-mcqs-relational-database-schema/
+ctg 6
+con 
+fig 
+q The term attribute refers to a ___________ of a table.
+aa Column
+af Record
+af Tuple
+af Key
+af Description
+
+k 052
+cit http://www.sanfoundry.com/database-mcqs-relational-database-schema/
+ctg 6
+con 
+fig 
+q Database __________ , which is the logical design of the database, and the database _______,which is a snapshot of the data in the database at a given instant in time.
+aa Schema, Instance
+af Instance, Schema
+af Relation, Schema
+af Relation, Domain
+af Class, Instance
+
+k 053
+cit http://www.sanfoundry.com/microprocessors-mcqs-machine-language-instruction-formats/
+ctg 4
+con 
+fig 
+q A machine language instruction format consists of
+aa Operation code field & operand field
+af Operand field
+af Operation code field
+af Sign bit and mantissa
+af None of the above
+
+k 054
+cit http://www.sanfoundry.com/microprocessors-mcqs-machine-language-instruction-formats/
+ctg 4
+con 
+fig 
+q The instruction “JUMP” belongs to
+aa control transfer & branch instructions
+af sequential control flow instructions
+af control transfer instructions
+af branch instructions
+af escape instructions
+
+k 055
+cit http://www.sanfoundry.com/microprocessors-mcqs-machine-language-instruction-formats/
+ctg 4
+con 
+fig 
+q If the data is present in a register and it is referred using the particular register, then it is
+aa register addressing mode
+af direct addressing mode
+af indexed addressing mode
+af immediate addressing mode
+af new floating mode
+
+k 056
+cit http://www.sanfoundry.com/microprocessors-mcqs-machine-language-instruction-formats/
+ctg 4
+con 
+fig 
+q The instruction that is used to transfer the data from source operand to destination operand is
+aa data copy/transfer instruction
+af branch instruction
+af arithmetic/logical instruction
+af string instruction
+af unambiguous
+
+k 057
+cit http://www.sanfoundry.com/computer-networks-question-answers-basics/
+ctg 7
+con I. computer network  II. distributed system  III. open source  IV. unified
+fig 
+q When collection of various computers seems a single coherent system to its client, then it is called
+aa II only
+af III and IV
+af I only
+af I and IV
+af All of the above
+
+k 058
+cit http://www.sanfoundry.com/computer-networks-question-answers-basics/
+ctg 7
+con 
+fig 
+q Two devices are in network if:
+aa a process in one device is able to exchange information with a process in another device
+af a process is running on both devices
+af PIDs of the processes running of different devices are same
+af None of these is true
+af All of these are true
+
+k 059
+cit http://www.sanfoundry.com/computer-networks-question-answers-basics/
+ctg 7
+con 
+fig 
+q In computer network nodes are:
+aa all of the above
+af none of the above
+af the computer that originates the data
+af the computer that routes the data
+af the computer that terminates the data
+
+k 060
+cit http://www.sanfoundry.com/computer-networks-question-answers-basics/
+ctg 7
+con 
+fig 
+q A _____ is a device that forwards packets between networks by processing the routing information included in the packet.
+aa router
+af bridge
+af firewall
+af all of the above
+af none of the above; packets have been replaced by quanta
+
+
+
