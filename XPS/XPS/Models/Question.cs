@@ -11,6 +11,7 @@ namespace XPS.Models
     {
         private int _questionID;
         private int _questionCategory;
+        private bool _image;
         private string _questionText;
         private string _correctAnswer;
         private string _incorrectAnswer1;
@@ -32,6 +33,17 @@ namespace XPS.Models
             _hint = "";
         }
 
+        public bool image
+        {
+            get
+            {
+                return image;
+            }
+            set
+            {
+                _image = value;
+            }
+        }
         public int QuestionID
         {
             get

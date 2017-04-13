@@ -338,6 +338,7 @@
             this.imCheckBox.TabIndex = 5;
             this.imCheckBox.Text = "Information Management";
             this.imCheckBox.UseVisualStyleBackColor = true;
+            this.imCheckBox.CheckedChanged += new System.EventHandler(this.imCheckBox_CheckedChanged);
             // 
             // seCheckBox
             // 
@@ -348,6 +349,7 @@
             this.seCheckBox.TabIndex = 4;
             this.seCheckBox.Text = "Software Engineering";
             this.seCheckBox.UseVisualStyleBackColor = true;
+            this.seCheckBox.CheckedChanged += new System.EventHandler(this.seCheckBox_CheckedChanged);
             // 
             // sysCheckBox
             // 
@@ -358,6 +360,7 @@
             this.sysCheckBox.TabIndex = 3;
             this.sysCheckBox.Text = "Systems";
             this.sysCheckBox.UseVisualStyleBackColor = true;
+            this.sysCheckBox.CheckedChanged += new System.EventHandler(this.sysCheckBox_CheckedChanged);
             // 
             // acCheckBox
             // 
@@ -368,6 +371,7 @@
             this.acCheckBox.TabIndex = 2;
             this.acCheckBox.Text = "Algorithms and Complexity";
             this.acCheckBox.UseVisualStyleBackColor = true;
+            this.acCheckBox.CheckedChanged += new System.EventHandler(this.acCheckBox_CheckedChanged);
             // 
             // progCheckBox
             // 
@@ -378,6 +382,7 @@
             this.progCheckBox.TabIndex = 1;
             this.progCheckBox.Text = "Programming";
             this.progCheckBox.UseVisualStyleBackColor = true;
+            this.progCheckBox.CheckedChanged += new System.EventHandler(this.progCheckBox_CheckedChanged);
             // 
             // dsCheckBox
             // 
@@ -388,6 +393,7 @@
             this.dsCheckBox.TabIndex = 0;
             this.dsCheckBox.Text = "Discrete Structures";
             this.dsCheckBox.UseVisualStyleBackColor = true;
+            this.dsCheckBox.CheckedChanged += new System.EventHandler(this.dsCheckBox_CheckedChanged);
             // 
             // dateLabel
             // 

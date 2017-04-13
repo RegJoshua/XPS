@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.examUserLabel = new System.Windows.Forms.Label();
             this.testIDLabel = new System.Windows.Forms.Label();
             this.questionGroupBox = new System.Windows.Forms.GroupBox();
@@ -46,6 +47,8 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.remainLabel = new System.Windows.Forms.Label();
+            this.cdLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.questionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -224,6 +227,7 @@
             this.nextButton.TabIndex = 7;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // previousButton
             // 
@@ -236,6 +240,7 @@
             this.previousButton.TabIndex = 8;
             this.previousButton.Text = "Previous";
             this.previousButton.UseVisualStyleBackColor = false;
+            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
             // remainLabel
             // 
@@ -249,12 +254,23 @@
             this.remainLabel.TabIndex = 9;
             this.remainLabel.Text = "Remaining Time";
             // 
+            // cdLabel
+            // 
+            this.cdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cdLabel.AutoSize = true;
+            this.cdLabel.Location = new System.Drawing.Point(1060, 188);
+            this.cdLabel.Name = "cdLabel";
+            this.cdLabel.Size = new System.Drawing.Size(60, 13);
+            this.cdLabel.TabIndex = 10;
+            this.cdLabel.Text = "countdown";
+            // 
             // ExamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1156, 638);
+            this.Controls.Add(this.cdLabel);
             this.Controls.Add(this.remainLabel);
             this.Controls.Add(this.previousButton);
             this.Controls.Add(this.nextButton);
@@ -298,5 +314,7 @@
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button previousButton;
         private System.Windows.Forms.Label remainLabel;
+        private System.Windows.Forms.Label cdLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }

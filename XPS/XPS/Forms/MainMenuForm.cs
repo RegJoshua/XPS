@@ -16,12 +16,13 @@ namespace XPS
     public partial class MainMenuForm : Form
     {
         User mainUser;
+        int[] categories = new int[6];
 
         public MainMenuForm()
         {
             InitializeComponent();
         }
-        
+
         public MainMenuForm(User user)
         {
             mainUser = user;
@@ -75,6 +76,7 @@ namespace XPS
             timedGroupBox.Visible = true;
             numGroupBox.Visible = true;
             generateTestButton.Visible = true;
+            yesRadioButton.Checked = true;
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -89,13 +91,79 @@ namespace XPS
         {
             //get whatever string is selected from the combobox (Num of questions user wants)
             string selected = this.questionComboBox.GetItemText(this.questionComboBox.SelectedItem);
-            //show in message box for testing purposes
-            MessageBox.Show(selected);
             //parse the string into an int and pass it as a parameter to the examForm.
             int num = Int32.Parse(selected);
+            bool timed;
+
+            if (yesRadioButton.Checked == true)
+            {
+                timed = true;
+            }
+            else
+                timed = false;
+
             this.Hide();
-            ExamForm ef = new Forms.ExamForm(mainUser, num);
+            ExamForm ef = new Forms.ExamForm(mainUser, num, timed, categories);
             ef.Show();
+        }
+
+        private void dsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //1 is checked, 0 is not checked
+            if (dsCheckBox.Checked == true)
+                categories[0] = 1;
+            else
+                categories[0] = 0;
+        }
+
+        private void progCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (progCheckBox.Checked == true)
+            {
+                categories[1] = 1;
+            }
+            else
+                categories[1] = 0;
+        }
+
+        private void acCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (acCheckBox.Checked == true)
+            {
+                categories[2] = 1;
+            }
+            else
+                categories[2] = 0;
+        }
+
+        private void sysCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sysCheckBox.Checked == true)
+            {
+                categories[3] = 1;
+            }
+            else
+                categories[3] = 0;
+        }
+
+        private void seCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (seCheckBox.Checked == true)
+            {
+                categories[4] = 1;
+            }
+            else
+                categories[4] = 0;
+        }
+
+        private void imCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (imCheckBox.Checked == true)
+            {
+                categories[5] = 1;
+            }
+            else
+                categories[5] = 0;   
         }
     }
 }
