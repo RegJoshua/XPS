@@ -19,57 +19,65 @@ namespace XPS.Forms
 
         private int counter;
         private int countQuest;
-        private int countdown;
+        private int cdTimer;
         private int currentQuestion = 0;
         private List<Question> quest;
-        private bool placed = true;
+
         public ExamForm()
         {
             InitializeComponent();
-            //List<Question> exam = db.GetQuestions();
         }
 
         public ExamForm(User user, int numQuest, bool timed, int []categories)
         {
             InitializeComponent();
             countQuest = numQuest;
-            quest = db.GetQuestions(numQuest, categories);
 
-            questionLabel.Text = quest[0].QuestionText;
             int corrNum = random.Next(1, 6);
 
+            //get the questions from the DB and store in a new list called quest
+            quest = db.GetQuestions(numQuest, categories);
+
+            //set the questionLabel and radioButtons to the first element
+            //in the quest array.
+            questionLabel.Text = quest[0].QuestionText;                
             answer1RadioButton.Text = quest[0].CorrectAnswer;
             answer2RadioButton.Text = quest[0].IncorrectAnswer1;
             answer3RadioButton.Text = quest[0].IncorrectAnswer2;
             answer4RadioButton.Text = quest[0].IncorrectAnswer3;
             answer5RadioButton.Text = quest[0].IncorrectAnswer4;
 
-
+            //if timed is checked from the mainMenu form then
+            //a label will print the time allocated (120s/2 min) per question.
             if (timed == true)
             {
-                countdown = numQuest * 120;
+                cdTimer = numQuest * 120;
                 timer1 = new Timer();
                 timer1.Enabled = true;
                 timer1.Tick += new EventHandler(timer1_Tick);
-                timer1.Interval = 1000;
+                timer1.Interval = 1000; //1000 = 1s
                 timer1.Start();
-                cdLabel.Text = countdown.ToString();
-
+                cdLabel.Text = cdTimer.ToString();
             }
+
+            //used to print the current Date and the user on the Exam Form.
             dateLabel.Text = "Date: " + DateTime.Now.ToLongDateString();
             examUserLabel.Text = "User: " + user.FirstName + " " + user.LastName;
 
-            int rowCount = numQuest / 5;
-            Point pt = new Point();
+            //Below is used to dynamically create the navigation for the exam form.
+            //We will get the number of buttons needed based on the number of questions
+            //that is passed from the mainMenuForm (what the user selects).
+            int rowCount = numQuest / 5; //want 5 buttons in a row
+            Point pt = new Point(); //Point is used to tell where each button goes
             pt.X = 10;
             pt.Y = 10;
             int num = 1;
-
-
             for (int i = 0; i < rowCount; i++)
             {
                 for (int j = 0; j < 5; j++)
                 {
+                    //create a button, give it a name, color, location, and add
+                    //to the navGroupBox.
                     Button button = new Button();
                     button.Click += new EventHandler(button_Click);
                     button.Name = "button" + counter;
@@ -91,11 +99,9 @@ namespace XPS.Forms
         }
 
         /* protected void button_Click(object sender, EventArgs e)
-         * used for navigated through the navigation tool on the form.
-         * 
-         * 
-         * 
-         * 
+         * button_Click is used for the navigation within the Exam Form.
+         * When the user clicks on the button, it prints the corresponding
+         * question and choices on the Exam Form. 
          */
         protected void button_Click(object sender, EventArgs e)
         {
@@ -110,22 +116,35 @@ namespace XPS.Forms
                     answer3RadioButton.Text = quest[i].IncorrectAnswer2;
                     answer4RadioButton.Text = quest[i].IncorrectAnswer3;
                     answer5RadioButton.Text = quest[i].IncorrectAnswer4;
-
                 }
             }
-
         }
+
+        /* private void ExamForm_FormClosing(object sender, FormClosingEventArgs e)
+         * This is used so the applicaiton will close when the user clicks the 'x'
+         */
         private void ExamForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
+        /* private void timer1_Tick(object sender, EventArgs e)
+         * timer1_Tick is used to countdown from the allocated time and print
+         */
         private void timer1_Tick(object sender, EventArgs e)
         {
-            countdown--;
-            cdLabel.Text = TimeSpan.FromSeconds(countdown).ToString();
+            cdTimer--;
+            cdLabel.Text = TimeSpan.FromSeconds(cdTimer).ToString();
         }
 
+        /* private void nextButton_Click(object sender, EventArgs e)
+         * NOTE: Do we want the next button to be disabled when the user
+         * is on the last question or wrap around to the beginning?
+         * 
+         * created a variable called currentQuestion which will get the 
+         * next element in the array when it is incremented. The next
+         * question and answers will show when the user clicks 'Next'.
+         */
         private void nextButton_Click(object sender, EventArgs e)
         {
             if(currentQuestion == countQuest)
@@ -145,10 +164,12 @@ namespace XPS.Forms
         }
 
         /* private void previousButton_Click(object sender, EventArgs e)
+         * NOTE: Same as nextButton, do we want previous to go to the last 
+         * question when the user is on the first question when clicked or 
+         * disable the button on the first question.
          * 
-         * 
-         * 
-         * 
+         * previousButton functions the same as nextButton_Click but decrements
+         * the variable currentQuestion which gets the previous Question in the list.
          */
         private void previousButton_Click(object sender, EventArgs e)
         {
