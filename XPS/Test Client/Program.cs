@@ -111,6 +111,7 @@ namespace TestClient
         public static void InsertUserTest()
         {
             DatabaseManager db = new DatabaseManager();
+            int userid = 0;
             String firstName = "";
             String lastName = "";
             String userName = "";
@@ -121,6 +122,8 @@ namespace TestClient
             Console.WriteLine("**********************************************************************************");
             Console.WriteLine("INSERT USER TEST");
             Console.WriteLine("**********************************************************************************");
+            Console.WriteLine("User ID: ");
+            userid = Int32.Parse(Console.ReadLine());
             Console.WriteLine("First Name: ");
             firstName = Console.ReadLine();
             Console.WriteLine("Last Name: ");
@@ -135,16 +138,13 @@ namespace TestClient
             try
             {
                 user = new User()
-                {
-                    FirstName = firstName
-                    ,
-                    LastName = lastName
-                    ,
-                    UserName = userName
-                    ,
-                    PassWord = passWord
-                    ,
-                    UserType = userType
+                {   
+                    UserID = userid
+                    , FirstName = firstName
+                    ,LastName = lastName
+                    ,UserName = userName
+                    ,PassWord = passWord
+                    ,UserType = userType
                 };
 
                 if (db.InsertUser(user))

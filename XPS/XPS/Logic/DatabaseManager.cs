@@ -232,7 +232,8 @@ namespace XPS.Logic
             String query = @"
 				INSERT INTO User
 				(
-					FirstName
+                    UserID
+					, FirstName
 					, LastName
 					, UserName
 					, Password
@@ -240,7 +241,8 @@ namespace XPS.Logic
 				)
 				VALUES
 				(
-					@FirstName
+                    @UserID
+					, @FirstName
 					, @LastName
 					, @UserName
 					, @Password
@@ -254,6 +256,7 @@ namespace XPS.Logic
                 using (MySqlCommand command = new MySqlCommand(query, _connection))
                 {
                     //Adds the parameters to the query from the user object.
+                    command.Parameters.AddWithValue("@UserID", user.UserID);
                     command.Parameters.AddWithValue("@FirstName", user.FirstName.Trim());
                     command.Parameters.AddWithValue("@LastName", user.LastName.Trim());
                     command.Parameters.AddWithValue("@username", user.UserName.Trim());
