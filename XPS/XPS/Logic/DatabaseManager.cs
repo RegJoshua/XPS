@@ -90,16 +90,11 @@ namespace XPS.Logic
                             result = new XPS.Models.User()
                             {
                                 UserID = Int32.Parse(reader.GetString("UserID"))
-                                ,
-                                FirstName = reader.GetString("FirstName")
-                                ,
-                                LastName = reader.GetString("LastName")
-                                ,
-                                UserName = reader.GetString("UserName")
-                                ,
-                                PassWord = reader.GetString("Password")
-                                ,
-                                UserType = reader.GetString("UserType").ToCharArray()[0]
+                                , FirstName = reader.GetString("FirstName")
+                                , LastName = reader.GetString("LastName")
+                                , UserName = reader.GetString("UserName")
+                                , PassWord = reader.GetString("Password")
+                                , UserType = reader.GetString("UserType").ToCharArray()[0]
                             };
                         }
                     }
@@ -149,16 +144,11 @@ namespace XPS.Logic
                             result = new XPS.Models.User()
                             {
                                 UserID = Int32.Parse(reader.GetString("UserID"))
-                                ,
-                                FirstName = reader.GetString("FirstName")
-                                ,
-                                LastName = reader.GetString("LastName")
-                                ,
-                                UserName = reader.GetString("UserName")
-                                ,
-                                PassWord = reader.GetString("Password")
-                                ,
-                                UserType = reader.GetChar("UserType")
+                                , FirstName = reader.GetString("FirstName")
+                                , LastName = reader.GetString("LastName")
+                                , UserName = reader.GetString("UserName")
+                                , PassWord = reader.GetString("Password")
+                                , UserType = reader.GetChar("UserType")
                             };
                         }
                     }
@@ -174,15 +164,24 @@ namespace XPS.Logic
             return result;
         }
 
+        /// <summary>
+        /// This method will pull be used to pull the questions from the database
+        /// based on the parameters that the user enteres. 
+        /// </summary>
+        /// <param name="n">The number of questions. </param>
+        /// <param name="categories">The question categories. </param>
+        /// <returns></returns>
         public List<Question> GetQuestions(int n, int[] categories)
         {
             List<Question> result = new List<Question>();
-            string query = @"
-                SELECT * 
+            string query = String.Format(@"
+                SELECT TOP {0} * 
 
                 FROM       
-                    Question;
-            ";
+                    Question
+                WHERE
+                    Category IN {1};
+            ", n, Utilities.CategoryString(categories));
 
             try
             {
@@ -208,6 +207,111 @@ namespace XPS.Logic
 
                             result.Add(question);
                         }
+                    }
+                }
+
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// This method inserts a Question Response object into the database.
+        /// </summary>
+        /// <param name="qr">The Question Response object being inserted.</param>
+        /// <returns>The return result indicates the success of the insert.</returns>
+        public bool InsertQuestionResponse(QuestionResponse qr)
+        {
+            bool result = false;
+            string query = @"
+                INSERT INTO QuestionResponse
+                (
+                    QuestionID
+                    , UserID
+                    , Correct
+                )
+                VALUES
+                (
+                    @QuestionID
+                    , @UserID
+                    , @Correct
+                );
+            ";
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlCommand command = new MySqlCommand(query, _connection))
+                {
+                    command.Parameters.AddWithValue("@QuestionID", qr.QuestionID);
+                    command.Parameters.AddWithValue("@UserID", qr.UserID);
+                    command.Parameters.AddWithValue("@Correct", (qr.Correct) ? 1 : 0);
+
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        throw new Exception("Error inserting Question Response.");
+                    }
+                }
+
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Inserts a test object into the database.
+        /// </summary>
+        /// <param name="test"> The object being inserted. </param>
+        /// <returns></returns>
+        public bool InsertTest(Test test)
+        {
+            bool result = false;
+            String query = @"
+                INSERT INTO Test
+                (
+                    UserID
+                    , Attempted
+                    , Correct
+                    , Time
+                )
+                VALUES
+                (
+                    @UserID
+                    , @Attempted
+                    , @Correct
+                    , @Time
+                );
+            ";
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlCommand command = new MySqlCommand(query, _connection))
+                {
+                    command.Parameters.AddWithValue("@UserID", test.UserID);
+                    command.Parameters.AddWithValue("@Attempted", test.Attempted);
+                    command.Parameters.AddWithValue("@Correct", test.Correct);
+                    command.Parameters.AddWithValue("@Time", test.Time);
+
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        result = true;
                     }
                 }
 
@@ -267,59 +371,6 @@ namespace XPS.Logic
                     if (command.ExecuteNonQuery() == 1)
                     {
                         result = true;
-                    }
-                }
-
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// This method inserts a Question Response object into the database.
-        /// </summary>
-        /// <param name="qr">The Question Response object being inserted.</param>
-        /// <returns>The return result indicates the success of the insert.</returns>
-        public bool InsertQuestionResponse(QuestionResponse qr)
-        {
-            bool result = false;
-            string query = @"
-                INSERT INTO QuestionResponse
-                (
-                    QuestionID
-                    , UserID
-                    , Correct
-                )
-                VALUES
-                (
-                    @QuestionID
-                    , @UserID
-                    , @Correct
-                );
-            ";
-
-            try
-            {
-                OpenConnection();
-
-                using (MySqlCommand command = new MySqlCommand(query, _connection))
-                {
-                    command.Parameters.AddWithValue("@QuestionID", qr.QuestionID);
-                    command.Parameters.AddWithValue("@UserID", qr.UserID);
-                    command.Parameters.AddWithValue("@Correct", (qr.Correct) ? 1 : 0);
-
-                    if (command.ExecuteNonQuery() == 1)
-                    {
-                        result = true;
-                    }
-                    else
-                    {
-                        throw new Exception("Error inserting Question Response.");
                     }
                 }
 

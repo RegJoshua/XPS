@@ -12,9 +12,9 @@ namespace XPS.Models
 
         private int _testID;
         private int _userID;
-        private string _correctAnswer;
         private float _time;
         private int _attempted;
+        private int _correct;
 
         #endregion
 
@@ -22,7 +22,6 @@ namespace XPS.Models
         {
             _testID = 0;
             _userID = 0;
-            _correctAnswer = "";
             _time = 0;
             _attempted = 0;
         }
@@ -51,17 +50,6 @@ namespace XPS.Models
                 _userID = value;
             }
         }
-        public string CorrectAnswer
-        {
-            get
-            {
-                return _correctAnswer;
-            }
-            set
-            {
-                _correctAnswer = value;
-            }
-        }
         public float Time
         {
             get
@@ -82,6 +70,17 @@ namespace XPS.Models
             set
             {
                 _attempted = value;
+            }
+        }
+        public int Correct
+        {
+            get
+            {
+                return _correct;
+            }
+            set
+            {
+                _correct = value;
             }
         }
 
