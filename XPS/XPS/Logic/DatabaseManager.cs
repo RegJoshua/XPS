@@ -96,6 +96,11 @@ namespace XPS.Logic
                                 , PassWord = reader.GetString("Password")
                                 , UserType = reader.GetString("UserType").ToCharArray()[0]
                             };
+
+                            if (passWord != result.PassWord)
+                            {
+                                result = null;
+                            }
                         }
                     }
                 }
