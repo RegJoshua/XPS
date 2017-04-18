@@ -42,8 +42,7 @@ namespace XPS.Forms
             //set the questionLabel and radioButtons to the first element
             //in the quest array.
             int current = currentQuestion;
-            cat = setQuestionCategory(quest[0].QuestionCategory);
-            catLabel.Text = "Category: " + cat;
+           
             questionLabel.Text = "Question " + (current+1) + ": " +quest[0].QuestionText;                
             answer1RadioButton.Text = quest[0].CorrectAnswer;
             answer2RadioButton.Text = quest[0].IncorrectAnswer1;
@@ -135,7 +134,9 @@ namespace XPS.Forms
                 if (button.Name == ("button" + i))
                 {
                     //must set i to currentQuestion or panel and next/prev button are out of order
-                    currentQuestion = i; 
+                    currentQuestion = i;
+                    cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
+                    catLabel.Text = "Category: " + cat;
                     questionLabel.Text = "Question " + current + ": " +quest[i].QuestionText;
                     answer1RadioButton.Text = quest[i].CorrectAnswer;
                     answer2RadioButton.Text = quest[i].IncorrectAnswer1;
@@ -169,7 +170,10 @@ namespace XPS.Forms
                 previousButton.Enabled = true;
                 currentQuestion++;
                 int current = currentQuestion;
+                
                 questionLabel.Text = "Question " + (current+1) + ": " + quest[currentQuestion].QuestionText;
+                cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
+                catLabel.Text = "Category: " + cat;
                 answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
                 answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
                 answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
@@ -197,8 +201,11 @@ namespace XPS.Forms
             {
                 nextButton.Enabled = true;
                 currentQuestion--;
-                int current = currentQuestion;               
+                int current = currentQuestion;
+                         
                 questionLabel.Text = "Question " + (current+1) + ": " + quest[currentQuestion].QuestionText;
+                cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
+                catLabel.Text = "Category: " + cat;
                 answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
                 answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
                 answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
@@ -214,32 +221,32 @@ namespace XPS.Forms
             if(num == 1)
             {
                 ans = "Discrete Structures";
-                return ans;
+              
             }
             else if(num == 2)
             {
                 ans = "Programming";
-                return ans;
+               
             }
             else if(num == 3)
             {
                 ans = "Algorithm and Complexity";
-                return ans;
+                
             }
             else if(num == 4)
             {
                 ans = "Systems";
-                return ans;
+                
             }
             else if(num == 5)
             {
                 ans = "Software Engineering";
-                return ans;
+                
             }
             else if(num == 6)
             {
                 ans = "Information Management";
-                return ans;
+                
             }
 
             return ans;
