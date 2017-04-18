@@ -175,13 +175,14 @@ namespace XPS.Logic
         {
             List<Question> result = new List<Question>();
             string query = String.Format(@"
-                SELECT TOP {0} * 
+                SELECT * 
 
                 FROM       
                     Question
                 WHERE
-                    Category IN {1};
-            ", n, Utilities.CategoryString(categories));
+                    Category IN {0}
+                LIMIT {1};
+            ", Utilities.CategoryString(categories), n);
 
             try
             {
