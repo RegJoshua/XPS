@@ -106,6 +106,7 @@ namespace XPS
             catGroupBox.Visible = true;
             timedGroupBox.Visible = true;
             numGroupBox.Visible = true;
+            questionComboBox.SelectedIndex = 0;
             generateTestButton.Visible = true;
             yesRadioButton.Checked = true;
         }
@@ -138,11 +139,20 @@ namespace XPS
             else
                 timed = false;
 
-            this.Hide();
-            //create an examForm with the mainUser, number of questions, if it is timed
-            //and send the categories array based on what is checked or not.
-            ExamForm ef = new Forms.ExamForm(mainUser, num, timed, categories);
-            ef.Show();
+            //user must select at least on category
+            if (dsCheckBox.Checked == false && progCheckBox.Checked == false && acCheckBox.Checked == false
+                 && sysCheckBox.Checked == false && seCheckBox.Checked == false && imCheckBox.Checked == false)
+                MessageBox.Show("Must select at least one category to take the test.");
+            else
+            {
+                this.Hide();
+                //create an examForm with the mainUser, number of questions, if it is timed
+                //and send the categories array based on what is checked or not.
+                ExamForm ef = new Forms.ExamForm(mainUser, num, timed, categories);
+                ef.Show();
+            }
+
+            
         }
 
         /* Everything below here will just see if one of the categories is checked when

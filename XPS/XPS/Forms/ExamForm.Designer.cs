@@ -168,11 +168,10 @@
             // 
             // questionLabel
             // 
-            this.questionLabel.AutoSize = true;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.Location = new System.Drawing.Point(6, 16);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(277, 18);
+            this.questionLabel.Size = new System.Drawing.Size(734, 65);
             this.questionLabel.TabIndex = 0;
             this.questionLabel.Text = "This question label will have the question.";
             // 

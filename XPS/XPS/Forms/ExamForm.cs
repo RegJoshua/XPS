@@ -17,9 +17,10 @@ namespace XPS.Forms
         DatabaseManager db = new DatabaseManager();
         Random random = new Random();
 
-        private int counter;
-        private int countQuest;
+        private int counter; //holds the numQuest passed in for the buttonName
+        private int countQuest; //holds the numQuest passed in
         private int cdTimer;
+        private string cat; //holds the category to print the category for each question
         private int currentQuestion = 0;
         private List<Question> quest;
 
@@ -40,7 +41,10 @@ namespace XPS.Forms
 
             //set the questionLabel and radioButtons to the first element
             //in the quest array.
-            questionLabel.Text = quest[0].QuestionText;                
+            int current = currentQuestion;
+            cat = setQuestionCategory(quest[0].QuestionCategory);
+            catLabel.Text = "Category: " + cat;
+            questionLabel.Text = "Question " + (current+1) + ": " +quest[0].QuestionText;                
             answer1RadioButton.Text = quest[0].CorrectAnswer;
             answer2RadioButton.Text = quest[0].IncorrectAnswer1;
             answer3RadioButton.Text = quest[0].IncorrectAnswer2;
@@ -96,33 +100,13 @@ namespace XPS.Forms
                 pt.X = 10;
                 pt.Y = pt.Y + 35;
             }
-        }
 
-        /* protected void button_Click(object sender, EventArgs e)
-         * button_Click is used for the navigation within the Exam Form.
-         * When the user clicks on the button, it prints the corresponding
-         * question and choices on the Exam Form. 
-         */
-        protected void button_Click(object sender, EventArgs e)
-        {
-            Button button = sender as Button;
-            for (int i = 0; i < counter; i++)
-            {
-                if (button.Name == ("button" + i))
-                {
-                    questionLabel.Text = quest[i].QuestionText;
-                    answer1RadioButton.Text = quest[i].CorrectAnswer;
-                    answer2RadioButton.Text = quest[i].IncorrectAnswer1;
-                    answer3RadioButton.Text = quest[i].IncorrectAnswer2;
-                    answer4RadioButton.Text = quest[i].IncorrectAnswer3;
-                    answer5RadioButton.Text = quest[i].IncorrectAnswer4;
-                }
-            }
+            testIDLabel.Text = "Test ID: " + currentQuestion;
         }
 
         /* private void ExamForm_FormClosing(object sender, FormClosingEventArgs e)
-         * This is used so the applicaiton will close when the user clicks the 'x'
-         */
+        * This is used so the applicaiton will close when the user clicks the 'x'
+        */
         private void ExamForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -137,6 +121,33 @@ namespace XPS.Forms
             cdLabel.Text = TimeSpan.FromSeconds(cdTimer).ToString();
         }
 
+        /* protected void button_Click(object sender, EventArgs e)
+         * button_Click is used for the navigation within the Exam Form.
+         * When the user clicks on the button, it prints the corresponding
+         * question and choices on the Exam Form. 
+         */
+        protected void button_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            for (int i = 0; i < counter; i++)
+            {
+                int current = (i + 1);
+                if (button.Name == ("button" + i))
+                {
+                    //must set i to currentQuestion or panel and next/prev button are out of order
+                    currentQuestion = i; 
+                    questionLabel.Text = "Question " + current + ": " +quest[i].QuestionText;
+                    answer1RadioButton.Text = quest[i].CorrectAnswer;
+                    answer2RadioButton.Text = quest[i].IncorrectAnswer1;
+                    answer3RadioButton.Text = quest[i].IncorrectAnswer2;
+                    answer4RadioButton.Text = quest[i].IncorrectAnswer3;
+                    answer5RadioButton.Text = quest[i].IncorrectAnswer4;
+                }
+            }
+        }
+
+       
+
         /* private void nextButton_Click(object sender, EventArgs e)
          * NOTE: Do we want the next button to be disabled when the user
          * is on the last question or wrap around to the beginning?
@@ -147,14 +158,18 @@ namespace XPS.Forms
          */
         private void nextButton_Click(object sender, EventArgs e)
         {
-            if(currentQuestion == countQuest)
+            testIDLabel.Text = "test ID: " + countQuest;
+            
+            if(currentQuestion == (countQuest-1))
             {
                 nextButton.Enabled = false;
             }
             else
             {
+                previousButton.Enabled = true;
                 currentQuestion++;
-                questionLabel.Text = quest[currentQuestion].QuestionText;
+                int current = currentQuestion;
+                questionLabel.Text = "Question " + (current+1) + ": " + quest[currentQuestion].QuestionText;
                 answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
                 answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
                 answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
@@ -173,20 +188,61 @@ namespace XPS.Forms
          */
         private void previousButton_Click(object sender, EventArgs e)
         {
+
             if (currentQuestion == 0)
             {
                 previousButton.Enabled = false;
             }
             else
             {
+                nextButton.Enabled = true;
                 currentQuestion--;
-                questionLabel.Text = quest[currentQuestion].QuestionText;
+                int current = currentQuestion;               
+                questionLabel.Text = "Question " + (current+1) + ": " + quest[currentQuestion].QuestionText;
                 answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
                 answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
                 answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
                 answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
                 answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
             }
+        }
+
+        private string setQuestionCategory(int num)
+        {
+            string ans = "";
+
+            if(num == 1)
+            {
+                ans = "Discrete Structures";
+                return ans;
+            }
+            else if(num == 2)
+            {
+                ans = "Programming";
+                return ans;
+            }
+            else if(num == 3)
+            {
+                ans = "Algorithm and Complexity";
+                return ans;
+            }
+            else if(num == 4)
+            {
+                ans = "Systems";
+                return ans;
+            }
+            else if(num == 5)
+            {
+                ans = "Software Engineering";
+                return ans;
+            }
+            else if(num == 6)
+            {
+                ans = "Information Management";
+                return ans;
+            }
+
+            return ans;
         }
 
         //private bool setAnswer(int num, string answer)
