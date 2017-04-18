@@ -12,21 +12,15 @@ namespace XPS.Logic
         {
             String result = "(";
 
-            if (categories.Length == 1)
+            for (int i = 0; i < categories.Length; i++)
             {
-                result += categories[0].ToString();
-            }
-
-            if (categories.Length > 1)
-            {
-                foreach (int cat in categories)
+                if (categories[i] == 1)
                 {
-                    result += String.Format("{0}, ", cat); 
+                    result += i.ToString() + ',';
                 }
-
-                result = result.Substring(0, result.Length - 1);
             }
 
+            result = result.Substring(0, result.Length - 1);
             result += ")";
             return result;
         }

@@ -59,9 +59,13 @@ namespace XPS.Models
             set
             {
                 //Ensures that the value is not too long to be stored in the database.
-                if (value.Length <= Logic.Constants.USER_FIRSTNAME_LENGTH)
+                if (value.Length != 0 && value.Length <= Logic.Constants.USER_FIRSTNAME_LENGTH)
                 {
                     _firstName = value;
+                }
+                else if (value.Length == 0)
+                {
+                    throw new Exception("First Name can't be empty.");
                 }
                 else
                 {
@@ -78,9 +82,13 @@ namespace XPS.Models
             set
             {
                 //Ensures that the value is not too long to be stored in the database.
-                if (value.Length <= Logic.Constants.USER_LASTNAME_LENGTH)
+                if (value.Length != 0 && value.Length <= Logic.Constants.USER_LASTNAME_LENGTH)
                 {
                     _lastName = value;
+                }
+                else if (value.Length == 0)
+                {
+                    throw new Exception("Last Name can't be empty.");
                 }
                 else
                 {
@@ -97,9 +105,13 @@ namespace XPS.Models
             set
             {
                 //Ensures that the value is not too long to be stored in the database.
-                if (value.Length <= Logic.Constants.USER_USERNAME_LENGTH)
+                if (value.Length != 0 && value.Length <= Logic.Constants.USER_USERNAME_LENGTH)
                 {
                     _userName = value;
+                }
+                else if (value.Length == 0)
+                {
+                    throw new Exception("Username can't be empty.");
                 }
                 else
                 {
@@ -116,9 +128,13 @@ namespace XPS.Models
             set
             {
                 //Ensures that the value is not too long to be stored in the database.
-                if (value.Length <= Logic.Constants.USER_PASSWORD_LENGTH)
+                if (value.Length != 0 && value.Length <= Logic.Constants.USER_PASSWORD_LENGTH)
                 {
                     _passWord = value;
+                }
+                else if (value.Length == 0)
+                {
+                    throw new Exception("Password can't be empty.");
                 }
                 else
                 {
