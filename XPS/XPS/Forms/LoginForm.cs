@@ -118,5 +118,34 @@ namespace XPS.Forms
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                user = db.ValidateUser("mellis", "Test123");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Trouble connecting to database. Try again later.");
+                Application.Exit(); //want the form to close if error is thrown after
+                //user chooses "ok" on messagebox.
+            }
+
+            //db.ValidateUser() returns null if not authenticated.
+            if (user == null)
+            {
+                MessageBox.Show("Username/Password is incorrect. Try again.");
+                usernameBox.Text = "";
+                passwordBox.Text = "";
+                usernameBox.Focus();
+            }
+            else
+            {
+                this.Hide();
+                MainMenuForm mm = new MainMenuForm(user);
+                mm.Show();
+            }
+        }
     }
 }
