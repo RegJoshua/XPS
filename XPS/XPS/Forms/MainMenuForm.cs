@@ -15,7 +15,7 @@ using XPS.Forms;
  * 
  * 
  * 
- */ 
+ */
 namespace XPS
 {
     public partial class MainMenuForm : Form
@@ -152,7 +152,7 @@ namespace XPS
                 ef.Show();
             }
 
-            
+
         }
 
         /* Everything below here will just see if one of the categories is checked when
@@ -160,29 +160,19 @@ namespace XPS
          * from 0 to 1. (0 is not checked, 1 is checked). The array we store the information in
          * is categories[]. This array is then passed to the Exam Form where we will use it to
          * get the corresponding questions based on what is checked.
-         */ 
+         */
         private void dsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             //1 is checked, 0 is not checked
             if (dsCheckBox.Checked == true)
-                categories[0] = 1;
+                categories[1] = 1;
             else
-                categories[0] = 0;
+                categories[1] = 0;
         }
 
         private void progCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (progCheckBox.Checked == true)
-            {
-                categories[1] = 1;
-            }
-            else
-                categories[1] = 0;
-        }
-
-        private void acCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (acCheckBox.Checked == true)
             {
                 categories[2] = 1;
             }
@@ -190,9 +180,9 @@ namespace XPS
                 categories[2] = 0;
         }
 
-        private void sysCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void acCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (sysCheckBox.Checked == true)
+            if (acCheckBox.Checked == true)
             {
                 categories[3] = 1;
             }
@@ -200,9 +190,9 @@ namespace XPS
                 categories[3] = 0;
         }
 
-        private void seCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void sysCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (seCheckBox.Checked == true)
+            if (sysCheckBox.Checked == true)
             {
                 categories[4] = 1;
             }
@@ -210,14 +200,24 @@ namespace XPS
                 categories[4] = 0;
         }
 
-        private void imCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void seCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (imCheckBox.Checked == true)
+            if (seCheckBox.Checked == true)
             {
                 categories[5] = 1;
             }
             else
-                categories[5] = 0;   
+                categories[5] = 0;
+        }
+
+        private void imCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (imCheckBox.Checked == true)
+            {
+                categories[6] = 1;
+            }
+            else
+                categories[6] = 0;
         }
     }
 }

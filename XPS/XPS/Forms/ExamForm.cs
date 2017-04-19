@@ -29,7 +29,7 @@ namespace XPS.Forms
             InitializeComponent();
         }
 
-        public ExamForm(User user, int numQuest, bool timed, int []categories)
+        public ExamForm(User user, int numQuest, bool timed, int[] categories)
         {
             InitializeComponent();
             countQuest = numQuest;
@@ -42,8 +42,10 @@ namespace XPS.Forms
             //set the questionLabel and radioButtons to the first element
             //in the quest array.
             int current = currentQuestion;
-           
-            questionLabel.Text = "Question " + (current+1) + ": " +quest[0].QuestionText;                
+
+            questionLabel.Text = "Question " + (current + 1) + ": " + quest[0].QuestionText;
+            cat = setQuestionCategory(quest[0].QuestionCategory);
+            catLabel.Text = "Category: " + cat;
             answer1RadioButton.Text = quest[0].CorrectAnswer;
             answer2RadioButton.Text = quest[0].IncorrectAnswer1;
             answer3RadioButton.Text = quest[0].IncorrectAnswer2;
@@ -75,6 +77,7 @@ namespace XPS.Forms
             pt.X = 10;
             pt.Y = 10;
             int num = 1;
+
             for (int i = 0; i < rowCount; i++)
             {
                 for (int j = 0; j < 5; j++)
@@ -94,12 +97,16 @@ namespace XPS.Forms
                     pt.X = pt.X + 35;
                     num++;
                     counter++;
-                }
 
+                    //initially change the backColor of button1 to black
+                    if (button.TabIndex == 0)
+                    {
+                        button.BackColor = Color.Black;
+                    }
+                }
                 pt.X = 10;
                 pt.Y = pt.Y + 35;
             }
-
             testIDLabel.Text = "Test ID: " + currentQuestion;
         }
 
@@ -128,16 +135,19 @@ namespace XPS.Forms
         protected void button_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
+
             for (int i = 0; i < counter; i++)
             {
                 int current = (i + 1);
+
                 if (button.Name == ("button" + i))
                 {
+
                     //must set i to currentQuestion or panel and next/prev button are out of order
                     currentQuestion = i;
                     cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                     catLabel.Text = "Category: " + cat;
-                    questionLabel.Text = "Question " + current + ": " +quest[i].QuestionText;
+                    questionLabel.Text = "Question " + current + ": " + quest[i].QuestionText;
                     answer1RadioButton.Text = quest[i].CorrectAnswer;
                     answer2RadioButton.Text = quest[i].IncorrectAnswer1;
                     answer3RadioButton.Text = quest[i].IncorrectAnswer2;
@@ -147,7 +157,7 @@ namespace XPS.Forms
             }
         }
 
-       
+
 
         /* private void nextButton_Click(object sender, EventArgs e)
          * NOTE: Do we want the next button to be disabled when the user
@@ -160,8 +170,9 @@ namespace XPS.Forms
         private void nextButton_Click(object sender, EventArgs e)
         {
             testIDLabel.Text = "test ID: " + countQuest;
-            
-            if(currentQuestion == (countQuest-1))
+            Button button = sender as Button;
+
+            if (currentQuestion >= (countQuest - 1))
             {
                 nextButton.Enabled = false;
             }
@@ -170,8 +181,8 @@ namespace XPS.Forms
                 previousButton.Enabled = true;
                 currentQuestion++;
                 int current = currentQuestion;
-                
-                questionLabel.Text = "Question " + (current+1) + ": " + quest[currentQuestion].QuestionText;
+
+                questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
                 answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
@@ -179,7 +190,18 @@ namespace XPS.Forms
                 answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
                 answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
                 answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
-            }        
+
+                var buttons = navGroupBox.Controls.OfType<Button>();
+                foreach (Button btn in buttons)
+                {
+                    btn.BackColor = Color.Gray;
+                    if (btn.TabIndex == currentQuestion)
+                    {
+                        btn.Focus();
+                        btn.BackColor = Color.Black;
+                    }
+                }
+            }
         }
 
         /* private void previousButton_Click(object sender, EventArgs e)
@@ -202,8 +224,8 @@ namespace XPS.Forms
                 nextButton.Enabled = true;
                 currentQuestion--;
                 int current = currentQuestion;
-                         
-                questionLabel.Text = "Question " + (current+1) + ": " + quest[currentQuestion].QuestionText;
+
+                questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
                 answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
@@ -211,6 +233,18 @@ namespace XPS.Forms
                 answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
                 answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
                 answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
+
+                var buttons = navGroupBox.Controls.OfType<Button>();
+                foreach (Button btn in buttons)
+                {
+                    btn.BackColor = Color.Gray;
+                    if (btn.TabIndex == currentQuestion)
+                    {
+                        btn.BackColor = Color.Black;
+                        btn.Focus();
+                    }
+
+                }
             }
         }
 
@@ -218,37 +252,18 @@ namespace XPS.Forms
         {
             string ans = "";
 
-            if(num == 1)
-            {
-                ans = "Discrete Structures";
-              
-            }
-            else if(num == 2)
-            {
-                ans = "Programming";
-               
-            }
-            else if(num == 3)
-            {
-                ans = "Algorithm and Complexity";
-                
-            }
-            else if(num == 4)
-            {
-                ans = "Systems";
-                
-            }
-            else if(num == 5)
-            {
-                ans = "Software Engineering";
-                
-            }
-            else if(num == 6)
-            {
+            if (num == 1)           
+                ans = "Discrete Structures";           
+            else if (num == 2)           
+                ans = "Programming";            
+            else if (num == 3)           
+                ans = "Algorithm and Complexity";           
+            else if (num == 4)           
+                ans = "Systems";           
+            else if (num == 5)           
+                ans = "Software Engineering";           
+            else if (num == 6)            
                 ans = "Information Management";
-                
-            }
-
             return ans;
         }
 
@@ -272,13 +287,13 @@ namespace XPS.Forms
         //        answer3RadioButton.Text = answer;
         //        return false;
         //    }
-                
+
         //    if (num == 4 && answer4RadioButton.Text == "")
         //    {
         //        answer4RadioButton.Text = answer;
         //        return false;
         //    }
-                
+
         //    if (num == 5 && answer5RadioButton.Text == "")
         //    {
         //        answer5RadioButton.Text = answer;
