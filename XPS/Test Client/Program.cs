@@ -33,7 +33,8 @@ namespace TestClient
             Console.WriteLine("5. Get User");
             Console.WriteLine("6. Get Questions");
             Console.WriteLine("7. Insert Question Response");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("8. Permutation Tester");
+            Console.WriteLine("9. Exit");
 
             try
             {
@@ -64,6 +65,9 @@ namespace TestClient
                         InsertQuestionResponseTest();
                         break;
                     case 8:
+                        PermutationTest();
+                        break;
+                    case 9:
                         Environment.Exit(0);
                         break;
                 }
@@ -332,6 +336,24 @@ namespace TestClient
                 Console.WriteLine(ex.Message);
             }
 
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public static void PermutationTest()
+        {
+            Console.WriteLine("**********************************************************************************");
+            Console.WriteLine("PERMUTATION TEST");
+            Console.WriteLine("**********************************************************************************");
+
+            int[] permutation = XPS.Logic.Utilities.Permutation();
+            string output = permutation[0] + " ";
+            output += permutation[1] + " ";
+            output += permutation[2] + " ";
+            output += permutation[3] + " ";
+            output += permutation[4];
+
+            Console.WriteLine(output);
             Console.ReadLine();
             Console.Clear();
         }

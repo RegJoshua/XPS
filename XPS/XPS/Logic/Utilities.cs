@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XPS.Logic
 {
-    class Utilities
+    public class Utilities
     {
         public static String CategoryString(int[] categories)
         {
@@ -23,6 +23,24 @@ namespace XPS.Logic
             result = result.Substring(0, result.Length - 1);
             result += ")";
             return result;
+        }
+
+        public static int[] Permutation()
+        {
+            Random rand = new Random();
+            List<int> tempList = new List<int>();
+            int randInt = 0;
+
+            while (tempList.Count != 5)
+            {
+                randInt = rand.Next() % 5;
+                if (!tempList.Contains(randInt))
+                {
+                    tempList.Add(randInt);
+                }
+            }
+
+            return tempList.ToArray();
         }
     }
 }

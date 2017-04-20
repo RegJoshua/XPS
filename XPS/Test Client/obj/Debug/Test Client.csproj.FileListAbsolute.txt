@@ -34,3 +34,11 @@ C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\Test Client\bin\Debug\Test Client.pdb
 C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\Test Client\bin\Debug\XPS.exe
 C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\Test Client\bin\Debug\XPS.pdb
 C:\Users\Mason\Desktop\XPS 2\XPS\XPS\XPS\Test Client\obj\Debug\Test Client.csprojResolveAssemblyReference.cache
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\bin\Debug\Test Client.exe.config
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\obj\Debug\Test Client.exe
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\obj\Debug\Test Client.pdb
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\bin\Debug\Test Client.exe
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\bin\Debug\Test Client.pdb
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\bin\Debug\XPS.exe
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\bin\Debug\XPS.pdb
+C:\Users\Mason\Desktop\XPS\XPS\XPS\Test Client\obj\Debug\Test Client.csprojResolveAssemblyReference.cache

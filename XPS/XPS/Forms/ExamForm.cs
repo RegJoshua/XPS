@@ -23,6 +23,7 @@ namespace XPS.Forms
         private string cat; //holds the category to print the category for each question
         private int currentQuestion = 0;
         private List<Question> quest;
+        private Dictionary<Question, int[]> questions;
 
         public ExamForm()
         {
@@ -33,11 +34,18 @@ namespace XPS.Forms
         {
             InitializeComponent();
             countQuest = numQuest;
+            questions = new Dictionary<Question, int[]>();
 
             int corrNum = random.Next(1, 6);
 
             //get the questions from the DB and store in a new list called quest
             quest = db.GetQuestions(numQuest, categories);
+
+            foreach (Question q in quest)
+            {
+                int[] permutation = Logic.Utilities.Permutation();
+                questions.Add(q, permutation);
+            }
 
             //set the questionLabel and radioButtons to the first element
             //in the quest array.
