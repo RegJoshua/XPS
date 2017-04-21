@@ -747,5 +747,170 @@ af firewall
 af all of the above
 af none of the above; packets have been replaced by quanta
 
+k061
+cit 
+ctg 6
+con 
+fig 
+q Using which language can a user request information from a database ?
+aa Query
+af Relational
+af Structural
+af Compiler
+af Recursive
 
+k 062
+cit http://www.sanfoundry.com/database-mcqs-relational-query-operations-operators/
+ctg 6
+con Student(ID, name, dept name, tot_cred)
+fig 
+q In this query which attribute form the primary key?
+aa ID
+af Name
+af Dept
+af Tot_cred
+af None
 
+k 063
+cit http://www.sanfoundry.com/database-mcqs-relational-query-operations-operators/
+ctg 6
+con 
+fig 
+q The_____ operation allows the combining of two relations by merging pairs of tuples, one from each relation, into a single tuple.
+aa Join
+af Select
+af Union
+af Intersection
+af Symmetric Intersection
+
+k 064 
+cit http://www.sanfoundry.com/database-mcqs-relational-query-operations-operators/
+ctg 6
+con 
+fig 
+q The _______ operator takes the results of two queries and returns only rows that appear in both result sets.
+aa Intersect
+af Union
+af Difference
+af Projection
+af Complement
+
+k 065
+cit http://www.sanfoundry.com/database-mcqs-relational-query-operations-operators/
+ctg 6
+con 
+fig 
+q A ________ is a pictorial depiction of the schema of a database that shows the relations in the database, their attributes, and primary keys and foreign keys.
+aa Schema diagram
+af Relational algebra
+af Database diagram
+af Schema flow
+af Data layout
+
+k 066
+cit http://www.sanfoundry.com/database-mcqs-entiity-relationship-diagram/
+ctg 6
+con 
+fig 
+q Which of the following gives a logical structure of the database graphically ?
+aa Entity-relationship diagram
+af Entity diagram
+af Database diagram
+af Architectural representation
+af Boolean framework
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
+
+k 
+cit 
+ctg 
+con 
+fig 
+q 
+aa 
+af 
+af 
+af 
+af 
