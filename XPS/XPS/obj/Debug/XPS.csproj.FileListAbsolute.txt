@@ -129,3 +129,6 @@ C:\Users\Mason\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.LoginForm.resources
 C:\Users\Mason\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
 C:\Users\Mason\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
 C:\Users\Mason\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\bin\Debug\XPS.exe.config
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.exe
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.pdb

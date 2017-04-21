@@ -41,10 +41,11 @@ namespace XPS.Forms
             //get the questions from the DB and store in a new list called quest
             quest = db.GetQuestions(numQuest, categories);
 
+            //Fix bug. For some reason, sets the same permutation for all questions
             foreach (Question q in quest)
             {
-                int[] permutation = Logic.Utilities.Permutation();
-                questions.Add(q, permutation);
+                //int[] permutation = Utilities.Permutation();
+                questions.Add(q, Utilities.Permutation());
             }
 
             //set the questionLabel and radioButtons to the first element
@@ -54,11 +55,17 @@ namespace XPS.Forms
             questionLabel.Text = "Question " + (current + 1) + ": " + quest[0].QuestionText;
             cat = setQuestionCategory(quest[0].QuestionCategory);
             catLabel.Text = "Category: " + cat;
-            answer1RadioButton.Text = quest[0].CorrectAnswer;
-            answer2RadioButton.Text = quest[0].IncorrectAnswer1;
-            answer3RadioButton.Text = quest[0].IncorrectAnswer2;
-            answer4RadioButton.Text = quest[0].IncorrectAnswer3;
-            answer5RadioButton.Text = quest[0].IncorrectAnswer4;
+            //answer1RadioButton.Text = quest[0].CorrectAnswer;
+            //answer2RadioButton.Text = quest[0].IncorrectAnswer1;
+            //answer3RadioButton.Text = quest[0].IncorrectAnswer2;
+            //answer4RadioButton.Text = quest[0].IncorrectAnswer3;
+            //answer5RadioButton.Text = quest[0].IncorrectAnswer4;
+            string[] array = { quest[0].CorrectAnswer, quest[0].IncorrectAnswer1, quest[0].IncorrectAnswer2, quest[0].IncorrectAnswer3, quest[0].IncorrectAnswer4 };
+            answer1RadioButton.Text = array[questions[quest[0]][0]];
+            answer2RadioButton.Text = array[questions[quest[0]][1]];
+            answer3RadioButton.Text = array[questions[quest[0]][2]];
+            answer4RadioButton.Text = array[questions[quest[0]][3]];
+            answer5RadioButton.Text = array[questions[quest[0]][4]];
 
             //if timed is checked from the mainMenu form then
             //a label will print the time allocated (120s/2 min) per question.
@@ -156,11 +163,18 @@ namespace XPS.Forms
                     cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                     catLabel.Text = "Category: " + cat;
                     questionLabel.Text = "Question " + current + ": " + quest[i].QuestionText;
-                    answer1RadioButton.Text = quest[i].CorrectAnswer;
-                    answer2RadioButton.Text = quest[i].IncorrectAnswer1;
-                    answer3RadioButton.Text = quest[i].IncorrectAnswer2;
-                    answer4RadioButton.Text = quest[i].IncorrectAnswer3;
-                    answer5RadioButton.Text = quest[i].IncorrectAnswer4;
+                    //answer1RadioButton.Text = quest[i].CorrectAnswer;
+                    //answer2RadioButton.Text = quest[i].IncorrectAnswer1;
+                    //answer3RadioButton.Text = quest[i].IncorrectAnswer2;
+                    //answer4RadioButton.Text = quest[i].IncorrectAnswer3;
+                    //answer5RadioButton.Text = quest[i].IncorrectAnswer4;
+
+                    string[] array = { quest[i].CorrectAnswer, quest[i].IncorrectAnswer1, quest[i].IncorrectAnswer2, quest[i].IncorrectAnswer3, quest[i].IncorrectAnswer4 };
+                    answer1RadioButton.Text = array[questions[quest[i]][0]];
+                    answer2RadioButton.Text = array[questions[quest[i]][1]];
+                    answer3RadioButton.Text = array[questions[quest[i]][2]];
+                    answer4RadioButton.Text = array[questions[quest[i]][3]];
+                    answer5RadioButton.Text = array[questions[quest[i]][4]];
                 }
             }
         }
@@ -193,11 +207,20 @@ namespace XPS.Forms
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
-                answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
-                answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
-                answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
-                answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
-                answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
+                //answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
+                //answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
+                //answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
+                //answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
+                //answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
+
+                string[] array = { quest[currentQuestion].CorrectAnswer, quest[currentQuestion].IncorrectAnswer1,
+                    quest[currentQuestion].IncorrectAnswer2, quest[currentQuestion].IncorrectAnswer3,
+                    quest[currentQuestion].IncorrectAnswer4 };
+                answer1RadioButton.Text = array[questions[quest[currentQuestion]][0]];
+                answer2RadioButton.Text = array[questions[quest[currentQuestion]][1]];
+                answer3RadioButton.Text = array[questions[quest[currentQuestion]][2]];
+                answer4RadioButton.Text = array[questions[quest[currentQuestion]][3]];
+                answer5RadioButton.Text = array[questions[quest[currentQuestion]][4]];
 
                 var buttons = navGroupBox.Controls.OfType<Button>();
                 foreach (Button btn in buttons)
@@ -236,11 +259,20 @@ namespace XPS.Forms
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
-                answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
-                answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
-                answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
-                answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
-                answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
+                //answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
+                //answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
+                //answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
+                //answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
+                //answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
+
+                string[] array = { quest[currentQuestion].CorrectAnswer, quest[currentQuestion].IncorrectAnswer1,
+                    quest[currentQuestion].IncorrectAnswer2, quest[currentQuestion].IncorrectAnswer3,
+                    quest[currentQuestion].IncorrectAnswer4 };
+                answer1RadioButton.Text = array[questions[quest[currentQuestion]][0]];
+                answer2RadioButton.Text = array[questions[quest[currentQuestion]][1]];
+                answer3RadioButton.Text = array[questions[quest[currentQuestion]][2]];
+                answer4RadioButton.Text = array[questions[quest[currentQuestion]][3]];
+                answer5RadioButton.Text = array[questions[quest[currentQuestion]][4]];
 
                 var buttons = navGroupBox.Controls.OfType<Button>();
                 foreach (Button btn in buttons)
@@ -260,17 +292,17 @@ namespace XPS.Forms
         {
             string ans = "";
 
-            if (num == 1)           
-                ans = "Discrete Structures";           
-            else if (num == 2)           
-                ans = "Programming";            
-            else if (num == 3)           
-                ans = "Algorithm and Complexity";           
-            else if (num == 4)           
-                ans = "Systems";           
-            else if (num == 5)           
-                ans = "Software Engineering";           
-            else if (num == 6)            
+            if (num == 1)
+                ans = "Discrete Structures";
+            else if (num == 2)
+                ans = "Programming";
+            else if (num == 3)
+                ans = "Algorithm and Complexity";
+            else if (num == 4)
+                ans = "Systems";
+            else if (num == 5)
+                ans = "Software Engineering";
+            else if (num == 6)
                 ans = "Information Management";
             return ans;
         }
