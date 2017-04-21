@@ -819,43 +819,43 @@ af Database diagram
 af Architectural representation
 af Boolean framework
 
-k 
-cit 
-ctg 
+k 067
+cit http://www.sanfoundry.com/discrete-mathematics-mcqs-sets/
+ctg 1
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q What is the Cartesian product of A = {1, 2} and B = {a, b}?
+aa {(1, a), (2, a), (1, b), (2, b)}
+af {(1, a), (1, b), (2, a), (b, b)}
+af {(1, 1), (a, a), (2, a), (1, b)}
+af {(1, 1), (2, 2), (a, a), (b, b)}
+af {(1, a), (2, a), (2, a), (1, b)}
 
-k 
-cit 
-ctg 
+k 068
+cit http://www.sanfoundry.com/artificial-intelligence-mcqs-neural-networks-1/
+ctg 7
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q An auto-associative network is:
+aa a neural network that contains feedback
+af a neural network that has only one loop
+af a neural network that contains no loops
+af a single layer feed-forward neural network with pre-processing
+af dimensionless asynchronous neural network
 
-k 
-cit 
-ctg 
-con 
+k 069
+cit http://www.sanfoundry.com/artificial-intelligence-mcqs-neural-networks-1/
+ctg 7
+con I. They have the ability to learn by example  II. They are more fault tolerant  III. They are more suited for real time operation due to their high ‘computational’ rates
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q What are the advantages of neural networks over conventional computers?
+aa I, II, and III
+af I and II only
+af II and III only
+af I and III only
+af None of these
 
-k 
+k 070
 cit 
 ctg 
 con 
