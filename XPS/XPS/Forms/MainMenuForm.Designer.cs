@@ -59,6 +59,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.otherCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.sideMenu)).BeginInit();
             this.sideMenu.Panel1.SuspendLayout();
             this.sideMenu.Panel2.SuspendLayout();
@@ -316,6 +317,7 @@
             // 
             // catGroupBox
             // 
+            this.catGroupBox.Controls.Add(this.otherCheckBox);
             this.catGroupBox.Controls.Add(this.imCheckBox);
             this.catGroupBox.Controls.Add(this.seCheckBox);
             this.catGroupBox.Controls.Add(this.sysCheckBox);
@@ -440,6 +442,17 @@
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
+            // otherCheckBox
+            // 
+            this.otherCheckBox.AutoSize = true;
+            this.otherCheckBox.Location = new System.Drawing.Point(6, 157);
+            this.otherCheckBox.Name = "otherCheckBox";
+            this.otherCheckBox.Size = new System.Drawing.Size(52, 17);
+            this.otherCheckBox.TabIndex = 6;
+            this.otherCheckBox.Text = "Other";
+            this.otherCheckBox.UseVisualStyleBackColor = true;
+            this.otherCheckBox.CheckedChanged += new System.EventHandler(this.otherCheckBox_CheckedChanged);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +520,7 @@
         private System.Windows.Forms.GroupBox numGroupBox;
         private System.Windows.Forms.ComboBox questionComboBox;
         private System.Windows.Forms.Button generateTestButton;
+        private System.Windows.Forms.CheckBox otherCheckBox;
     }
 }
 

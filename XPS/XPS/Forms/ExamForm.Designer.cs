@@ -245,11 +245,11 @@
             // 
             this.remainLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.remainLabel.AutoSize = true;
-            this.remainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remainLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.remainLabel.Location = new System.Drawing.Point(981, 136);
+            this.remainLabel.Location = new System.Drawing.Point(995, 152);
             this.remainLabel.Name = "remainLabel";
-            this.remainLabel.Size = new System.Drawing.Size(163, 24);
+            this.remainLabel.Size = new System.Drawing.Size(149, 24);
             this.remainLabel.TabIndex = 9;
             this.remainLabel.Text = "Remaining Time";
             // 
@@ -257,9 +257,10 @@
             // 
             this.cdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cdLabel.AutoSize = true;
-            this.cdLabel.Location = new System.Drawing.Point(1060, 188);
+            this.cdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdLabel.Location = new System.Drawing.Point(1028, 176);
             this.cdLabel.Name = "cdLabel";
-            this.cdLabel.Size = new System.Drawing.Size(60, 13);
+            this.cdLabel.Size = new System.Drawing.Size(116, 25);
             this.cdLabel.TabIndex = 10;
             this.cdLabel.Text = "countdown";
             // 

@@ -15,6 +15,7 @@ namespace XPS.Forms
     public partial class ExamForm : Form
     {
         DatabaseManager db = new DatabaseManager();
+        User user = new User();
         Random random = new Random();
 
         private int counter; //holds the numQuest passed in for the buttonName
@@ -33,6 +34,7 @@ namespace XPS.Forms
         public ExamForm(User user, int numQuest, bool timed, int[] categories)
         {
             InitializeComponent();
+            this.user = user;
             countQuest = numQuest;
             questions = new Dictionary<Question, int[]>();
 
@@ -140,6 +142,15 @@ namespace XPS.Forms
         {
             cdTimer--;
             cdLabel.Text = TimeSpan.FromSeconds(cdTimer).ToString();
+            if (cdTimer <= 5 * 60)
+                cdLabel.BackColor = Color.Red;
+            if(cdTimer == 0)
+            {
+                //Shows the main menu. will need to switch after reports form is done
+                this.Hide();
+                MainMenuForm mm = new MainMenuForm(user);
+                mm.Show();
+            }
         }
 
         /* protected void button_Click(object sender, EventArgs e)
@@ -304,43 +315,9 @@ namespace XPS.Forms
                 ans = "Software Engineering";
             else if (num == 6)
                 ans = "Information Management";
+            else if (num == 7)
+                ans = "Other";
             return ans;
         }
-
-        //private bool setAnswer(int num, string answer)
-        //{
-
-
-        //    if (num == 1 && answer1RadioButton.Text == "")
-        //    {
-        //        answer1RadioButton.Text = answer;
-        //        return false;
-        //    }
-        //    if (num == 2 && answer2RadioButton.Text == "")
-        //    {
-        //        answer2RadioButton.Text = answer;
-        //        return false;
-        //    }
-
-        //    if (num == 3 && answer3RadioButton.Text == "")
-        //    {
-        //        answer3RadioButton.Text = answer;
-        //        return false;
-        //    }
-
-        //    if (num == 4 && answer4RadioButton.Text == "")
-        //    {
-        //        answer4RadioButton.Text = answer;
-        //        return false;
-        //    }
-
-        //    if (num == 5 && answer5RadioButton.Text == "")
-        //    {
-        //        answer5RadioButton.Text = answer;
-        //        return false;
-        //    }
-
-        //    return true;               
-        //}
     }
 }

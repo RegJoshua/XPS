@@ -21,7 +21,7 @@ namespace XPS
     public partial class MainMenuForm : Form
     {
         User mainUser; //will need to pass user to exam form form
-        int[] categories = new int[6]; //needed to store what the user checks for categories
+        int[] categories = new int[8]; //needed to store what the user checks for categories
 
         public MainMenuForm()
         {
@@ -91,9 +91,18 @@ namespace XPS
          */
         private void aboutButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("\t\t\tXPS\n" + "-------------------------------------------" +
+            MessageBox.Show("\t\t       Exam Preparation Software (XPS)\n" +
+                "---------------------------------------------------------------------------------" +
                 "\nXPS is a test taking preparation application. XPS simulates the" +
-                " Computer Science Exit Exam.");
+                " MFT Computer Science Exit Exam. When you are ready to take your" +
+                " practice exam, press the 'Take Test' button. You are allowed to" +
+                " select any of the given categories, if your test is timed," +
+                " and the amount of questions you want on your exam. You are given" +
+                " two (2) minuutes per question. After your test is completed, you" +
+                " will be given a report based on the questions you answered during" +
+                " your time taking the test. These reports will be stored on your profile" +
+                " page. We at PrepT Software hope your experience with XPS will improve" +
+                " your chances at passing the MFT Computer Science Exit Exam.", "XPS - About");
         }
 
         /* private void takeTestButton_Click(object sender, EventArgs e)
@@ -141,7 +150,7 @@ namespace XPS
 
             //user must select at least on category
             if (dsCheckBox.Checked == false && progCheckBox.Checked == false && acCheckBox.Checked == false
-                 && sysCheckBox.Checked == false && seCheckBox.Checked == false && imCheckBox.Checked == false)
+                 && sysCheckBox.Checked == false && seCheckBox.Checked == false && imCheckBox.Checked == false && otherCheckBox.Checked == false)
                 MessageBox.Show("Must select at least one category to take the test.");
             else
             {
@@ -173,51 +182,49 @@ namespace XPS
         private void progCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (progCheckBox.Checked == true)
-            {
                 categories[2] = 1;
-            }
             else
                 categories[2] = 0;
         }
 
         private void acCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (acCheckBox.Checked == true)
-            {
-                categories[3] = 1;
-            }
+            if (acCheckBox.Checked == true)          
+                categories[3] = 1;           
             else
                 categories[3] = 0;
         }
 
         private void sysCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (sysCheckBox.Checked == true)
-            {
-                categories[4] = 1;
-            }
+            if (sysCheckBox.Checked == true)           
+                categories[4] = 1;         
             else
                 categories[4] = 0;
         }
 
         private void seCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (seCheckBox.Checked == true)
-            {
-                categories[5] = 1;
-            }
+            if (seCheckBox.Checked == true)           
+                categories[5] = 1;            
             else
                 categories[5] = 0;
         }
 
         private void imCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (imCheckBox.Checked == true)
-            {
-                categories[6] = 1;
-            }
+            if (imCheckBox.Checked == true)           
+                categories[6] = 1;          
             else
                 categories[6] = 0;
+        }
+
+        private void otherCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (otherCheckBox.Checked == true)           
+                categories[7] = 1;           
+            else
+                categories[7] = 0;
         }
     }
 }
