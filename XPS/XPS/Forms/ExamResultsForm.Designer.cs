@@ -109,6 +109,7 @@
             // 
             // erfTestIDTextBx
             // 
+            this.erfTestIDTextBx.Enabled = false;
             this.erfTestIDTextBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfTestIDTextBx.ForeColor = System.Drawing.Color.Maroon;
             this.erfTestIDTextBx.Location = new System.Drawing.Point(87, 95);
@@ -116,6 +117,7 @@
             this.erfTestIDTextBx.ReadOnly = true;
             this.erfTestIDTextBx.Size = new System.Drawing.Size(100, 29);
             this.erfTestIDTextBx.TabIndex = 20;
+            this.erfTestIDTextBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // erfTestIDLabel
             // 
@@ -130,6 +132,7 @@
             // 
             // erfTimeTextBx
             // 
+            this.erfTimeTextBx.Enabled = false;
             this.erfTimeTextBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfTimeTextBx.ForeColor = System.Drawing.Color.Maroon;
             this.erfTimeTextBx.Location = new System.Drawing.Point(87, 60);
@@ -137,6 +140,7 @@
             this.erfTimeTextBx.ReadOnly = true;
             this.erfTimeTextBx.Size = new System.Drawing.Size(100, 29);
             this.erfTimeTextBx.TabIndex = 18;
+            this.erfTimeTextBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // srfResultsLabel
             // 
@@ -183,6 +187,7 @@
             // 
             // erfScoreTextBox
             // 
+            this.erfScoreTextBox.Enabled = false;
             this.erfScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfScoreTextBox.ForeColor = System.Drawing.Color.Maroon;
             this.erfScoreTextBox.Location = new System.Drawing.Point(354, 193);
@@ -190,6 +195,7 @@
             this.erfScoreTextBox.ReadOnly = true;
             this.erfScoreTextBox.Size = new System.Drawing.Size(161, 80);
             this.erfScoreTextBox.TabIndex = 10;
+            this.erfScoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // erfCorrectLabel
             // 
@@ -229,6 +235,7 @@
             // 
             // erfCorrectTxtBx
             // 
+            this.erfCorrectTxtBx.Enabled = false;
             this.erfCorrectTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfCorrectTxtBx.ForeColor = System.Drawing.Color.Maroon;
             this.erfCorrectTxtBx.Location = new System.Drawing.Point(429, 308);
@@ -236,9 +243,11 @@
             this.erfCorrectTxtBx.ReadOnly = true;
             this.erfCorrectTxtBx.Size = new System.Drawing.Size(100, 29);
             this.erfCorrectTxtBx.TabIndex = 14;
+            this.erfCorrectTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // erfIncorrectTxtBx
             // 
+            this.erfIncorrectTxtBx.Enabled = false;
             this.erfIncorrectTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfIncorrectTxtBx.ForeColor = System.Drawing.Color.Maroon;
             this.erfIncorrectTxtBx.Location = new System.Drawing.Point(429, 352);
@@ -246,9 +255,11 @@
             this.erfIncorrectTxtBx.ReadOnly = true;
             this.erfIncorrectTxtBx.Size = new System.Drawing.Size(100, 29);
             this.erfIncorrectTxtBx.TabIndex = 15;
+            this.erfIncorrectTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // erfAttemptedTxtBx
             // 
+            this.erfAttemptedTxtBx.Enabled = false;
             this.erfAttemptedTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfAttemptedTxtBx.ForeColor = System.Drawing.Color.Maroon;
             this.erfAttemptedTxtBx.Location = new System.Drawing.Point(429, 391);
@@ -256,6 +267,7 @@
             this.erfAttemptedTxtBx.ReadOnly = true;
             this.erfAttemptedTxtBx.Size = new System.Drawing.Size(100, 29);
             this.erfAttemptedTxtBx.TabIndex = 16;
+            this.erfAttemptedTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // erfHomeButton
             // 

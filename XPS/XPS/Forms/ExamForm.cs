@@ -15,7 +15,6 @@ namespace XPS.Forms
     public partial class ExamForm : Form
     {
         DatabaseManager db = new DatabaseManager();
-        User user = new User();
         Random random = new Random();
 
         private int counter; //holds the numQuest passed in for the buttonName
@@ -25,6 +24,9 @@ namespace XPS.Forms
         private int currentQuestion = 0;
         private List<Question> quest;
         private Dictionary<Question, int[]> questions;
+        private List<QuestionResponse> response = new List<QuestionResponse>();
+        private Test test = new Test();
+        private User testUser;
 
         public ExamForm()
         {
@@ -34,14 +36,24 @@ namespace XPS.Forms
         public ExamForm(User user, int numQuest, bool timed, int[] categories)
         {
             InitializeComponent();
-            this.user = user;
+            testUser = user;
             countQuest = numQuest;
+            test.Attempted = numQuest;
+            test.UserID = user.UserID;
             questions = new Dictionary<Question, int[]>();
 
             int corrNum = random.Next(1, 6);
 
             //get the questions from the DB and store in a new list called quest
             quest = db.GetQuestions(numQuest, categories);
+
+            for (int i = 0; i < numQuest; i++)
+            {
+                QuestionResponse resp = new QuestionResponse();
+                resp.QuestionID = quest[i].QuestionID;
+                resp.UserID = user.UserID;
+                response.Add(resp);
+            }
 
             //Fix bug. For some reason, sets the same permutation for all questions
             foreach (Question q in quest)
@@ -57,17 +69,8 @@ namespace XPS.Forms
             questionLabel.Text = "Question " + (current + 1) + ": " + quest[0].QuestionText;
             cat = setQuestionCategory(quest[0].QuestionCategory);
             catLabel.Text = "Category: " + cat;
-            //answer1RadioButton.Text = quest[0].CorrectAnswer;
-            //answer2RadioButton.Text = quest[0].IncorrectAnswer1;
-            //answer3RadioButton.Text = quest[0].IncorrectAnswer2;
-            //answer4RadioButton.Text = quest[0].IncorrectAnswer3;
-            //answer5RadioButton.Text = quest[0].IncorrectAnswer4;
-            string[] array = { quest[0].CorrectAnswer, quest[0].IncorrectAnswer1, quest[0].IncorrectAnswer2, quest[0].IncorrectAnswer3, quest[0].IncorrectAnswer4 };
-            answer1RadioButton.Text = array[questions[quest[0]][0]];
-            answer2RadioButton.Text = array[questions[quest[0]][1]];
-            answer3RadioButton.Text = array[questions[quest[0]][2]];
-            answer4RadioButton.Text = array[questions[quest[0]][3]];
-            answer5RadioButton.Text = array[questions[quest[0]][4]];
+
+            setAnswerBtn(0);
 
             //if timed is checked from the mainMenu form then
             //a label will print the time allocated (120s/2 min) per question.
@@ -114,12 +117,6 @@ namespace XPS.Forms
                     pt.X = pt.X + 35;
                     num++;
                     counter++;
-
-                    //initially change the backColor of button1 to black
-                    if (button.TabIndex == 0)
-                    {
-                        button.BackColor = Color.Black;
-                    }
                 }
                 pt.X = 10;
                 pt.Y = pt.Y + 35;
@@ -142,15 +139,6 @@ namespace XPS.Forms
         {
             cdTimer--;
             cdLabel.Text = TimeSpan.FromSeconds(cdTimer).ToString();
-            if (cdTimer <= 5 * 60)
-                cdLabel.BackColor = Color.Red;
-            if(cdTimer == 0)
-            {
-                //Shows the main menu. will need to switch after reports form is done
-                this.Hide();
-                MainMenuForm mm = new MainMenuForm(user);
-                mm.Show();
-            }
         }
 
         /* protected void button_Click(object sender, EventArgs e)
@@ -174,18 +162,11 @@ namespace XPS.Forms
                     cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                     catLabel.Text = "Category: " + cat;
                     questionLabel.Text = "Question " + current + ": " + quest[i].QuestionText;
-                    //answer1RadioButton.Text = quest[i].CorrectAnswer;
-                    //answer2RadioButton.Text = quest[i].IncorrectAnswer1;
-                    //answer3RadioButton.Text = quest[i].IncorrectAnswer2;
-                    //answer4RadioButton.Text = quest[i].IncorrectAnswer3;
-                    //answer5RadioButton.Text = quest[i].IncorrectAnswer4;
 
-                    string[] array = { quest[i].CorrectAnswer, quest[i].IncorrectAnswer1, quest[i].IncorrectAnswer2, quest[i].IncorrectAnswer3, quest[i].IncorrectAnswer4 };
-                    answer1RadioButton.Text = array[questions[quest[i]][0]];
-                    answer2RadioButton.Text = array[questions[quest[i]][1]];
-                    answer3RadioButton.Text = array[questions[quest[i]][2]];
-                    answer4RadioButton.Text = array[questions[quest[i]][3]];
-                    answer5RadioButton.Text = array[questions[quest[i]][4]];
+                    setAnswerBtn(i);
+
+                    resetAnserBtn();
+                    checkAnswer();
                 }
             }
         }
@@ -218,29 +199,18 @@ namespace XPS.Forms
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
-                //answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
-                //answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
-                //answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
-                //answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
-                //answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
 
-                string[] array = { quest[currentQuestion].CorrectAnswer, quest[currentQuestion].IncorrectAnswer1,
-                    quest[currentQuestion].IncorrectAnswer2, quest[currentQuestion].IncorrectAnswer3,
-                    quest[currentQuestion].IncorrectAnswer4 };
-                answer1RadioButton.Text = array[questions[quest[currentQuestion]][0]];
-                answer2RadioButton.Text = array[questions[quest[currentQuestion]][1]];
-                answer3RadioButton.Text = array[questions[quest[currentQuestion]][2]];
-                answer4RadioButton.Text = array[questions[quest[currentQuestion]][3]];
-                answer5RadioButton.Text = array[questions[quest[currentQuestion]][4]];
+                setAnswerBtn(currentQuestion);
+
+                resetAnserBtn();
+                checkAnswer();
 
                 var buttons = navGroupBox.Controls.OfType<Button>();
                 foreach (Button btn in buttons)
                 {
-                    btn.BackColor = Color.Gray;
                     if (btn.TabIndex == currentQuestion)
                     {
                         btn.Focus();
-                        btn.BackColor = Color.Black;
                     }
                 }
             }
@@ -270,28 +240,17 @@ namespace XPS.Forms
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
-                //answer1RadioButton.Text = quest[currentQuestion].CorrectAnswer;
-                //answer2RadioButton.Text = quest[currentQuestion].IncorrectAnswer1;
-                //answer3RadioButton.Text = quest[currentQuestion].IncorrectAnswer2;
-                //answer4RadioButton.Text = quest[currentQuestion].IncorrectAnswer3;
-                //answer5RadioButton.Text = quest[currentQuestion].IncorrectAnswer4;
 
-                string[] array = { quest[currentQuestion].CorrectAnswer, quest[currentQuestion].IncorrectAnswer1,
-                    quest[currentQuestion].IncorrectAnswer2, quest[currentQuestion].IncorrectAnswer3,
-                    quest[currentQuestion].IncorrectAnswer4 };
-                answer1RadioButton.Text = array[questions[quest[currentQuestion]][0]];
-                answer2RadioButton.Text = array[questions[quest[currentQuestion]][1]];
-                answer3RadioButton.Text = array[questions[quest[currentQuestion]][2]];
-                answer4RadioButton.Text = array[questions[quest[currentQuestion]][3]];
-                answer5RadioButton.Text = array[questions[quest[currentQuestion]][4]];
+                setAnswerBtn(currentQuestion);
+
+                resetAnserBtn();
+                checkAnswer();
 
                 var buttons = navGroupBox.Controls.OfType<Button>();
                 foreach (Button btn in buttons)
                 {
-                    btn.BackColor = Color.Gray;
                     if (btn.TabIndex == currentQuestion)
                     {
-                        btn.BackColor = Color.Black;
                         btn.Focus();
                     }
 
@@ -315,9 +274,87 @@ namespace XPS.Forms
                 ans = "Software Engineering";
             else if (num == 6)
                 ans = "Information Management";
-            else if (num == 7)
-                ans = "Other";
             return ans;
+        }
+
+        private void saveQuestionButton_Click(object sender, EventArgs e)
+        {
+            foreach (RadioButton button in answersGroupBox.Controls)
+            {
+                if (button.Checked)
+                {
+                    response[currentQuestion].QuestionResponseID = button.Name[6] - 48;
+                    if (button.Text == quest[currentQuestion].CorrectAnswer)
+                        response[currentQuestion].Correct = true;
+                    else
+                        response[currentQuestion].Correct = false;
+                }
+            }
+
+            if (response[currentQuestion].QuestionResponseID != 0)
+            {
+                var buttons = navGroupBox.Controls.OfType<Button>();
+                foreach (Button btn in buttons)
+                {
+                    if (btn.TabIndex == currentQuestion)
+                    {
+                        btn.BackColor = Color.Green;
+                        btn.Focus();
+                    }
+
+                }
+            }
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            int numCorrect = 0;
+            timer1.Stop();
+            test.Time = cdTimer;
+            foreach (QuestionResponse resp in response)
+            {
+                if (resp.Correct == true)
+                    numCorrect++;
+            }
+            test.Correct = numCorrect;
+            this.Hide();
+            ExamResultsForm ERF = new ExamResultsForm(test, testUser);
+            ERF.Show();
+        }
+
+        public void resetAnserBtn()
+        {
+            answer1RadioButton.Checked = false;
+            answer2RadioButton.Checked = false;
+            answer3RadioButton.Checked = false;
+            answer4RadioButton.Checked = false;
+            answer5RadioButton.Checked = false;
+        }
+
+        public void checkAnswer()
+        {
+            if (response[currentQuestion].QuestionResponseID == 1)
+                answer1RadioButton.Checked = true;
+            else if (response[currentQuestion].QuestionResponseID == 2)
+                answer2RadioButton.Checked = true;
+            else if (response[currentQuestion].QuestionResponseID == 3)
+                answer3RadioButton.Checked = true;
+            else if (response[currentQuestion].QuestionResponseID == 4)
+                answer4RadioButton.Checked = true;
+            else if (response[currentQuestion].QuestionResponseID == 5)
+                answer5RadioButton.Checked = true;
+        }
+
+        public void setAnswerBtn(int i)
+        {
+            string[] array = { quest[i].CorrectAnswer, quest[i].IncorrectAnswer1,
+                    quest[i].IncorrectAnswer2, quest[i].IncorrectAnswer3,
+                    quest[i].IncorrectAnswer4 };
+            answer1RadioButton.Text = array[questions[quest[i]][0]];
+            answer2RadioButton.Text = array[questions[quest[i]][1]];
+            answer3RadioButton.Text = array[questions[quest[i]][2]];
+            answer4RadioButton.Text = array[questions[quest[i]][3]];
+            answer5RadioButton.Text = array[questions[quest[i]][4]];
         }
     }
 }

@@ -13,9 +13,11 @@ namespace XPS.Forms
 {
     public partial class ExamResultsForm : Form
     {
+        private User ERFUser;
         public ExamResultsForm(Test ts, User user)
         {
             InitializeComponent();
+            ERFUser = user;
 
             erfNameLabel.Text = user.FirstName + " " + user.LastName;
 
@@ -37,17 +39,15 @@ namespace XPS.Forms
             int incorrect = attempted - correct;
             erfIncorrectTxtBx.Text =incorrect.ToString();
 
-
-
-            erfTestIDLabel.Text = ts.TestID.ToString();
+            erfTestIDTextBx.Text = ts.TestID.ToString();
         }
 
         private void erfHomeButton_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            MainMenuForm mm = new MainMenuForm(ERFUser);
+            mm.Show();
 
             this.Close();
-            
         }
 
 

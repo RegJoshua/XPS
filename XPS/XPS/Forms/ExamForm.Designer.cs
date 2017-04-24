@@ -49,8 +49,11 @@
             this.remainLabel = new System.Windows.Forms.Label();
             this.cdLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.answersGroupBox = new System.Windows.Forms.GroupBox();
+            this.submitButton = new System.Windows.Forms.Button();
             this.questionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.answersGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // examUserLabel
@@ -78,11 +81,7 @@
             // questionGroupBox
             // 
             this.questionGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.questionGroupBox.Controls.Add(this.answer5RadioButton);
-            this.questionGroupBox.Controls.Add(this.answer4RadioButton);
-            this.questionGroupBox.Controls.Add(this.answer3RadioButton);
-            this.questionGroupBox.Controls.Add(this.answer2RadioButton);
-            this.questionGroupBox.Controls.Add(this.answer1RadioButton);
+            this.questionGroupBox.Controls.Add(this.answersGroupBox);
             this.questionGroupBox.Controls.Add(this.pictureBox1);
             this.questionGroupBox.Controls.Add(this.saveQuestionButton);
             this.questionGroupBox.Controls.Add(this.questionLabel);
@@ -95,7 +94,7 @@
             // answer5RadioButton
             // 
             this.answer5RadioButton.AutoSize = true;
-            this.answer5RadioButton.Location = new System.Drawing.Point(18, 402);
+            this.answer5RadioButton.Location = new System.Drawing.Point(6, 124);
             this.answer5RadioButton.Name = "answer5RadioButton";
             this.answer5RadioButton.Size = new System.Drawing.Size(69, 17);
             this.answer5RadioButton.TabIndex = 7;
@@ -106,7 +105,7 @@
             // answer4RadioButton
             // 
             this.answer4RadioButton.AutoSize = true;
-            this.answer4RadioButton.Location = new System.Drawing.Point(18, 379);
+            this.answer4RadioButton.Location = new System.Drawing.Point(6, 101);
             this.answer4RadioButton.Name = "answer4RadioButton";
             this.answer4RadioButton.Size = new System.Drawing.Size(69, 17);
             this.answer4RadioButton.TabIndex = 6;
@@ -117,7 +116,7 @@
             // answer3RadioButton
             // 
             this.answer3RadioButton.AutoSize = true;
-            this.answer3RadioButton.Location = new System.Drawing.Point(18, 356);
+            this.answer3RadioButton.Location = new System.Drawing.Point(6, 78);
             this.answer3RadioButton.Name = "answer3RadioButton";
             this.answer3RadioButton.Size = new System.Drawing.Size(69, 17);
             this.answer3RadioButton.TabIndex = 5;
@@ -128,7 +127,7 @@
             // answer2RadioButton
             // 
             this.answer2RadioButton.AutoSize = true;
-            this.answer2RadioButton.Location = new System.Drawing.Point(18, 333);
+            this.answer2RadioButton.Location = new System.Drawing.Point(6, 55);
             this.answer2RadioButton.Name = "answer2RadioButton";
             this.answer2RadioButton.Size = new System.Drawing.Size(69, 17);
             this.answer2RadioButton.TabIndex = 4;
@@ -139,7 +138,7 @@
             // answer1RadioButton
             // 
             this.answer1RadioButton.AutoSize = true;
-            this.answer1RadioButton.Location = new System.Drawing.Point(18, 310);
+            this.answer1RadioButton.Location = new System.Drawing.Point(6, 32);
             this.answer1RadioButton.Name = "answer1RadioButton";
             this.answer1RadioButton.Size = new System.Drawing.Size(69, 17);
             this.answer1RadioButton.TabIndex = 3;
@@ -159,12 +158,13 @@
             // 
             this.saveQuestionButton.BackColor = System.Drawing.Color.Maroon;
             this.saveQuestionButton.ForeColor = System.Drawing.Color.White;
-            this.saveQuestionButton.Location = new System.Drawing.Point(652, 402);
+            this.saveQuestionButton.Location = new System.Drawing.Point(657, 402);
             this.saveQuestionButton.Name = "saveQuestionButton";
             this.saveQuestionButton.Size = new System.Drawing.Size(75, 23);
             this.saveQuestionButton.TabIndex = 1;
             this.saveQuestionButton.Text = "Save";
             this.saveQuestionButton.UseVisualStyleBackColor = false;
+            this.saveQuestionButton.Click += new System.EventHandler(this.saveQuestionButton_Click);
             // 
             // questionLabel
             // 
@@ -264,12 +264,39 @@
             this.cdLabel.TabIndex = 10;
             this.cdLabel.Text = "countdown";
             // 
+            // answersGroupBox
+            // 
+            this.answersGroupBox.Controls.Add(this.answer3RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer5RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer1RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer4RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer2RadioButton);
+            this.answersGroupBox.Location = new System.Drawing.Point(9, 265);
+            this.answersGroupBox.Name = "answersGroupBox";
+            this.answersGroupBox.Size = new System.Drawing.Size(642, 177);
+            this.answersGroupBox.TabIndex = 8;
+            this.answersGroupBox.TabStop = false;
+            // 
+            // submitButton
+            // 
+            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitButton.BackColor = System.Drawing.Color.Maroon;
+            this.submitButton.ForeColor = System.Drawing.Color.White;
+            this.submitButton.Location = new System.Drawing.Point(999, 538);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(106, 60);
+            this.submitButton.TabIndex = 11;
+            this.submitButton.Text = "Submit Test";
+            this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
             // ExamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1156, 638);
+            this.Controls.Add(this.submitButton);
             this.Controls.Add(this.cdLabel);
             this.Controls.Add(this.remainLabel);
             this.Controls.Add(this.previousButton);
@@ -287,8 +314,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExamForm_FormClosing);
             this.questionGroupBox.ResumeLayout(false);
-            this.questionGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.answersGroupBox.ResumeLayout(false);
+            this.answersGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +344,7 @@
         private System.Windows.Forms.Label remainLabel;
         private System.Windows.Forms.Label cdLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox answersGroupBox;
+        private System.Windows.Forms.Button submitButton;
     }
 }
