@@ -857,60 +857,100 @@ af None of these
 
 k 070
 cit 
-ctg 
+ctg 3
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q Which of these is used to denote the worst case complexity of an algorithm?
+aa O(g(n))
+af theta(g(n))
+af omega(g(n))
+af epsilon(g(n))
+af complexity(g(n))
 
-k 
+k 071
 cit 
-ctg 
+ctg 3
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q What is the worst case time comlexity of MergeSort?
+aa O(n squared)
+af O(log(n))
+af O(n log(n))
+af O(n!)
+af O(n)
 
-k 
+k 072
 cit 
-ctg 
+ctg 3
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q What is the expected average time complexity of searching a Binary Search Tree with n nodes?
+aa O(log(n))
+af O(n)
+af O(n log(n))
+af constant
+af O(n!)
 
-k 
+k 073
 cit 
-ctg 
+ctg 3
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q What is the worst-case time complexity of searching a Binary Search Tree with n nodes?
+aa O(n)
+af O(log(n))
+af O(n log(n))
+af constant
+af O(n!)
 
-k 
+k 074
 cit 
-ctg 
+ctg 3
 con 
 fig 
-q 
-aa 
-af 
-af 
-af 
-af 
+q Which is the correct ordering of complexities?
+aa O(1), O(log(n)), O(n), O(n log(n)), O(n squared), O(n!)
+af O(1), O(log(n)), O(n), O(n log(n)), O(n!), O(n squared) 
+af O(log(n)), O(1), O(n log(n)), O(n), O(n squared) , O(n!)
+af O(n), O(n squared), O(n!), O(log(n)), O(1), O(n log(n))
+af with increased processor speeds, programmers need not consider complexity
+
+k 075
+cit 
+ctg 3
+con 
+fig 
+q What is the time complexity of inserting an item in a stack that already contains n elements?
+aa O(1)
+af O(n squared)
+af O(n - k)
+af O(n)
+af O(log n)
+
+k 076
+cit http://www.psexam.com/MCQs-from-Data-Structures-and-Algorithms/data-structures-a-algorithms-multiple-choice-questions-mcqs-objective-set-1.html
+ctg 3
+con 
+fig 
+q Two main measures for the efficiency of an algorithm are
+aa Time and space
+af Processor and memory
+af Complexity and capacity
+af Data and space
+af lines of comment per line of code
+
+k 077
+cit http://www.psexam.com/MCQs-from-Data-Structures-and-Algorithms/data-structures-a-algorithms-multiple-choice-questions-mcqs-objective-set-1.html
+ctg 3
+con 
+fig 
+q The elements of an array are stored successively in memory cells because
+aa by this way computer can keep track only the address of the first element and the addresses of other elements can be calculated
+af the architecture of computer memory does not allow arrays to store other than serially
+af the amount of memory is less than the number of items stored
+af there is no other way to do it
+af memory is volatile
+
+
+
+
