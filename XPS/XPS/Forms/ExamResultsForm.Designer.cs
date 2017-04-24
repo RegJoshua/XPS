@@ -34,13 +34,21 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.erfHeadingGroupBox = new System.Windows.Forms.GroupBox();
+            this.erfTestIDTextBx = new System.Windows.Forms.TextBox();
+            this.erfTestIDLabel = new System.Windows.Forms.Label();
+            this.erfTimeTextBx = new System.Windows.Forms.TextBox();
+            this.srfResultsLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.erfTimeLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.erfNameLabe = new System.Windows.Forms.Label();
-            this.erfCategoryLabel = new System.Windows.Forms.Label();
-            this.userTypeLabel = new System.Windows.Forms.Label();
-            this.srfResultsLabel = new System.Windows.Forms.Label();
+            this.erfNameLabel = new System.Windows.Forms.Label();
+            this.erfScoreTextBox = new System.Windows.Forms.TextBox();
+            this.erfCorrectLabel = new System.Windows.Forms.Label();
+            this.erfIncorrectLabel = new System.Windows.Forms.Label();
+            this.erfAttemptedLabel = new System.Windows.Forms.Label();
+            this.erfCorrectTxtBx = new System.Windows.Forms.TextBox();
+            this.erfIncorrectTxtBx = new System.Windows.Forms.TextBox();
+            this.erfAttemptedTxtBx = new System.Windows.Forms.TextBox();
+            this.erfHomeButton = new System.Windows.Forms.Button();
             this.erfMainMenuStrip.SuspendLayout();
             this.erfHeadingGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,13 +92,13 @@
             // 
             this.erfHeadingGroupBox.BackColor = System.Drawing.Color.Maroon;
             this.erfHeadingGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.erfHeadingGroupBox.Controls.Add(this.erfTestIDTextBx);
+            this.erfHeadingGroupBox.Controls.Add(this.erfTestIDLabel);
+            this.erfHeadingGroupBox.Controls.Add(this.erfTimeTextBx);
             this.erfHeadingGroupBox.Controls.Add(this.srfResultsLabel);
             this.erfHeadingGroupBox.Controls.Add(this.pictureBox1);
             this.erfHeadingGroupBox.Controls.Add(this.erfTimeLabel);
-            this.erfHeadingGroupBox.Controls.Add(this.label3);
-            this.erfHeadingGroupBox.Controls.Add(this.erfNameLabe);
-            this.erfHeadingGroupBox.Controls.Add(this.erfCategoryLabel);
-            this.erfHeadingGroupBox.Controls.Add(this.userTypeLabel);
+            this.erfHeadingGroupBox.Controls.Add(this.erfNameLabel);
             this.erfHeadingGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfHeadingGroupBox.ForeColor = System.Drawing.Color.Gold;
             this.erfHeadingGroupBox.Location = new System.Drawing.Point(0, 36);
@@ -98,6 +106,47 @@
             this.erfHeadingGroupBox.Size = new System.Drawing.Size(863, 140);
             this.erfHeadingGroupBox.TabIndex = 9;
             this.erfHeadingGroupBox.TabStop = false;
+            // 
+            // erfTestIDTextBx
+            // 
+            this.erfTestIDTextBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfTestIDTextBx.ForeColor = System.Drawing.Color.Maroon;
+            this.erfTestIDTextBx.Location = new System.Drawing.Point(87, 95);
+            this.erfTestIDTextBx.Name = "erfTestIDTextBx";
+            this.erfTestIDTextBx.ReadOnly = true;
+            this.erfTestIDTextBx.Size = new System.Drawing.Size(100, 29);
+            this.erfTestIDTextBx.TabIndex = 20;
+            // 
+            // erfTestIDLabel
+            // 
+            this.erfTestIDLabel.AutoSize = true;
+            this.erfTestIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfTestIDLabel.ForeColor = System.Drawing.Color.Gold;
+            this.erfTestIDLabel.Location = new System.Drawing.Point(15, 104);
+            this.erfTestIDLabel.Name = "erfTestIDLabel";
+            this.erfTestIDLabel.Size = new System.Drawing.Size(67, 18);
+            this.erfTestIDLabel.TabIndex = 19;
+            this.erfTestIDLabel.Text = "Test ID:";
+            // 
+            // erfTimeTextBx
+            // 
+            this.erfTimeTextBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfTimeTextBx.ForeColor = System.Drawing.Color.Maroon;
+            this.erfTimeTextBx.Location = new System.Drawing.Point(87, 60);
+            this.erfTimeTextBx.Name = "erfTimeTextBx";
+            this.erfTimeTextBx.ReadOnly = true;
+            this.erfTimeTextBx.Size = new System.Drawing.Size(100, 29);
+            this.erfTimeTextBx.TabIndex = 18;
+            // 
+            // srfResultsLabel
+            // 
+            this.srfResultsLabel.AutoSize = true;
+            this.srfResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.srfResultsLabel.Location = new System.Drawing.Point(348, 96);
+            this.srfResultsLabel.Name = "srfResultsLabel";
+            this.srfResultsLabel.Size = new System.Drawing.Size(181, 31);
+            this.srfResultsLabel.TabIndex = 17;
+            this.srfResultsLabel.Text = "Exam Results";
             // 
             // pictureBox1
             // 
@@ -114,78 +163,127 @@
             // erfTimeLabel
             // 
             this.erfTimeLabel.AutoSize = true;
-            this.erfTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.erfTimeLabel.ForeColor = System.Drawing.Color.Gold;
-            this.erfTimeLabel.Location = new System.Drawing.Point(31, 96);
+            this.erfTimeLabel.Location = new System.Drawing.Point(27, 69);
             this.erfTimeLabel.Name = "erfTimeLabel";
-            this.erfTimeLabel.Size = new System.Drawing.Size(42, 16);
+            this.erfTimeLabel.Size = new System.Drawing.Size(50, 18);
             this.erfTimeLabel.TabIndex = 14;
             this.erfTimeLabel.Text = "Time:";
             // 
-            // label3
+            // erfNameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(99, 96);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "The Time";
+            this.erfNameLabel.AutoSize = true;
+            this.erfNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfNameLabel.ForeColor = System.Drawing.Color.Gold;
+            this.erfNameLabel.Location = new System.Drawing.Point(30, 32);
+            this.erfNameLabel.Name = "erfNameLabel";
+            this.erfNameLabel.Size = new System.Drawing.Size(0, 25);
+            this.erfNameLabel.TabIndex = 13;
             // 
-            // erfNameLabe
+            // erfScoreTextBox
             // 
-            this.erfNameLabe.AutoSize = true;
-            this.erfNameLabe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.erfNameLabe.ForeColor = System.Drawing.Color.Gold;
-            this.erfNameLabe.Location = new System.Drawing.Point(30, 32);
-            this.erfNameLabe.Name = "erfNameLabe";
-            this.erfNameLabe.Size = new System.Drawing.Size(145, 25);
-            this.erfNameLabe.TabIndex = 13;
-            this.erfNameLabe.Text = "Raul Escatel";
+            this.erfScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfScoreTextBox.ForeColor = System.Drawing.Color.Maroon;
+            this.erfScoreTextBox.Location = new System.Drawing.Point(354, 193);
+            this.erfScoreTextBox.Name = "erfScoreTextBox";
+            this.erfScoreTextBox.ReadOnly = true;
+            this.erfScoreTextBox.Size = new System.Drawing.Size(161, 80);
+            this.erfScoreTextBox.TabIndex = 10;
             // 
-            // erfCategoryLabel
+            // erfCorrectLabel
             // 
-            this.erfCategoryLabel.AutoSize = true;
-            this.erfCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.erfCategoryLabel.ForeColor = System.Drawing.Color.Gold;
-            this.erfCategoryLabel.Location = new System.Drawing.Point(31, 65);
-            this.erfCategoryLabel.Name = "erfCategoryLabel";
-            this.erfCategoryLabel.Size = new System.Drawing.Size(66, 16);
-            this.erfCategoryLabel.TabIndex = 4;
-            this.erfCategoryLabel.Text = "Category:";
+            this.erfCorrectLabel.AutoSize = true;
+            this.erfCorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfCorrectLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.erfCorrectLabel.Location = new System.Drawing.Point(325, 308);
+            this.erfCorrectLabel.Name = "erfCorrectLabel";
+            this.erfCorrectLabel.Size = new System.Drawing.Size(84, 24);
+            this.erfCorrectLabel.TabIndex = 11;
+            this.erfCorrectLabel.Text = "Correct:";
+            this.erfCorrectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // userTypeLabel
+            // erfIncorrectLabel
             // 
-            this.userTypeLabel.AutoSize = true;
-            this.userTypeLabel.BackColor = System.Drawing.Color.White;
-            this.userTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTypeLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.userTypeLabel.Location = new System.Drawing.Point(99, 65);
-            this.userTypeLabel.Name = "userTypeLabel";
-            this.userTypeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userTypeLabel.Size = new System.Drawing.Size(63, 13);
-            this.userTypeLabel.TabIndex = 6;
-            this.userTypeLabel.Text = "Categories?";
+            this.erfIncorrectLabel.AutoSize = true;
+            this.erfIncorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfIncorrectLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.erfIncorrectLabel.Location = new System.Drawing.Point(311, 352);
+            this.erfIncorrectLabel.Name = "erfIncorrectLabel";
+            this.erfIncorrectLabel.Size = new System.Drawing.Size(98, 24);
+            this.erfIncorrectLabel.TabIndex = 12;
+            this.erfIncorrectLabel.Text = "Incorrect:";
+            this.erfIncorrectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // srfResultsLabel
+            // erfAttemptedLabel
             // 
-            this.srfResultsLabel.AutoSize = true;
-            this.srfResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.srfResultsLabel.Location = new System.Drawing.Point(348, 96);
-            this.srfResultsLabel.Name = "srfResultsLabel";
-            this.srfResultsLabel.Size = new System.Drawing.Size(181, 31);
-            this.srfResultsLabel.TabIndex = 17;
-            this.srfResultsLabel.Text = "Exam Results";
+            this.erfAttemptedLabel.AutoSize = true;
+            this.erfAttemptedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfAttemptedLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.erfAttemptedLabel.Location = new System.Drawing.Point(299, 391);
+            this.erfAttemptedLabel.Name = "erfAttemptedLabel";
+            this.erfAttemptedLabel.Size = new System.Drawing.Size(110, 24);
+            this.erfAttemptedLabel.TabIndex = 13;
+            this.erfAttemptedLabel.Text = "Attempted:";
+            this.erfAttemptedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // erfCorrectTxtBx
+            // 
+            this.erfCorrectTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfCorrectTxtBx.ForeColor = System.Drawing.Color.Maroon;
+            this.erfCorrectTxtBx.Location = new System.Drawing.Point(429, 308);
+            this.erfCorrectTxtBx.Name = "erfCorrectTxtBx";
+            this.erfCorrectTxtBx.ReadOnly = true;
+            this.erfCorrectTxtBx.Size = new System.Drawing.Size(100, 29);
+            this.erfCorrectTxtBx.TabIndex = 14;
+            // 
+            // erfIncorrectTxtBx
+            // 
+            this.erfIncorrectTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfIncorrectTxtBx.ForeColor = System.Drawing.Color.Maroon;
+            this.erfIncorrectTxtBx.Location = new System.Drawing.Point(429, 352);
+            this.erfIncorrectTxtBx.Name = "erfIncorrectTxtBx";
+            this.erfIncorrectTxtBx.ReadOnly = true;
+            this.erfIncorrectTxtBx.Size = new System.Drawing.Size(100, 29);
+            this.erfIncorrectTxtBx.TabIndex = 15;
+            // 
+            // erfAttemptedTxtBx
+            // 
+            this.erfAttemptedTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfAttemptedTxtBx.ForeColor = System.Drawing.Color.Maroon;
+            this.erfAttemptedTxtBx.Location = new System.Drawing.Point(429, 391);
+            this.erfAttemptedTxtBx.Name = "erfAttemptedTxtBx";
+            this.erfAttemptedTxtBx.ReadOnly = true;
+            this.erfAttemptedTxtBx.Size = new System.Drawing.Size(100, 29);
+            this.erfAttemptedTxtBx.TabIndex = 16;
+            // 
+            // erfHomeButton
+            // 
+            this.erfHomeButton.BackColor = System.Drawing.Color.Maroon;
+            this.erfHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erfHomeButton.ForeColor = System.Drawing.Color.Gold;
+            this.erfHomeButton.Location = new System.Drawing.Point(704, 443);
+            this.erfHomeButton.Name = "erfHomeButton";
+            this.erfHomeButton.Size = new System.Drawing.Size(123, 47);
+            this.erfHomeButton.TabIndex = 17;
+            this.erfHomeButton.Text = "HOME";
+            this.erfHomeButton.UseVisualStyleBackColor = false;
+            this.erfHomeButton.Click += new System.EventHandler(this.erfHomeButton_Click);
             // 
             // ExamResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(863, 492);
+            this.ClientSize = new System.Drawing.Size(863, 505);
+            this.Controls.Add(this.erfHomeButton);
+            this.Controls.Add(this.erfAttemptedTxtBx);
+            this.Controls.Add(this.erfIncorrectTxtBx);
+            this.Controls.Add(this.erfCorrectTxtBx);
+            this.Controls.Add(this.erfAttemptedLabel);
+            this.Controls.Add(this.erfIncorrectLabel);
+            this.Controls.Add(this.erfCorrectLabel);
+            this.Controls.Add(this.erfScoreTextBox);
             this.Controls.Add(this.erfHeadingGroupBox);
             this.Controls.Add(this.erfMainMenuStrip);
             this.Name = "ExamResultsForm";
@@ -208,11 +306,19 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label erfTimeLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label erfNameLabe;
-        private System.Windows.Forms.Label erfCategoryLabel;
-        private System.Windows.Forms.Label userTypeLabel;
+        private System.Windows.Forms.Label erfNameLabel;
         private System.Windows.Forms.GroupBox erfHeadingGroupBox;
         private System.Windows.Forms.Label srfResultsLabel;
+        private System.Windows.Forms.TextBox erfScoreTextBox;
+        private System.Windows.Forms.TextBox erfTimeTextBx;
+        private System.Windows.Forms.Label erfCorrectLabel;
+        private System.Windows.Forms.Label erfIncorrectLabel;
+        private System.Windows.Forms.Label erfAttemptedLabel;
+        private System.Windows.Forms.TextBox erfCorrectTxtBx;
+        private System.Windows.Forms.TextBox erfIncorrectTxtBx;
+        private System.Windows.Forms.TextBox erfAttemptedTxtBx;
+        private System.Windows.Forms.TextBox erfTestIDTextBx;
+        private System.Windows.Forms.Label erfTestIDLabel;
+        private System.Windows.Forms.Button erfHomeButton;
     }
 }
