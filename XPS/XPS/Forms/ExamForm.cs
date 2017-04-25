@@ -58,7 +58,11 @@ namespace XPS.Forms
             //Fix bug. For some reason, sets the same permutation for all questions
             foreach (Question q in quest)
             {
-                //int[] permutation = Utilities.Permutation();
+                for (int i = 0; i < 10000000; i++)
+                { 
+                    //Kill Time
+                }
+                
                 questions.Add(q, Utilities.Permutation());
             }
 
@@ -355,6 +359,34 @@ namespace XPS.Forms
             answer3RadioButton.Text = array[questions[quest[i]][2]];
             answer4RadioButton.Text = array[questions[quest[i]][3]];
             answer5RadioButton.Text = array[questions[quest[i]][4]];
+        }
+
+        private void FinalizeTest()
+        { 
+            Test test = new Test()
+	        {
+		        //The ID of the user taking the test.
+		        UserID = testUser.UserID
+		        , Attempted = questions.Count
+		        //LINQ expression to count the correct answers.
+		        , Correct = response.Count(x => x.Correct)
+		        , Time = 0
+	        };
+	
+	        //Saves Test Object.
+	        if(!db.InsertTest(test))
+	        {
+		        throw new Exception("Error saving test.");
+	        }
+	
+	        //Saves the individual question responses.
+            foreach (QuestionResponse qr in response)
+	        {
+		        if(!db.InsertQuestionResponse(qr))
+		        {
+			        throw new Exception("Error saving test.");
+		        }
+	        }
         }
     }
 }

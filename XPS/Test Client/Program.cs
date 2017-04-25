@@ -346,14 +346,17 @@ namespace TestClient
             Console.WriteLine("PERMUTATION TEST");
             Console.WriteLine("**********************************************************************************");
 
-            int[] permutation = XPS.Logic.Utilities.Permutation();
-            string output = permutation[0] + " ";
-            output += permutation[1] + " ";
-            output += permutation[2] + " ";
-            output += permutation[3] + " ";
-            output += permutation[4];
+            for (int i = 0; i < 10; i++)
+            {
+                int[] permutation = XPS.Logic.Utilities.Permutation();
+                string output = permutation[0] + " ";
+                output += permutation[1] + " ";
+                output += permutation[2] + " ";
+                output += permutation[3] + " ";
+                output += permutation[4];
 
-            Console.WriteLine(output);
+                Console.WriteLine(output);
+            }
             Console.ReadLine();
             Console.Clear();
         }

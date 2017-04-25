@@ -28,6 +28,7 @@ namespace XPS.Logic
         public static int[] Permutation()
         {
             Random rand = new Random();
+         
             List<int> tempList = new List<int>();
             int randInt = 0;
 
