@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XPS.Models;
 
 namespace XPS.Logic
 {
@@ -42,6 +43,16 @@ namespace XPS.Logic
             }
 
             return tempList.ToArray();
+        }
+
+        public static List<Question> ShuffleQuestions(List<Question> questions)
+        {
+            List<Question> result = new List<Question>();
+            Random rand = new Random();
+
+            result = questions.OrderBy(x => rand.Next()).ToList();  
+
+            return result;
         }
     }
 }

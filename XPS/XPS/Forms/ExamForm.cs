@@ -14,9 +14,8 @@ namespace XPS.Forms
 {
     public partial class ExamForm : Form
     {
-        DatabaseManager db = new DatabaseManager();
-        Random random = new Random();
-
+        private DatabaseManager db = new DatabaseManager();
+        private Random random = new Random();
         private int counter; //holds the numQuest passed in for the buttonName
         private int countQuest; //holds the numQuest passed in
         private int cdTimer;
@@ -46,6 +45,7 @@ namespace XPS.Forms
 
             //get the questions from the DB and store in a new list called quest
             quest = db.GetQuestions(numQuest, categories);
+            quest = Utilities.ShuffleQuestions(quest);
 
             for (int i = 0; i < numQuest; i++)
             {
