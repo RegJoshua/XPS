@@ -19,6 +19,7 @@ namespace XPS.Forms
         private int counter; //holds the numQuest passed in for the buttonName
         private int countQuest; //holds the numQuest passed in
         private int cdTimer;
+        private int initialTime;
         private string cat; //holds the category to print the category for each question
         private int currentQuestion = 0;
         private List<Question> quest;
@@ -38,6 +39,7 @@ namespace XPS.Forms
             testUser = user;
             countQuest = numQuest;
             test.Attempted = numQuest;
+            initialTime = numQuest * 120; //2 min per question
             test.UserID = user.UserID;
             questions = new Dictionary<Question, int[]>();
 
@@ -75,56 +77,12 @@ namespace XPS.Forms
             catLabel.Text = "Category: " + cat;
 
             setAnswerBtn(0);
-
-            //if timed is checked from the mainMenu form then
-            //a label will print the time allocated (120s/2 min) per question.
-            if (timed == true)
-            {
-                cdTimer = numQuest * 120;
-                timer1 = new Timer();
-                timer1.Enabled = true;
-                timer1.Tick += new EventHandler(timer1_Tick);
-                timer1.Interval = 1000; //1000 = 1s
-                timer1.Start();
-                cdLabel.Text = cdTimer.ToString();
-            }
-
-            //used to print the current Date and the user on the Exam Form.
+            CreateDynamicButtons(numQuest);
+            setTime(timed, numQuest);
+          
+            //used to print the current Date, user, and testID on examForm.
             dateLabel.Text = "Date: " + DateTime.Now.ToLongDateString();
-            examUserLabel.Text = "User: " + user.FirstName + " " + user.LastName;
-
-            //Below is used to dynamically create the navigation for the exam form.
-            //We will get the number of buttons needed based on the number of questions
-            //that is passed from the mainMenuForm (what the user selects).
-            int rowCount = numQuest / 5; //want 5 buttons in a row
-            Point pt = new Point(); //Point is used to tell where each button goes
-            pt.X = 10;
-            pt.Y = 10;
-            int num = 1;
-
-            for (int i = 0; i < rowCount; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    //create a button, give it a name, color, location, and add
-                    //to the navGroupBox.
-                    Button button = new Button();
-                    button.Click += new EventHandler(button_Click);
-                    button.Name = "button" + counter;
-                    button.Text = (num).ToString();
-                    button.BackColor = Color.Gray;
-                    button.ForeColor = Color.White;
-                    button.Location = pt;
-                    button.Width = 30;
-                    button.Height = 30;
-                    navGroupBox.Controls.Add(button);
-                    pt.X = pt.X + 35;
-                    num++;
-                    counter++;
-                }
-                pt.X = 10;
-                pt.Y = pt.Y + 35;
-            }
+            examUserLabel.Text = "User: " + user.FirstName + " " + user.LastName;       
             testIDLabel.Text = "Test ID: " + currentQuestion;
         }
 
@@ -142,6 +100,8 @@ namespace XPS.Forms
         private void timer1_Tick(object sender, EventArgs e)
         {
             cdTimer--;
+            if (cdTimer < 300)
+                cdLabel.BackColor = Color.Red;
             cdLabel.Text = TimeSpan.FromSeconds(cdTimer).ToString();
         }
 
@@ -187,6 +147,7 @@ namespace XPS.Forms
          */
         private void nextButton_Click(object sender, EventArgs e)
         {
+            //saveQuestionButton.PerformClick();
             testIDLabel.Text = "test ID: " + countQuest;
             Button button = sender as Button;
 
@@ -278,6 +239,8 @@ namespace XPS.Forms
                 ans = "Software Engineering";
             else if (num == 6)
                 ans = "Information Management";
+            else if (num == 7)
+                ans = "Other";
             return ans;
         }
 
@@ -314,7 +277,7 @@ namespace XPS.Forms
         {
             int numCorrect = 0;
             timer1.Stop();
-            test.Time = cdTimer;
+            test.Time = initialTime - cdTimer;
             foreach (QuestionResponse resp in response)
             {
                 if (resp.Correct == true)
@@ -387,6 +350,57 @@ namespace XPS.Forms
 			        throw new Exception("Error saving test.");
 		        }
 	        }
+        }
+
+        private void CreateDynamicButtons(int quest)
+        {
+            //Below is used to dynamically create the navigation for the exam form.
+            //We will get the number of buttons needed based on the number of questions
+            //that is passed from the mainMenuForm (what the user selects).
+            int rowCount = quest / 5; //want 5 buttons in a row
+            Point pt = new Point(); //Point is used to tell where each button goes
+            pt.X = 10;
+            pt.Y = 10;
+            int num = 1;
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    //create a button, give it a name, color, location, and add
+                    //to the navGroupBox.
+                    Button button = new Button();
+                    button.Click += new EventHandler(button_Click);
+                    button.Name = "button" + counter;
+                    button.Text = (num).ToString();
+                    button.BackColor = Color.Gray;
+                    button.ForeColor = Color.White;
+                    button.Location = pt;
+                    button.Width = 30;
+                    button.Height = 30;
+                    navGroupBox.Controls.Add(button);
+                    pt.X = pt.X + 35;
+                    num++;
+                    counter++;
+                }
+                pt.X = 10;
+                pt.Y = pt.Y + 35;
+            }
+        }
+
+        private void setTime(bool timed, int numQuest)
+        {
+            if (timed == true)
+            {
+                cdTimer = numQuest * 120;
+                
+                timer1 = new Timer();
+                timer1.Enabled = true;
+                timer1.Tick += new EventHandler(timer1_Tick);
+                timer1.Interval = 1000; //1000 = 1s
+                timer1.Start();
+                cdLabel.Text = cdTimer.ToString();
+            }
         }
     }
 }

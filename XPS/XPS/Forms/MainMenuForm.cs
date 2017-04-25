@@ -11,11 +11,6 @@ using System.Windows.Forms;
 using XPS.Models;
 using XPS.Forms;
 
-/* ABOUT FORM STILL NEEDS WORK.
- * 
- * 
- * 
- */
 namespace XPS
 {
     public partial class MainMenuForm : Form
@@ -127,6 +122,7 @@ namespace XPS
          */
         private void homeButton_Click(object sender, EventArgs e)
         {
+            ResetCheckBoxes();
             catGroupBox.Visible = false;
             timedGroupBox.Visible = false;
             numGroupBox.Visible = false;
@@ -225,6 +221,18 @@ namespace XPS
                 categories[7] = 1;           
             else
                 categories[7] = 0;
+        }
+
+        private void ResetCheckBoxes()
+        {
+            dsCheckBox.Checked = false;
+            seCheckBox.Checked = false;
+            acCheckBox.Checked = false;
+            sysCheckBox.Checked = false;
+            progCheckBox.Checked = false;
+            imCheckBox.Checked = false;
+            otherCheckBox.Checked = false;
+            
         }
     }
 }
