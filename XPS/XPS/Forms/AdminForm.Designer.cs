@@ -88,6 +88,7 @@
             this.viewReportButton.TabIndex = 4;
             this.viewReportButton.Text = "View Reports";
             this.viewReportButton.UseVisualStyleBackColor = false;
+            this.viewReportButton.Click += new System.EventHandler(this.viewReportButton_Click);
             // 
             // mainMenuButton
             // 

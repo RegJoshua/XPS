@@ -63,5 +63,12 @@ namespace XPS.Forms
             DeleteUserForm duf = new DeleteUserForm(this);
             duf.Show();
         }
+
+        private void viewReportButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportsForm reportsForm = new ReportsForm();
+            reportsForm.Show();
+        }
     }
 }
