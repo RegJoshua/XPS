@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.loginMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msuLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
@@ -43,44 +40,17 @@
             this.usernameBox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.loginMenuStrip.SuspendLayout();
             this.boxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginMenuStrip
             // 
             this.loginMenuStrip.BackColor = System.Drawing.Color.Maroon;
-            this.loginMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.aboutToolStripMenuItem});
             this.loginMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.loginMenuStrip.Name = "loginMenuStrip";
             this.loginMenuStrip.Size = new System.Drawing.Size(615, 24);
             this.loginMenuStrip.TabIndex = 0;
             this.loginMenuStrip.Text = "loginMenuStrip";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Maroon;
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
             // 
             // msuLabel
             // 
@@ -216,8 +186,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XPS - Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
-            this.loginMenuStrip.ResumeLayout(false);
-            this.loginMenuStrip.PerformLayout();
             this.boxPanel.ResumeLayout(false);
             this.boxPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -228,9 +196,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip loginMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label msuLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label loginLabel;

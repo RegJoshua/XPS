@@ -234,5 +234,12 @@ namespace XPS
             otherCheckBox.Checked = false;
             
         }
+
+        private void profileButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewProfile vp = new ViewProfile(mainUser);
+            vp.Show();
+        }
     }
 }

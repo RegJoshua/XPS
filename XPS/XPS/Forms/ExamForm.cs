@@ -73,6 +73,7 @@ namespace XPS.Forms
             int current = currentQuestion;
 
             questionLabel.Text = "Question " + (current + 1) + ": " + quest[0].QuestionText;
+            conditionLabel.Text = "" + quest[0].Paragraph;
             cat = setQuestionCategory(quest[0].QuestionCategory);
             catLabel.Text = "Category: " + cat;
 
@@ -126,6 +127,7 @@ namespace XPS.Forms
                     cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                     catLabel.Text = "Category: " + cat;
                     questionLabel.Text = "Question " + current + ": " + quest[i].QuestionText;
+                    conditionLabel.Text = "" + quest[i].Paragraph;
 
                     setAnswerBtn(i);
 
@@ -164,7 +166,7 @@ namespace XPS.Forms
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
-
+                conditionLabel.Text = "" + quest[currentQuestion].Paragraph;
                 setAnswerBtn(currentQuestion);
 
                 resetAnserBtn();
@@ -205,6 +207,7 @@ namespace XPS.Forms
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
+                conditionLabel.Text = "" + quest[currentQuestion].Paragraph;
 
                 setAnswerBtn(currentQuestion);
 

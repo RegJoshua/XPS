@@ -32,11 +32,12 @@
             this.examUserLabel = new System.Windows.Forms.Label();
             this.testIDLabel = new System.Windows.Forms.Label();
             this.questionGroupBox = new System.Windows.Forms.GroupBox();
-            this.answer5RadioButton = new System.Windows.Forms.RadioButton();
-            this.answer4RadioButton = new System.Windows.Forms.RadioButton();
+            this.answersGroupBox = new System.Windows.Forms.GroupBox();
             this.answer3RadioButton = new System.Windows.Forms.RadioButton();
-            this.answer2RadioButton = new System.Windows.Forms.RadioButton();
+            this.answer5RadioButton = new System.Windows.Forms.RadioButton();
             this.answer1RadioButton = new System.Windows.Forms.RadioButton();
+            this.answer4RadioButton = new System.Windows.Forms.RadioButton();
+            this.answer2RadioButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveQuestionButton = new System.Windows.Forms.Button();
             this.questionLabel = new System.Windows.Forms.Label();
@@ -49,11 +50,11 @@
             this.remainLabel = new System.Windows.Forms.Label();
             this.cdLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.answersGroupBox = new System.Windows.Forms.GroupBox();
             this.submitButton = new System.Windows.Forms.Button();
+            this.conditionLabel = new System.Windows.Forms.Label();
             this.questionGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.answersGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // examUserLabel
@@ -85,33 +86,24 @@
             this.questionGroupBox.Controls.Add(this.pictureBox1);
             this.questionGroupBox.Controls.Add(this.saveQuestionButton);
             this.questionGroupBox.Controls.Add(this.questionLabel);
-            this.questionGroupBox.Location = new System.Drawing.Point(235, 120);
+            this.questionGroupBox.Location = new System.Drawing.Point(235, 136);
             this.questionGroupBox.Name = "questionGroupBox";
-            this.questionGroupBox.Size = new System.Drawing.Size(750, 448);
+            this.questionGroupBox.Size = new System.Drawing.Size(740, 432);
             this.questionGroupBox.TabIndex = 2;
             this.questionGroupBox.TabStop = false;
             // 
-            // answer5RadioButton
+            // answersGroupBox
             // 
-            this.answer5RadioButton.AutoSize = true;
-            this.answer5RadioButton.Location = new System.Drawing.Point(6, 124);
-            this.answer5RadioButton.Name = "answer5RadioButton";
-            this.answer5RadioButton.Size = new System.Drawing.Size(69, 17);
-            this.answer5RadioButton.TabIndex = 7;
-            this.answer5RadioButton.TabStop = true;
-            this.answer5RadioButton.Text = "Answer 5";
-            this.answer5RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // answer4RadioButton
-            // 
-            this.answer4RadioButton.AutoSize = true;
-            this.answer4RadioButton.Location = new System.Drawing.Point(6, 101);
-            this.answer4RadioButton.Name = "answer4RadioButton";
-            this.answer4RadioButton.Size = new System.Drawing.Size(69, 17);
-            this.answer4RadioButton.TabIndex = 6;
-            this.answer4RadioButton.TabStop = true;
-            this.answer4RadioButton.Text = "Answer 4";
-            this.answer4RadioButton.UseVisualStyleBackColor = true;
+            this.answersGroupBox.Controls.Add(this.answer3RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer5RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer1RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer4RadioButton);
+            this.answersGroupBox.Controls.Add(this.answer2RadioButton);
+            this.answersGroupBox.Location = new System.Drawing.Point(9, 276);
+            this.answersGroupBox.Name = "answersGroupBox";
+            this.answersGroupBox.Size = new System.Drawing.Size(618, 150);
+            this.answersGroupBox.TabIndex = 8;
+            this.answersGroupBox.TabStop = false;
             // 
             // answer3RadioButton
             // 
@@ -124,16 +116,16 @@
             this.answer3RadioButton.Text = "Answer 3";
             this.answer3RadioButton.UseVisualStyleBackColor = true;
             // 
-            // answer2RadioButton
+            // answer5RadioButton
             // 
-            this.answer2RadioButton.AutoSize = true;
-            this.answer2RadioButton.Location = new System.Drawing.Point(6, 55);
-            this.answer2RadioButton.Name = "answer2RadioButton";
-            this.answer2RadioButton.Size = new System.Drawing.Size(69, 17);
-            this.answer2RadioButton.TabIndex = 4;
-            this.answer2RadioButton.TabStop = true;
-            this.answer2RadioButton.Text = "Answer 2";
-            this.answer2RadioButton.UseVisualStyleBackColor = true;
+            this.answer5RadioButton.AutoSize = true;
+            this.answer5RadioButton.Location = new System.Drawing.Point(6, 124);
+            this.answer5RadioButton.Name = "answer5RadioButton";
+            this.answer5RadioButton.Size = new System.Drawing.Size(69, 17);
+            this.answer5RadioButton.TabIndex = 7;
+            this.answer5RadioButton.TabStop = true;
+            this.answer5RadioButton.Text = "Answer 5";
+            this.answer5RadioButton.UseVisualStyleBackColor = true;
             // 
             // answer1RadioButton
             // 
@@ -145,6 +137,28 @@
             this.answer1RadioButton.TabStop = true;
             this.answer1RadioButton.Text = "Answer 1";
             this.answer1RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // answer4RadioButton
+            // 
+            this.answer4RadioButton.AutoSize = true;
+            this.answer4RadioButton.Location = new System.Drawing.Point(6, 101);
+            this.answer4RadioButton.Name = "answer4RadioButton";
+            this.answer4RadioButton.Size = new System.Drawing.Size(69, 17);
+            this.answer4RadioButton.TabIndex = 6;
+            this.answer4RadioButton.TabStop = true;
+            this.answer4RadioButton.Text = "Answer 4";
+            this.answer4RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // answer2RadioButton
+            // 
+            this.answer2RadioButton.AutoSize = true;
+            this.answer2RadioButton.Location = new System.Drawing.Point(6, 55);
+            this.answer2RadioButton.Name = "answer2RadioButton";
+            this.answer2RadioButton.Size = new System.Drawing.Size(69, 17);
+            this.answer2RadioButton.TabIndex = 4;
+            this.answer2RadioButton.TabStop = true;
+            this.answer2RadioButton.Text = "Answer 2";
+            this.answer2RadioButton.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -171,7 +185,7 @@
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.Location = new System.Drawing.Point(6, 16);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(734, 65);
+            this.questionLabel.Size = new System.Drawing.Size(728, 67);
             this.questionLabel.TabIndex = 0;
             this.questionLabel.Text = "This question label will have the question.";
             // 
@@ -247,7 +261,7 @@
             this.remainLabel.AutoSize = true;
             this.remainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remainLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.remainLabel.Location = new System.Drawing.Point(995, 152);
+            this.remainLabel.Location = new System.Drawing.Point(1007, 152);
             this.remainLabel.Name = "remainLabel";
             this.remainLabel.Size = new System.Drawing.Size(149, 24);
             this.remainLabel.TabIndex = 9;
@@ -258,24 +272,11 @@
             this.cdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cdLabel.AutoSize = true;
             this.cdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cdLabel.Location = new System.Drawing.Point(1028, 176);
+            this.cdLabel.Location = new System.Drawing.Point(1040, 176);
             this.cdLabel.Name = "cdLabel";
             this.cdLabel.Size = new System.Drawing.Size(116, 25);
             this.cdLabel.TabIndex = 10;
             this.cdLabel.Text = "countdown";
-            // 
-            // answersGroupBox
-            // 
-            this.answersGroupBox.Controls.Add(this.answer3RadioButton);
-            this.answersGroupBox.Controls.Add(this.answer5RadioButton);
-            this.answersGroupBox.Controls.Add(this.answer1RadioButton);
-            this.answersGroupBox.Controls.Add(this.answer4RadioButton);
-            this.answersGroupBox.Controls.Add(this.answer2RadioButton);
-            this.answersGroupBox.Location = new System.Drawing.Point(9, 265);
-            this.answersGroupBox.Name = "answersGroupBox";
-            this.answersGroupBox.Size = new System.Drawing.Size(642, 177);
-            this.answersGroupBox.TabIndex = 8;
-            this.answersGroupBox.TabStop = false;
             // 
             // submitButton
             // 
@@ -290,12 +291,23 @@
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
+            // conditionLabel
+            // 
+            this.conditionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionLabel.Location = new System.Drawing.Point(253, 37);
+            this.conditionLabel.Name = "conditionLabel";
+            this.conditionLabel.Size = new System.Drawing.Size(722, 96);
+            this.conditionLabel.TabIndex = 12;
+            this.conditionLabel.Text = "condition label";
+            // 
             // ExamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1156, 638);
+            this.Controls.Add(this.conditionLabel);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.cdLabel);
             this.Controls.Add(this.remainLabel);
@@ -314,9 +326,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExamForm_FormClosing);
             this.questionGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.answersGroupBox.ResumeLayout(false);
             this.answersGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +358,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox answersGroupBox;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Label conditionLabel;
     }
 }

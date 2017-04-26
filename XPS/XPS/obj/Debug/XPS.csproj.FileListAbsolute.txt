@@ -167,3 +167,6 @@ C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
 C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
 C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
 C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamResultsForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
+C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources

@@ -48,6 +48,7 @@
             this.noRadioButton = new System.Windows.Forms.RadioButton();
             this.yesRadioButton = new System.Windows.Forms.RadioButton();
             this.catGroupBox = new System.Windows.Forms.GroupBox();
+            this.otherCheckBox = new System.Windows.Forms.CheckBox();
             this.imCheckBox = new System.Windows.Forms.CheckBox();
             this.seCheckBox = new System.Windows.Forms.CheckBox();
             this.sysCheckBox = new System.Windows.Forms.CheckBox();
@@ -59,7 +60,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.otherCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.sideMenu)).BeginInit();
             this.sideMenu.Panel1.SuspendLayout();
             this.sideMenu.Panel2.SuspendLayout();
@@ -227,8 +227,9 @@
             this.profileButton.Name = "profileButton";
             this.profileButton.Size = new System.Drawing.Size(178, 36);
             this.profileButton.TabIndex = 1;
-            this.profileButton.Text = "Profile";
+            this.profileButton.Text = "View Profile";
             this.profileButton.UseVisualStyleBackColor = false;
+            this.profileButton.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // takeTestButton
             // 
@@ -330,6 +331,17 @@
             this.catGroupBox.TabIndex = 10;
             this.catGroupBox.TabStop = false;
             this.catGroupBox.Text = "Categories";
+            // 
+            // otherCheckBox
+            // 
+            this.otherCheckBox.AutoSize = true;
+            this.otherCheckBox.Location = new System.Drawing.Point(6, 157);
+            this.otherCheckBox.Name = "otherCheckBox";
+            this.otherCheckBox.Size = new System.Drawing.Size(52, 17);
+            this.otherCheckBox.TabIndex = 6;
+            this.otherCheckBox.Text = "Other";
+            this.otherCheckBox.UseVisualStyleBackColor = true;
+            this.otherCheckBox.CheckedChanged += new System.EventHandler(this.otherCheckBox_CheckedChanged);
             // 
             // imCheckBox
             // 
@@ -441,17 +453,6 @@
             this.mainMenuStrip.Size = new System.Drawing.Size(689, 24);
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "menuStrip1";
-            // 
-            // otherCheckBox
-            // 
-            this.otherCheckBox.AutoSize = true;
-            this.otherCheckBox.Location = new System.Drawing.Point(6, 157);
-            this.otherCheckBox.Name = "otherCheckBox";
-            this.otherCheckBox.Size = new System.Drawing.Size(52, 17);
-            this.otherCheckBox.TabIndex = 6;
-            this.otherCheckBox.Text = "Other";
-            this.otherCheckBox.UseVisualStyleBackColor = true;
-            this.otherCheckBox.CheckedChanged += new System.EventHandler(this.otherCheckBox_CheckedChanged);
             // 
             // MainMenuForm
             // 
