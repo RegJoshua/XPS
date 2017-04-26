@@ -299,6 +299,7 @@
             this.Controls.Add(this.erfHeadingGroupBox);
             this.Controls.Add(this.erfMainMenuStrip);
             this.Name = "ExamResultsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExamResultsForm";
             this.erfMainMenuStrip.ResumeLayout(false);
             this.erfMainMenuStrip.PerformLayout();

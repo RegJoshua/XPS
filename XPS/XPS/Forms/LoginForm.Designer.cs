@@ -110,7 +110,8 @@
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.loginButton.BackColor = System.Drawing.Color.Maroon;
+            this.loginButton.ForeColor = System.Drawing.Color.White;
             this.loginButton.Location = new System.Drawing.Point(104, 134);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);

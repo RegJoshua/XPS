@@ -162,31 +162,37 @@
             // 
             // aufAddUserButton
             // 
-            this.aufAddUserButton.Location = new System.Drawing.Point(83, 350);
+            this.aufAddUserButton.BackColor = System.Drawing.Color.Maroon;
+            this.aufAddUserButton.ForeColor = System.Drawing.Color.White;
+            this.aufAddUserButton.Location = new System.Drawing.Point(85, 341);
             this.aufAddUserButton.Name = "aufAddUserButton";
             this.aufAddUserButton.Size = new System.Drawing.Size(95, 30);
             this.aufAddUserButton.TabIndex = 11;
             this.aufAddUserButton.Text = "Add";
-            this.aufAddUserButton.UseVisualStyleBackColor = true;
+            this.aufAddUserButton.UseVisualStyleBackColor = false;
             this.aufAddUserButton.Click += new System.EventHandler(this.aufAddUserButton_Click);
             // 
             // aufCancelButton
             // 
-            this.aufCancelButton.Location = new System.Drawing.Point(188, 350);
+            this.aufCancelButton.BackColor = System.Drawing.Color.Maroon;
+            this.aufCancelButton.ForeColor = System.Drawing.Color.White;
+            this.aufCancelButton.Location = new System.Drawing.Point(193, 341);
             this.aufCancelButton.Name = "aufCancelButton";
             this.aufCancelButton.Size = new System.Drawing.Size(95, 30);
             this.aufCancelButton.TabIndex = 12;
             this.aufCancelButton.Text = "Cancel";
-            this.aufCancelButton.UseVisualStyleBackColor = true;
+            this.aufCancelButton.UseVisualStyleBackColor = false;
             // 
             // adminMenuButton
             // 
-            this.adminMenuButton.Location = new System.Drawing.Point(299, 371);
+            this.adminMenuButton.BackColor = System.Drawing.Color.Maroon;
+            this.adminMenuButton.ForeColor = System.Drawing.Color.White;
+            this.adminMenuButton.Location = new System.Drawing.Point(133, 377);
             this.adminMenuButton.Name = "adminMenuButton";
-            this.adminMenuButton.Size = new System.Drawing.Size(75, 23);
+            this.adminMenuButton.Size = new System.Drawing.Size(106, 23);
             this.adminMenuButton.TabIndex = 13;
             this.adminMenuButton.Text = "Admin Menu";
-            this.adminMenuButton.UseVisualStyleBackColor = true;
+            this.adminMenuButton.UseVisualStyleBackColor = false;
             this.adminMenuButton.Click += new System.EventHandler(this.adminMenuButton_Click);
             // 
             // AddUserForm
@@ -194,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(375, 397);
+            this.ClientSize = new System.Drawing.Size(375, 404);
             this.Controls.Add(this.adminMenuButton);
             this.Controls.Add(this.aufCancelButton);
             this.Controls.Add(this.aufAddUserButton);

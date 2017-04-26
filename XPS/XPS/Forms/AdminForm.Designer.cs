@@ -58,7 +58,7 @@
             // 
             // addUserButton
             // 
-            this.addUserButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addUserButton.BackColor = System.Drawing.Color.Maroon;
             this.addUserButton.ForeColor = System.Drawing.Color.White;
             this.addUserButton.Location = new System.Drawing.Point(140, 137);
             this.addUserButton.Name = "addUserButton";
@@ -70,7 +70,7 @@
             // 
             // deleteUserButton
             // 
-            this.deleteUserButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.deleteUserButton.BackColor = System.Drawing.Color.Maroon;
             this.deleteUserButton.Location = new System.Drawing.Point(140, 173);
             this.deleteUserButton.Name = "deleteUserButton";
             this.deleteUserButton.Size = new System.Drawing.Size(110, 30);
@@ -81,7 +81,7 @@
             // 
             // viewReportButton
             // 
-            this.viewReportButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.viewReportButton.BackColor = System.Drawing.Color.Maroon;
             this.viewReportButton.Location = new System.Drawing.Point(140, 209);
             this.viewReportButton.Name = "viewReportButton";
             this.viewReportButton.Size = new System.Drawing.Size(110, 30);
@@ -92,7 +92,7 @@
             // 
             // mainMenuButton
             // 
-            this.mainMenuButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.mainMenuButton.BackColor = System.Drawing.Color.Maroon;
             this.mainMenuButton.Location = new System.Drawing.Point(140, 245);
             this.mainMenuButton.Name = "mainMenuButton";
             this.mainMenuButton.Size = new System.Drawing.Size(110, 30);
