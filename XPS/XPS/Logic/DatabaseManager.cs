@@ -180,7 +180,17 @@ namespace XPS.Logic
         {
             List<Question> result = new List<Question>();
             string query = String.Format(@"
-                SELECT * 
+                SELECT 
+                    QuestionID
+                    , Category
+                    , QuestionText
+                    , CorrectAnswer
+                    , IncorrectAnswer1                    
+                    , IncorrectAnswer2
+                    , IncorrectAnswer3
+                    , IncorrectAnswer4
+                    , ImageName
+                    , Paragraph
 
                 FROM       
                     Question
@@ -209,6 +219,8 @@ namespace XPS.Logic
                                 , IncorrectAnswer2 = reader.GetString("IncorrectAnswer2")
                                 , IncorrectAnswer3 = reader.GetString("IncorrectAnswer3")
                                 , IncorrectAnswer4 = reader.GetString("IncorrectAnswer4")
+                                , ImageName = reader.GetString("ImageName")
+                                , Paragraph = reader.GetString("Paragraph")
                             };
 
                             result.Add(question);

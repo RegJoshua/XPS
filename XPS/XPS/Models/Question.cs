@@ -11,14 +11,14 @@ namespace XPS.Models
     {
         private int _questionID;
         private int _questionCategory;
-        private bool _image;
+        private string _imageName;
         private string _questionText;
         private string _correctAnswer;
         private string _incorrectAnswer1;
         private string _incorrectAnswer2;
         private string _incorrectAnswer3;
         private string _incorrectAnswer4;
-        private string _hint;
+        private string _paragraph;
 
         public Question()
         {
@@ -30,18 +30,19 @@ namespace XPS.Models
             _incorrectAnswer2 = "";
             _incorrectAnswer3 = "";
             _incorrectAnswer4 = "";
-            _hint = "";
+            _imageName = "";
+            _paragraph = "";
         }
 
-        public bool image
+        public string ImageName
         {
             get
             {
-                return image;
+                return _imageName;
             }
             set
             {
-                _image = value;
+                _imageName = value;
             }
         }
         public int QuestionID
@@ -140,15 +141,15 @@ namespace XPS.Models
                 _incorrectAnswer4 = value;
             }
         }
-        public string Hint
+        public string Paragraph
         {
             get
             {
-                return _hint;
+                return _paragraph;
             }
             set
             {
-                _hint = value;
+                _paragraph = value;
             }
         }
     }
