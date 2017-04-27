@@ -32,6 +32,7 @@
             this.examUserLabel = new System.Windows.Forms.Label();
             this.testIDLabel = new System.Windows.Forms.Label();
             this.questionGroupBox = new System.Windows.Forms.GroupBox();
+            this.conditionLabel = new System.Windows.Forms.Label();
             this.answersGroupBox = new System.Windows.Forms.GroupBox();
             this.answer3RadioButton = new System.Windows.Forms.RadioButton();
             this.answer5RadioButton = new System.Windows.Forms.RadioButton();
@@ -51,7 +52,6 @@
             this.cdLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.submitButton = new System.Windows.Forms.Button();
-            this.conditionLabel = new System.Windows.Forms.Label();
             this.questionGroupBox.SuspendLayout();
             this.answersGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,6 +92,16 @@
             this.questionGroupBox.Size = new System.Drawing.Size(740, 531);
             this.questionGroupBox.TabIndex = 2;
             this.questionGroupBox.TabStop = false;
+            // 
+            // conditionLabel
+            // 
+            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionLabel.Location = new System.Drawing.Point(7, 20);
+            this.conditionLabel.Name = "conditionLabel";
+            this.conditionLabel.Size = new System.Drawing.Size(725, 61);
+            this.conditionLabel.TabIndex = 9;
+            this.conditionLabel.Text = "condition Label";
+            this.conditionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // answersGroupBox
             // 
@@ -174,9 +184,9 @@
             // 
             this.saveQuestionButton.BackColor = System.Drawing.Color.Maroon;
             this.saveQuestionButton.ForeColor = System.Drawing.Color.White;
-            this.saveQuestionButton.Location = new System.Drawing.Point(657, 499);
+            this.saveQuestionButton.Location = new System.Drawing.Point(657, 489);
             this.saveQuestionButton.Name = "saveQuestionButton";
-            this.saveQuestionButton.Size = new System.Drawing.Size(75, 23);
+            this.saveQuestionButton.Size = new System.Drawing.Size(75, 33);
             this.saveQuestionButton.TabIndex = 1;
             this.saveQuestionButton.Text = "Save";
             this.saveQuestionButton.UseVisualStyleBackColor = false;
@@ -238,7 +248,7 @@
             this.nextButton.ForeColor = System.Drawing.Color.White;
             this.nextButton.Location = new System.Drawing.Point(892, 575);
             this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.Size = new System.Drawing.Size(83, 36);
             this.nextButton.TabIndex = 7;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = false;
@@ -249,9 +259,9 @@
             this.previousButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.previousButton.BackColor = System.Drawing.Color.Maroon;
             this.previousButton.ForeColor = System.Drawing.Color.White;
-            this.previousButton.Location = new System.Drawing.Point(253, 575);
+            this.previousButton.Location = new System.Drawing.Point(235, 574);
             this.previousButton.Name = "previousButton";
-            this.previousButton.Size = new System.Drawing.Size(75, 23);
+            this.previousButton.Size = new System.Drawing.Size(87, 36);
             this.previousButton.TabIndex = 8;
             this.previousButton.Text = "Previous";
             this.previousButton.UseVisualStyleBackColor = false;
@@ -292,16 +302,6 @@
             this.submitButton.Text = "Submit Test";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
-            // 
-            // conditionLabel
-            // 
-            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conditionLabel.Location = new System.Drawing.Point(7, 20);
-            this.conditionLabel.Name = "conditionLabel";
-            this.conditionLabel.Size = new System.Drawing.Size(725, 61);
-            this.conditionLabel.TabIndex = 9;
-            this.conditionLabel.Text = "condition Label";
-            this.conditionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // ExamForm
             // 
