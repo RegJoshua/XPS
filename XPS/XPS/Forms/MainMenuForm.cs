@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XPS.Models;
 using XPS.Forms;
+using XPS.Logic;
 
 namespace XPS
 {
     public partial class MainMenuForm : Form
     {
+        DatabaseManager db2 = new DatabaseManager();
+        List<Question> questList = new List<Question>();
         User mainUser; //will need to pass user to exam form form
         int[] categories = new int[8]; //needed to store what the user checks for categories
 
@@ -135,6 +138,14 @@ namespace XPS
             string selected = this.questionComboBox.GetItemText(this.questionComboBox.SelectedItem);
             //parse the string into an int and pass it as a parameter to the examForm.
             int num = Int32.Parse(selected);
+
+            int questCounter = 0;
+            questList = db2.GetQuestions(num, categories);
+            foreach (Question q in questList)
+                questCounter++;
+           
+           
+            
             bool timed;
             //if timed is selected, bool timed is true, else false.
             if (yesRadioButton.Checked == true)
@@ -148,6 +159,8 @@ namespace XPS
             if (dsCheckBox.Checked == false && progCheckBox.Checked == false && acCheckBox.Checked == false
                  && sysCheckBox.Checked == false && seCheckBox.Checked == false && imCheckBox.Checked == false && otherCheckBox.Checked == false)
                 MessageBox.Show("Must select at least one category to take the test.");
+            else if (questCounter < num)
+                MessageBox.Show("Please select more categories. Not enough questions to fill exam form.");
             else
             {
                 this.Hide();
