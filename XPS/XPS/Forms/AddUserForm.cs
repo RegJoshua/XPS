@@ -12,32 +12,65 @@ using XPS.Models;
 
 namespace XPS.Forms
 {
+    /**********************************************************************
+     * 
+     * class AddUserForm
+     * Administrators add users to the database using this form.
+     * 
+    **********************************************************************/
     public partial class AddUserForm : Form
     {
-        // a reference to the user's open admin form...
+        // a reference to the user's open admin form 
         private AdminForm _AdminForm = null;
 
-        //.. is passed as an argument so we can go back to the form
+        /**********************************************************************
+         * 
+         * constructor
+         * @param: AdminForm anAdminForm
+         * 
+        **********************************************************************/
         public AddUserForm(AdminForm anAdminForm)
         {
             _AdminForm = anAdminForm;
             InitializeComponent();
         }
 
+        /**********************************************************************
+         * 
+         * private void AddUserForm_FormClosing
+         * @param: object sender, FormClosingEventArgs e
+         * @return: NA
+         * @closes this form and displays the Admin Form
+         * 
+        **********************************************************************/
         private void AddUserForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
             _AdminForm.Show();
         }
 
-        // closes this form and returns to (shows) the admin form
+        /**********************************************************************
+         * 
+         * private void adminMenuButton_Click
+         * @param: object sender, EventArgs e
+         * @return: NA
+         * @closes this form and displays the Admin Form
+         * 
+        **********************************************************************/
         private void adminMenuButton_Click(object sender, EventArgs e)
         {
             _AdminForm.Show();
             this.Hide();
         }
-        // when the user button is clicked, a new user is created and data in the 
-        // text boxes is applied to it.
+
+        /**********************************************************************
+         * 
+         * private void aufAddUserButton_Click
+         * @param: object sender, EventArgs e
+         * @return: NA
+         * @instantiates a new user with attributes as indicated by the Admin;
+         * includes extensive data validation
+         * 
+        **********************************************************************/
         private void aufAddUserButton_Click(object sender, EventArgs e)
         {
             // Create new user
