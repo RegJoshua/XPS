@@ -72,6 +72,18 @@ namespace XPS.Forms
                 }
             }
 
+            else if (reportName == "Test History")
+            {
+                queryString = Queries.REPORT_TEST_HISTORY;
+                dataSet = db.RunReport(queryString);
+            }
+
+            else if (reportName == "Results by Category")
+            {
+                queryString = Queries.REPORT_RESULTS_BY_CATEGORY;
+                dataSet = db.RunReport(queryString);
+            }
+
             reportDataGridView.DataSource = dataSet.Tables[0];
         }
     }

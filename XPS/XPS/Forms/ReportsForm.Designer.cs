@@ -65,7 +65,7 @@
             this.reportsComboBox.FormattingEnabled = true;
             this.reportsComboBox.Items.AddRange(new object[] {
             "Individual Student Results",
-            "Student Results by Category",
+            "Results by Category",
             "Test History"});
             this.reportsComboBox.Location = new System.Drawing.Point(87, 122);
             this.reportsComboBox.Name = "reportsComboBox";
