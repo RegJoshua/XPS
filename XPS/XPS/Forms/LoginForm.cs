@@ -44,7 +44,7 @@ namespace XPS.Forms
                 {
                     user = db.ValidateUser(usernameBox.Text, passwordBox.Text);
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
                     MessageBox.Show("Trouble connecting to database. Try again later.");
                     Application.Exit(); //want the form to close if error is thrown after
@@ -125,7 +125,7 @@ namespace XPS.Forms
             {
                 user = db.ValidateUser("mellis", "Test123");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Trouble connecting to database. Try again later.");
                 Application.Exit(); //want the form to close if error is thrown after

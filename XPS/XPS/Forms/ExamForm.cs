@@ -17,17 +17,18 @@ namespace XPS.Forms
     {
         private DatabaseManager db = new DatabaseManager();
         private Random random = new Random();
-        private int counter; //holds the numQuest passed in for the buttonName
-        private int countQuest; //holds the numQuest passed in
-        private int cdTimer;
-        private int initialTime;
-        private string cat; //holds the category to print the category for each question
-        private int currentQuestion = 0;
+        private Test test = new Test();
+        private User testUser;
         private List<Question> quest;
         private Dictionary<Question, int[]> questions;
         private List<QuestionResponse> response = new List<QuestionResponse>();
-        private Test test = new Test();
-        private User testUser;
+        private int counter; //holds the numQuest passed in for the buttonName
+        private int countQuest; //holds the numQuest passed in
+        private int cdTimer;
+        private int initialTime; //used to subtract with cdTimer to get elapsed time    
+        private int currentQuestion = 0;
+        private int answered = 0;
+        private string cat; //holds the category to print the category for each question
 
         public ExamForm()
         {
@@ -44,11 +45,17 @@ namespace XPS.Forms
             test.UserID = user.UserID;
             questions = new Dictionary<Question, int[]>();
 
-            int corrNum = random.Next(1, 6);
-
-            //get the questions from the DB and store in a new list called quest
-            quest = db.GetQuestions(numQuest, categories);
-            quest = Utilities.ShuffleQuestions(quest);
+            try
+            {
+                //get the questions from the DB and store in a new list called quest
+                quest = db.GetQuestions(numQuest, categories);
+                quest = Utilities.ShuffleQuestions(quest);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error connecting to database. Try again later.", "Error");
+            }
+            
 
             for (int i = 0; i < numQuest; i++)
             {
@@ -250,6 +257,7 @@ namespace XPS.Forms
 
         private void saveQuestionButton_Click(object sender, EventArgs e)
         {
+
             foreach (RadioButton button in answersGroupBox.Controls)
             {
                 if (button.Checked)
@@ -279,18 +287,47 @@ namespace XPS.Forms
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult;
             int numCorrect = 0;
+            
+            int unanswered = 0;
             timer1.Stop();
-            test.Time = initialTime - cdTimer;
+           
             foreach (QuestionResponse resp in response)
             {
                 if (resp.Correct == true)
                     numCorrect++;
+                if (resp.QuestionResponseID == 0)
+                    unanswered++;
             }
-            test.Correct = numCorrect;
-            this.Hide();
-            ExamResultsForm ERF = new ExamResultsForm(test, testUser);
-            ERF.Show();
+
+            if (unanswered != 0)
+            {
+                dialogResult = MessageBox.Show("Are you sure you want to submit? There are " + unanswered + " questions remaining.", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //FinalizeTest();
+                    test.Time = initialTime - cdTimer;
+                    test.Correct = numCorrect;
+                    
+                    this.Hide();
+                    ExamResultsForm ERF = new ExamResultsForm(test, testUser);
+                    ERF.Show();
+                }
+                else
+                {
+                    timer1.Start();
+                }            
+            } 
+            else
+            {
+                test.Time = initialTime - cdTimer;
+                test.Correct = numCorrect;
+
+                this.Hide();
+                ExamResultsForm ERF = new ExamResultsForm(test, testUser);
+                ERF.Show();
+            }        
         }
 
         public void resetAnserBtn()
@@ -332,7 +369,6 @@ namespace XPS.Forms
             string startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
 
             if (quest[currentQuestion].ImageName != "")
-                //testIDLabel.Text = quest[currentQuestion].ImageName;
                 pictureBox1.Image = Image.FromFile(startupPath + quest[currentQuestion].ImageName);
             else
                 pictureBox1.Image = null;

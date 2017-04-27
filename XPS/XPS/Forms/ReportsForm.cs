@@ -42,6 +42,12 @@ namespace XPS.Forms
 
                 FillUserComboBox();
             }
+            //else
+            //{
+            //    userSelectionLabel.Visible = false;
+            //    usersComboBox.Visible = false;
+            //}
+               
         }
 
         private void runReportButton_Click(object sender, EventArgs e)
@@ -85,6 +91,11 @@ namespace XPS.Forms
             }
 
             reportDataGridView.DataSource = dataSet.Tables[0];
+        }
+
+        private void ReportsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

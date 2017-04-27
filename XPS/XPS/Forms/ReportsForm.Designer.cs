@@ -139,6 +139,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportsForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).EndInit();
