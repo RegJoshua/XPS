@@ -170,3 +170,5 @@ C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
 C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamResultsForm.resources
 C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
 C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources
+C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
+C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources

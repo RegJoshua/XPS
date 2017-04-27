@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -162,7 +163,7 @@ namespace XPS.Forms
                 previousButton.Enabled = true;
                 currentQuestion++;
                 int current = currentQuestion;
-
+                
                 questionLabel.Text = "Question " + (current + 1) + ": " + quest[currentQuestion].QuestionText;
                 cat = setQuestionCategory(quest[currentQuestion].QuestionCategory);
                 catLabel.Text = "Category: " + cat;
@@ -325,6 +326,16 @@ namespace XPS.Forms
             answer3RadioButton.Text = array[questions[quest[i]][2]];
             answer4RadioButton.Text = array[questions[quest[i]][3]];
             answer5RadioButton.Text = array[questions[quest[i]][4]];
+
+            string currentDir = Environment.CurrentDirectory;
+
+            string startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
+
+            if (quest[currentQuestion].ImageName != "")
+                //testIDLabel.Text = quest[currentQuestion].ImageName;
+                pictureBox1.Image = Image.FromFile(startupPath + quest[currentQuestion].ImageName);
+            else
+                pictureBox1.Image = null;
         }
 
         private void FinalizeTest()

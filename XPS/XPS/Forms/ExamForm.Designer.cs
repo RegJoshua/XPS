@@ -82,13 +82,14 @@
             // questionGroupBox
             // 
             this.questionGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.questionGroupBox.Controls.Add(this.conditionLabel);
             this.questionGroupBox.Controls.Add(this.answersGroupBox);
             this.questionGroupBox.Controls.Add(this.pictureBox1);
             this.questionGroupBox.Controls.Add(this.saveQuestionButton);
             this.questionGroupBox.Controls.Add(this.questionLabel);
-            this.questionGroupBox.Location = new System.Drawing.Point(235, 136);
+            this.questionGroupBox.Location = new System.Drawing.Point(235, 37);
             this.questionGroupBox.Name = "questionGroupBox";
-            this.questionGroupBox.Size = new System.Drawing.Size(740, 432);
+            this.questionGroupBox.Size = new System.Drawing.Size(740, 531);
             this.questionGroupBox.TabIndex = 2;
             this.questionGroupBox.TabStop = false;
             // 
@@ -99,7 +100,7 @@
             this.answersGroupBox.Controls.Add(this.answer1RadioButton);
             this.answersGroupBox.Controls.Add(this.answer4RadioButton);
             this.answersGroupBox.Controls.Add(this.answer2RadioButton);
-            this.answersGroupBox.Location = new System.Drawing.Point(9, 276);
+            this.answersGroupBox.Location = new System.Drawing.Point(18, 375);
             this.answersGroupBox.Name = "answersGroupBox";
             this.answersGroupBox.Size = new System.Drawing.Size(618, 150);
             this.answersGroupBox.TabIndex = 8;
@@ -162,9 +163,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(240, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(256, 106);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(269, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -172,7 +174,7 @@
             // 
             this.saveQuestionButton.BackColor = System.Drawing.Color.Maroon;
             this.saveQuestionButton.ForeColor = System.Drawing.Color.White;
-            this.saveQuestionButton.Location = new System.Drawing.Point(657, 402);
+            this.saveQuestionButton.Location = new System.Drawing.Point(657, 499);
             this.saveQuestionButton.Name = "saveQuestionButton";
             this.saveQuestionButton.Size = new System.Drawing.Size(75, 23);
             this.saveQuestionButton.TabIndex = 1;
@@ -183,7 +185,7 @@
             // questionLabel
             // 
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.Location = new System.Drawing.Point(6, 16);
+            this.questionLabel.Location = new System.Drawing.Point(12, 305);
             this.questionLabel.Name = "questionLabel";
             this.questionLabel.Size = new System.Drawing.Size(728, 67);
             this.questionLabel.TabIndex = 0;
@@ -293,13 +295,13 @@
             // 
             // conditionLabel
             // 
-            this.conditionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conditionLabel.Location = new System.Drawing.Point(253, 37);
+            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionLabel.Location = new System.Drawing.Point(7, 20);
             this.conditionLabel.Name = "conditionLabel";
-            this.conditionLabel.Size = new System.Drawing.Size(722, 96);
-            this.conditionLabel.TabIndex = 12;
-            this.conditionLabel.Text = "condition label";
+            this.conditionLabel.Size = new System.Drawing.Size(725, 61);
+            this.conditionLabel.TabIndex = 9;
+            this.conditionLabel.Text = "condition Label";
+            this.conditionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // ExamForm
             // 
@@ -307,7 +309,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1156, 638);
-            this.Controls.Add(this.conditionLabel);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.cdLabel);
             this.Controls.Add(this.remainLabel);
