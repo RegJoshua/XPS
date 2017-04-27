@@ -90,11 +90,16 @@ namespace XPS.Logic
                             result = new XPS.Models.User()
                             {
                                 UserID = Int32.Parse(reader.GetString("UserID"))
-                                , FirstName = reader.GetString("FirstName")
-                                , LastName = reader.GetString("LastName")
-                                , UserName = reader.GetString("UserName")
-                                , PassWord = reader.GetString("Password")
-                                , UserType = reader.GetString("UserType").ToCharArray()[0]
+                                ,
+                                FirstName = reader.GetString("FirstName")
+                                ,
+                                LastName = reader.GetString("LastName")
+                                ,
+                                UserName = reader.GetString("UserName")
+                                ,
+                                PassWord = reader.GetString("Password")
+                                ,
+                                UserType = reader.GetString("UserType").ToCharArray()[0]
                             };
 
                             if (passWord != result.PassWord)
@@ -149,12 +154,58 @@ namespace XPS.Logic
                             result = new XPS.Models.User()
                             {
                                 UserID = Int32.Parse(reader.GetString("UserID"))
-                                , FirstName = reader.GetString("FirstName")
-                                , LastName = reader.GetString("LastName")
-                                , UserName = reader.GetString("UserName")
-                                , PassWord = reader.GetString("Password")
-                                , UserType = reader.GetChar("UserType")
+                                ,
+                                FirstName = reader.GetString("FirstName")
+                                ,
+                                LastName = reader.GetString("LastName")
+                                ,
+                                UserName = reader.GetString("UserName")
+                                ,
+                                PassWord = reader.GetString("Password")
+                                ,
+                                UserType = reader.GetChar("UserType")
                             };
+                        }
+                    }
+                }
+
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
+
+        public Dictionary<int, string> GetUserList()
+        {
+            Dictionary<int, string> result = new Dictionary<int, string>();
+            string query = @"
+                SELECT 
+                    UserID
+                    , CONCAT(FIRSTNAME, ' ', LASTNAME) AS Name
+                FROM
+                    User
+                ORDER BY
+                    CONCAT(FIRSTNAME, ' ', LASTNAME);
+                   ";
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlCommand command = new MySqlCommand(query, _connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int userID = Int32.Parse(reader.GetString("UserID"));
+                            string name = reader.GetString("Name");
+
+                            result.Add(userID, name);
                         }
                     }
                 }
@@ -212,15 +263,24 @@ namespace XPS.Logic
                             Question question = new Question()
                             {
                                 QuestionID = Int32.Parse(reader.GetString("QuestionID"))
-                                , QuestionCategory = Int32.Parse(reader.GetString("Category"))
-                                , QuestionText = reader.GetString("QuestionText")
-                                , CorrectAnswer = reader.GetString("CorrectAnswer")
-                                , IncorrectAnswer1 = reader.GetString("IncorrectAnswer1")
-                                , IncorrectAnswer2 = reader.GetString("IncorrectAnswer2")
-                                , IncorrectAnswer3 = reader.GetString("IncorrectAnswer3")
-                                , IncorrectAnswer4 = reader.GetString("IncorrectAnswer4")
-                                , ImageName = reader.GetString("ImageName")
-                                , Paragraph = reader.GetString("Paragraph")
+                                ,
+                                QuestionCategory = Int32.Parse(reader.GetString("Category"))
+                                ,
+                                QuestionText = reader.GetString("QuestionText")
+                                ,
+                                CorrectAnswer = reader.GetString("CorrectAnswer")
+                                ,
+                                IncorrectAnswer1 = reader.GetString("IncorrectAnswer1")
+                                ,
+                                IncorrectAnswer2 = reader.GetString("IncorrectAnswer2")
+                                ,
+                                IncorrectAnswer3 = reader.GetString("IncorrectAnswer3")
+                                ,
+                                IncorrectAnswer4 = reader.GetString("IncorrectAnswer4")
+                                ,
+                                ImageName = reader.GetString("ImageName")
+                                ,
+                                Paragraph = reader.GetString("Paragraph")
                             };
 
                             result.Add(question);
