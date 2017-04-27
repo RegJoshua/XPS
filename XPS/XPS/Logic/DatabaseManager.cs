@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XPS.Models;
 using MySql.Data.MySqlClient;
+using MySql;
 
 namespace XPS.Logic
 {
@@ -154,16 +156,11 @@ namespace XPS.Logic
                             result = new XPS.Models.User()
                             {
                                 UserID = Int32.Parse(reader.GetString("UserID"))
-                                ,
-                                FirstName = reader.GetString("FirstName")
-                                ,
-                                LastName = reader.GetString("LastName")
-                                ,
-                                UserName = reader.GetString("UserName")
-                                ,
-                                PassWord = reader.GetString("Password")
-                                ,
-                                UserType = reader.GetChar("UserType")
+                                , FirstName = reader.GetString("FirstName")
+                                , LastName = reader.GetString("LastName")
+                                , UserName = reader.GetString("UserName")
+                                , PassWord = reader.GetString("Password")
+                                , UserType = reader.GetChar("UserType")
                             };
                         }
                     }
@@ -487,6 +484,29 @@ namespace XPS.Logic
                     {
                         result = true;
                     }
+                }
+
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
+
+        public DataSet RunReport(string queryString)
+        {
+            DataSet result = new DataSet();
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(queryString, _connection))
+                {
+                    adapter.Fill(result);
                 }
 
                 CloseConnection();

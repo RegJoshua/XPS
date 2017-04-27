@@ -105,13 +105,16 @@
             // 
             // runReportButton
             // 
-            this.runReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runReportButton.BackColor = System.Drawing.Color.Maroon;
+            this.runReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runReportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.runReportButton.Location = new System.Drawing.Point(430, 119);
             this.runReportButton.Name = "runReportButton";
             this.runReportButton.Size = new System.Drawing.Size(172, 64);
             this.runReportButton.TabIndex = 5;
             this.runReportButton.Text = "Run Report";
-            this.runReportButton.UseVisualStyleBackColor = true;
+            this.runReportButton.UseVisualStyleBackColor = false;
+            this.runReportButton.Click += new System.EventHandler(this.runReportButton_Click);
             // 
             // reportDataGridView
             // 

@@ -107,6 +107,7 @@
     </Compile>
     <Compile Include="Logic\Constants.cs" />
     <Compile Include="Logic\DatabaseManager.cs" />
+    <Compile Include="Logic\Queries.cs" />
     <Compile Include="Logic\Utilities.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionResponse.cs" />
