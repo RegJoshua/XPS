@@ -161,11 +161,7 @@ namespace XPS.Forms
             testIDLabel.Text = "test ID: " + countQuest;
             Button button = sender as Button;
 
-            if (currentQuestion >= (countQuest - 1))
-            {
-                nextButton.Enabled = false;
-            }
-            else
+            if (currentQuestion <= countQuest - 2)
             {
                 previousButton.Enabled = true;
                 currentQuestion++;
@@ -202,11 +198,7 @@ namespace XPS.Forms
         private void previousButton_Click(object sender, EventArgs e)
         {
 
-            if (currentQuestion == 0)
-            {
-                previousButton.Enabled = false;
-            }
-            else
+            if (currentQuestion != 0)
             {
                 nextButton.Enabled = true;
                 currentQuestion--;
@@ -258,7 +250,7 @@ namespace XPS.Forms
         private void saveQuestionButton_Click(object sender, EventArgs e)
         {
 
-            foreach (RadioButton button in answersGroupBox.Controls)
+            foreach (RadioButton button in questionGroupBox.Controls.OfType<RadioButton>())
             {
                 if (button.Checked)
                 {
@@ -369,9 +361,12 @@ namespace XPS.Forms
             string startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
 
             if (quest[currentQuestion].ImageName != "")
+            {
+                pictureBox1.Show();
                 pictureBox1.Image = Image.FromFile(startupPath + quest[currentQuestion].ImageName);
+            }
             else
-                pictureBox1.Image = null;
+                pictureBox1.Hide();
         }
 
         private void FinalizeTest()
