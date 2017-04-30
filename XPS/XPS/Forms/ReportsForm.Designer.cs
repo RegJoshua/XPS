@@ -36,11 +36,9 @@
             this.userSelectionLabel = new System.Windows.Forms.Label();
             this.runReportButton = new System.Windows.Forms.Button();
             this.reportDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.arfAdminMenuBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,7 +109,7 @@
             this.runReportButton.BackColor = System.Drawing.Color.Maroon;
             this.runReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runReportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.runReportButton.Location = new System.Drawing.Point(430, 94);
+            this.runReportButton.Location = new System.Drawing.Point(430, 93);
             this.runReportButton.Name = "runReportButton";
             this.runReportButton.Size = new System.Drawing.Size(172, 64);
             this.runReportButton.TabIndex = 5;
@@ -126,14 +124,6 @@
             this.reportDataGridView.Name = "reportDataGridView";
             this.reportDataGridView.Size = new System.Drawing.Size(586, 286);
             this.reportDataGridView.TabIndex = 6;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 178);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 286);
-            this.dataGridView1.TabIndex = 6;
             // 
             // arfAdminMenuBtn
             // 
@@ -155,7 +145,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(614, 558);
             this.Controls.Add(this.arfAdminMenuBtn);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.reportDataGridView);
             this.Controls.Add(this.runReportButton);
             this.Controls.Add(this.userSelectionLabel);
@@ -169,7 +158,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,7 +173,6 @@
         private System.Windows.Forms.Label userSelectionLabel;
         private System.Windows.Forms.Button runReportButton;
         private System.Windows.Forms.DataGridView reportDataGridView;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button arfAdminMenuBtn;
     }
 }

@@ -45,11 +45,11 @@ namespace XPS.Forms
 
                 FillUserComboBox();
             }
-            //else
-            //{
-            //    userSelectionLabel.Visible = false;
-            //    usersComboBox.Visible = false;
-            //}
+            else
+            {
+                userSelectionLabel.Visible = false;
+                usersComboBox.Visible = false;
+            }
                
         }
 
