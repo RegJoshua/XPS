@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XPS.Logic;
+using XPS.Models;
 
 namespace XPS.Forms
 {
     public partial class ReportsForm : Form
     {
+        User thisUser;
         private DatabaseManager db = null;
         private Dictionary<int, string> names = null;
 
-        public ReportsForm()
+        public ReportsForm(User adminUser)
         {
+            thisUser = adminUser;
             InitializeComponent();
             db = new DatabaseManager();
             names = db.GetUserList();
@@ -52,14 +55,24 @@ namespace XPS.Forms
 
         private void runReportButton_Click(object sender, EventArgs e)
         {
-            string reportName = reportsComboBox.SelectedItem.ToString();
+            string reportName ="";
+
+            if(reportsComboBox.SelectedItem != null)
+            {
+                reportName = reportsComboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please select a report to run.");
+            }
+            
             string queryString = "";
             int userID = 0;
             DataSet dataSet = null;
 
             if (reportName == "Individual Student Results")
             {
-                if (usersComboBox.SelectedItem.ToString() != "")
+                if (usersComboBox.SelectedItem != null)
                 {
                     foreach (KeyValuePair<int, string> pair in names)
                     {
@@ -75,6 +88,7 @@ namespace XPS.Forms
                 else
                 {
                     MessageBox.Show("Please select a user.");
+
                 }
             }
 
@@ -90,12 +104,20 @@ namespace XPS.Forms
                 dataSet = db.RunReport(queryString);
             }
 
-            reportDataGridView.DataSource = dataSet.Tables[0];
+            if(dataSet != null) reportDataGridView.DataSource = dataSet.Tables[0];
         }
 
         private void ReportsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void arfAdminMenuBtn_Click(object sender, EventArgs e)
+        {
+            
+            AdminForm af = new AdminForm(thisUser);
+            af.Show();
+            this.Hide();
         }
     }
 }

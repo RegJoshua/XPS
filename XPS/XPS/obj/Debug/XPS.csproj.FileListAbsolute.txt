@@ -69,21 +69,6 @@ C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.exe
 C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.pdb
 C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.pdb
 C:\Users\Josh\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.csprojResolveAssemblyReference.cache
-C:\XPS\XPS\XPS\bin\Debug\XPS.exe.config
-C:\XPS\XPS\XPS\bin\Debug\XPS.exe
-C:\XPS\XPS\XPS\bin\Debug\XPS.pdb
-C:\XPS\XPS\XPS\bin\Debug\MySql.Data.dll
-C:\XPS\XPS\XPS\obj\Debug\XPS.csprojResolveAssemblyReference.cache
-C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.AddUserForm.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.AdminForm.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.DeleteUserForm.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamForm.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.LoginForm.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
-C:\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
-C:\XPS\XPS\XPS\obj\Debug\XPS.exe
-C:\XPS\XPS\XPS\obj\Debug\XPS.pdb
 C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.exe.config
 C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.exe
 C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.pdb
@@ -175,3 +160,20 @@ C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resource
 C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources
 C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
 C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources
+C:\XPS\XPS\XPS\bin\Debug\XPS.exe.config
+C:\XPS\XPS\XPS\bin\Debug\XPS.exe
+C:\XPS\XPS\XPS\bin\Debug\XPS.pdb
+C:\XPS\XPS\XPS\bin\Debug\MySql.Data.dll
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.AddUserForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.AdminForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.DeleteUserForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamResultsForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.LoginForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
+C:\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
+C:\XPS\XPS\XPS\obj\Debug\XPS.exe
+C:\XPS\XPS\XPS\obj\Debug\XPS.pdb

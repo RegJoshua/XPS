@@ -36,8 +36,11 @@
             this.userSelectionLabel = new System.Windows.Forms.Label();
             this.runReportButton = new System.Windows.Forms.Button();
             this.reportDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.arfAdminMenuBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -46,7 +49,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 100);
+            this.panel1.Size = new System.Drawing.Size(615, 77);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -67,7 +70,7 @@
             "Individual Student Results",
             "Results by Category",
             "Test History"});
-            this.reportsComboBox.Location = new System.Drawing.Point(87, 122);
+            this.reportsComboBox.Location = new System.Drawing.Point(87, 97);
             this.reportsComboBox.Name = "reportsComboBox";
             this.reportsComboBox.Size = new System.Drawing.Size(289, 21);
             this.reportsComboBox.TabIndex = 1;
@@ -76,7 +79,7 @@
             // usersComboBox
             // 
             this.usersComboBox.FormattingEnabled = true;
-            this.usersComboBox.Location = new System.Drawing.Point(87, 162);
+            this.usersComboBox.Location = new System.Drawing.Point(87, 137);
             this.usersComboBox.Name = "usersComboBox";
             this.usersComboBox.Size = new System.Drawing.Size(289, 21);
             this.usersComboBox.TabIndex = 2;
@@ -86,7 +89,7 @@
             // 
             this.reportSelectionLabel.AutoSize = true;
             this.reportSelectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportSelectionLabel.Location = new System.Drawing.Point(12, 122);
+            this.reportSelectionLabel.Location = new System.Drawing.Point(12, 97);
             this.reportSelectionLabel.Name = "reportSelectionLabel";
             this.reportSelectionLabel.Size = new System.Drawing.Size(62, 20);
             this.reportSelectionLabel.TabIndex = 3;
@@ -96,7 +99,7 @@
             // 
             this.userSelectionLabel.AutoSize = true;
             this.userSelectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSelectionLabel.Location = new System.Drawing.Point(12, 162);
+            this.userSelectionLabel.Location = new System.Drawing.Point(12, 137);
             this.userSelectionLabel.Name = "userSelectionLabel";
             this.userSelectionLabel.Size = new System.Drawing.Size(47, 20);
             this.userSelectionLabel.TabIndex = 4;
@@ -108,7 +111,7 @@
             this.runReportButton.BackColor = System.Drawing.Color.Maroon;
             this.runReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runReportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.runReportButton.Location = new System.Drawing.Point(430, 119);
+            this.runReportButton.Location = new System.Drawing.Point(430, 94);
             this.runReportButton.Name = "runReportButton";
             this.runReportButton.Size = new System.Drawing.Size(172, 64);
             this.runReportButton.TabIndex = 5;
@@ -124,12 +127,35 @@
             this.reportDataGridView.Size = new System.Drawing.Size(586, 286);
             this.reportDataGridView.TabIndex = 6;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 178);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(586, 286);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // arfAdminMenuBtn
+            // 
+            this.arfAdminMenuBtn.BackColor = System.Drawing.Color.Maroon;
+            this.arfAdminMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.arfAdminMenuBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.arfAdminMenuBtn.Location = new System.Drawing.Point(430, 495);
+            this.arfAdminMenuBtn.Name = "arfAdminMenuBtn";
+            this.arfAdminMenuBtn.Size = new System.Drawing.Size(172, 64);
+            this.arfAdminMenuBtn.TabIndex = 7;
+            this.arfAdminMenuBtn.Text = "Admin Menu";
+            this.arfAdminMenuBtn.UseVisualStyleBackColor = false;
+            this.arfAdminMenuBtn.Click += new System.EventHandler(this.arfAdminMenuBtn_Click);
+            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(614, 501);
+            this.ClientSize = new System.Drawing.Size(614, 558);
+            this.Controls.Add(this.arfAdminMenuBtn);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.reportDataGridView);
             this.Controls.Add(this.runReportButton);
             this.Controls.Add(this.userSelectionLabel);
@@ -143,6 +169,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +185,7 @@
         private System.Windows.Forms.Label userSelectionLabel;
         private System.Windows.Forms.Button runReportButton;
         private System.Windows.Forms.DataGridView reportDataGridView;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button arfAdminMenuBtn;
     }
 }

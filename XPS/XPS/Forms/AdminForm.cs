@@ -67,7 +67,7 @@ namespace XPS.Forms
         private void viewReportButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ReportsForm reportsForm = new ReportsForm();
+            ReportsForm reportsForm = new ReportsForm(adminUser);
             reportsForm.Show();
         }
     }
