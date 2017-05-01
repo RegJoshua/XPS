@@ -956,7 +956,7 @@ cit http://www.sanfoundry.com/software-engg-mcqs-extreme-programming/
 ctg 5
 con 
 fig 
-q In XP Increments are delivered to customers every _______ weeks.
+q In Extreme Programming (XP) Increments are delivered to customers every _______ weeks.
 aa Two
 af One
 af Three
