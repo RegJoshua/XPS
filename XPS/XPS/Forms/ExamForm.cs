@@ -347,6 +347,9 @@ namespace XPS.Forms
 
         public void setAnswerBtn(int i)
         {
+            var startupPath ="";
+            string secondPath;
+
             string[] array = { quest[i].CorrectAnswer, quest[i].IncorrectAnswer1,
                     quest[i].IncorrectAnswer2, quest[i].IncorrectAnswer3,
                     quest[i].IncorrectAnswer4 };
@@ -359,7 +362,10 @@ namespace XPS.Forms
             string currentDir = Environment.CurrentDirectory;
             try
             {
-                string startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
+                //startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
+                startupPath = System.IO.Directory.GetCurrentDirectory();
+                startupPath += ".\\images\\";
+                //MessageBox.Show("Directory: " + startupPath);
                 if (quest[currentQuestion].ImageName != "")
                 {
                     pictureBox1.Show();
@@ -370,7 +376,8 @@ namespace XPS.Forms
             }
             catch
             {
-                MessageBox.Show("Error getting images.");
+                secondPath = System.IO.Directory.GetCurrentDirectory();
+                MessageBox.Show("Error getting images." + " directory: " + secondPath);
             }
 
            
