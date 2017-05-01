@@ -951,6 +951,16 @@ af the amount of memory is less than the number of items stored
 af there is no other way to do it
 af memory is volatile
 
-
+k 078
+cit http://www.sanfoundry.com/software-engg-mcqs-extreme-programming/
+ctg 5
+con 
+fig 
+q In XP Increments are delivered to customers every _______ weeks.
+aa Two
+af One
+af Three
+af Increments are delivered daily.
+af XP does not involve increments
 
 
