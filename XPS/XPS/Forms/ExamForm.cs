@@ -357,16 +357,23 @@ namespace XPS.Forms
             answer5RadioButton.Text = array[questions[quest[i]][4]];
 
             string currentDir = Environment.CurrentDirectory;
-
-            string startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
-
-            if (quest[currentQuestion].ImageName != "")
+            try
             {
-                pictureBox1.Show();
-                pictureBox1.Image = Image.FromFile(startupPath + quest[currentQuestion].ImageName);
+                string startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
+                if (quest[currentQuestion].ImageName != "")
+                {
+                    pictureBox1.Show();
+                    pictureBox1.Image = Image.FromFile(startupPath + quest[currentQuestion].ImageName);
+                }
+                else
+                    pictureBox1.Hide();
             }
-            else
-                pictureBox1.Hide();
+            catch
+            {
+                MessageBox.Show("Error getting images.");
+            }
+
+           
         }
 
         private void FinalizeTest()
