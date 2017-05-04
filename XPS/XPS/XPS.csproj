@@ -14,7 +14,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>F:\</PublishUrl>
+    <PublishUrl>D:\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,9 +24,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ProductName>XPS</ProductName>
+    <PublisherName>PrepT Software</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -209,6 +213,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\img_k005.PNG" />
+    <EmbeddedResource Include="images\img_k006.PNG" />
+    <EmbeddedResource Include="images\img_k018.PNG" />
+    <EmbeddedResource Include="images\img_k020.PNG" />
+    <EmbeddedResource Include="images\img_k026.PNG" />
+    <EmbeddedResource Include="images\img_k027_37.PNG" />
+    <EmbeddedResource Include="images\img_k031_2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img_k005.PNG" />
+    <EmbeddedResource Include="img_k006.PNG" />
+    <EmbeddedResource Include="img_k018.PNG" />
+    <EmbeddedResource Include="img_k020.PNG" />
+    <EmbeddedResource Include="img_k026.PNG" />
+    <EmbeddedResource Include="img_k027_37.PNG" />
+    <EmbeddedResource Include="img_k031_2.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

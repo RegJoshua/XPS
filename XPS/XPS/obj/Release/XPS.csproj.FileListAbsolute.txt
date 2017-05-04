@@ -20,3 +20,25 @@ C:\XPS\XPS\XPS\bin\Release\XPS.exe.manifest
 C:\XPS\XPS\XPS\bin\Release\XPS.application
 C:\XPS\XPS\XPS\obj\Release\XPS.exe.manifest
 C:\XPS\XPS\XPS\obj\Release\XPS.application
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Release\XPS.exe.config
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.exe
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.pdb
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Release\XPS.exe.manifest
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Release\XPS.application
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Release\XPS.exe
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Release\XPS.pdb
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Release\MySql.Data.dll
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.csprojResolveAssemblyReference.cache
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.AddUserForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.AdminForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.DeleteUserForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.ExamForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.ExamResultsForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.LoginForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.MainMenuForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.ReportsForm.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Forms.ViewProfile.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.Properties.Resources.resources
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.csproj.GenerateResource.Cache
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.exe.manifest
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Release\XPS.application

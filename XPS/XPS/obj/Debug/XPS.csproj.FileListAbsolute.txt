@@ -177,3 +177,7 @@ C:\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
 C:\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
 C:\XPS\XPS\XPS\obj\Debug\XPS.exe
 C:\XPS\XPS\XPS\obj\Debug\XPS.pdb
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Debug\XPS.exe.manifest
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Debug\XPS.application
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Debug\XPS.exe.manifest
+C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Debug\XPS.application

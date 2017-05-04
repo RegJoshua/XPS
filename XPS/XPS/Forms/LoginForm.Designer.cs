@@ -39,7 +39,6 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameBox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.boxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,24 +156,12 @@
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Username";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(456, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 214);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Bypass Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(615, 502);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.boxPanel);
             this.Controls.Add(this.underLabel);
             this.Controls.Add(this.loginLabel);
@@ -207,6 +194,5 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox usernameBox;
         private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.Button button1;
     }
 }

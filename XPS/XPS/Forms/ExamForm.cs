@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XPS.Logic;
 using XPS.Models;
+using XPS.Properties;
 
 namespace XPS.Forms
 {
@@ -347,9 +349,6 @@ namespace XPS.Forms
 
         public void setAnswerBtn(int i)
         {
-            var startupPath ="";
-            string secondPath;
-
             string[] array = { quest[i].CorrectAnswer, quest[i].IncorrectAnswer1,
                     quest[i].IncorrectAnswer2, quest[i].IncorrectAnswer3,
                     quest[i].IncorrectAnswer4 };
@@ -362,25 +361,23 @@ namespace XPS.Forms
             string currentDir = Environment.CurrentDirectory;
             try
             {
-                //startupPath = System.IO.Directory.GetParent(@"../").FullName + "/images/";
-                startupPath = System.IO.Directory.GetCurrentDirectory();
-                startupPath += ".\\images\\";
-                //MessageBox.Show("Directory: " + startupPath);
                 if (quest[currentQuestion].ImageName != "")
                 {
-                    pictureBox1.Show();
-                    pictureBox1.Image = Image.FromFile(startupPath + quest[currentQuestion].ImageName);
+
+                    System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+                    string test = "XPS." + quest[currentQuestion].ImageName;
+                    Stream myStream = myAssembly.GetManifestResourceStream(test);
+                    Bitmap image = new Bitmap(myStream);
+                    pictureBox1.Image = image;
+                    pictureBox1.Show();       
                 }
                 else
                     pictureBox1.Hide();
             }
             catch
             {
-                secondPath = System.IO.Directory.GetCurrentDirectory();
-                MessageBox.Show("Error getting images." + " directory: " + secondPath);
-            }
-
-           
+                MessageBox.Show("Error getting images.");
+            }     
         }
 
         private void FinalizeTest()

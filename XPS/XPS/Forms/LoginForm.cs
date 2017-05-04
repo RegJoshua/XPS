@@ -35,8 +35,6 @@ namespace XPS.Forms
             if(usernameBox.Text == "" || passwordBox.Text == "")
             {
                 MessageBox.Show("Username or Password cannot be empty. Please enter your credentials.");
-                usernameBox.Text = "";
-                passwordBox.Text = "";
             }
             else
             {
@@ -47,7 +45,7 @@ namespace XPS.Forms
                 catch(Exception)
                 {
                     MessageBox.Show("Trouble connecting to database. Try again later.");
-                    Application.Exit(); //want the form to close if error is thrown after
+                    //Application.Exit(); //want the form to close if error is thrown after
                                         //user chooses "ok" on messagebox.
                 }
 
@@ -55,9 +53,9 @@ namespace XPS.Forms
                 if(user == null)
                 {
                     MessageBox.Show("Username/Password is incorrect. Try again.");
-                    usernameBox.Text = "";
+                    //usernameBox.Text = "";
                     passwordBox.Text = "";
-                    usernameBox.Focus();
+                    passwordBox.Focus();
                 }
                 else
                 {
@@ -117,35 +115,6 @@ namespace XPS.Forms
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                user = db.ValidateUser("mellis", "Test123");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Trouble connecting to database. Try again later.");
-                Application.Exit(); //want the form to close if error is thrown after
-                //user chooses "ok" on messagebox.
-            }
-
-            //db.ValidateUser() returns null if not authenticated.
-            if (user == null)
-            {
-                MessageBox.Show("Username/Password is incorrect. Try again.");
-                usernameBox.Text = "";
-                passwordBox.Text = "";
-                usernameBox.Focus();
-            }
-            else
-            {
-                this.Hide();
-                MainMenuForm mm = new MainMenuForm(user);
-                mm.Show();
-            }
-        }
+        }    
     }
 }
