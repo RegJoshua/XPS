@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteUserForm));
             this.dMustangIDLabel = new System.Windows.Forms.Label();
             this.dFirstnameLabel = new System.Windows.Forms.Label();
             this.dLastnameLabel = new System.Windows.Forms.Label();
@@ -188,6 +189,7 @@
             this.Controls.Add(this.dLastnameLabel);
             this.Controls.Add(this.dFirstnameLabel);
             this.Controls.Add(this.dMustangIDLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete User";
