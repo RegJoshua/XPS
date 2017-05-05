@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="XPS.exe.manifest" size="4601">
+    <dependentAssembly dependencyType="install" codebase="XPS.exe.manifest" size="4102">
       <assemblyIdentity name="XPS.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rGBmISPRTYVU6kfiXCh6EFkyqr98aa274OLWT6rYNaA=</dsig:DigestValue>
+        <dsig:DigestValue>0aNLoOzjHG1/rnb4taXdxsw3roKV/Cc/2s4PIr7Q6Q8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

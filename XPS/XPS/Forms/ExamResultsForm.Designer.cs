@@ -298,7 +298,6 @@
             this.Controls.Add(this.erfScoreTextBox);
             this.Controls.Add(this.erfHeadingGroupBox);
             this.Controls.Add(this.erfMainMenuStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExamResultsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExamResultsForm";

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUserForm));
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.auffirstNameBox = new System.Windows.Forms.TextBox();
             this.lastNameBox = new System.Windows.Forms.Label();
@@ -217,7 +216,6 @@
             this.Controls.Add(this.auffirstNameBox);
             this.Controls.Add(this.firstNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUserForm";

@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamForm));
             this.examUserLabel = new System.Windows.Forms.Label();
             this.testIDLabel = new System.Windows.Forms.Label();
             this.questionGroupBox = new System.Windows.Forms.GroupBox();
-            this.answer3RadioButton = new System.Windows.Forms.RadioButton();
             this.conditionLabel = new System.Windows.Forms.Label();
+            this.answer3RadioButton = new System.Windows.Forms.RadioButton();
             this.answer5RadioButton = new System.Windows.Forms.RadioButton();
             this.answer1RadioButton = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.answer4RadioButton = new System.Windows.Forms.RadioButton();
-            this.saveQuestionButton = new System.Windows.Forms.Button();
             this.answer2RadioButton = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.saveQuestionButton = new System.Windows.Forms.Button();
             this.questionLabel = new System.Windows.Forms.Label();
             this.examMenuStrip = new System.Windows.Forms.MenuStrip();
             this.navGroupBox = new System.Windows.Forms.GroupBox();
@@ -96,6 +95,16 @@
             this.questionGroupBox.TabIndex = 2;
             this.questionGroupBox.TabStop = false;
             // 
+            // conditionLabel
+            // 
+            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionLabel.Location = new System.Drawing.Point(7, 20);
+            this.conditionLabel.Name = "conditionLabel";
+            this.conditionLabel.Size = new System.Drawing.Size(725, 61);
+            this.conditionLabel.TabIndex = 9;
+            this.conditionLabel.Text = "condition Label";
+            this.conditionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // answer3RadioButton
             // 
             this.answer3RadioButton.AutoSize = true;
@@ -106,16 +115,6 @@
             this.answer3RadioButton.TabStop = true;
             this.answer3RadioButton.Text = "Answer 3";
             this.answer3RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // conditionLabel
-            // 
-            this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conditionLabel.Location = new System.Drawing.Point(7, 20);
-            this.conditionLabel.Name = "conditionLabel";
-            this.conditionLabel.Size = new System.Drawing.Size(725, 61);
-            this.conditionLabel.TabIndex = 9;
-            this.conditionLabel.Text = "condition Label";
-            this.conditionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // answer5RadioButton
             // 
@@ -139,15 +138,6 @@
             this.answer1RadioButton.Text = "Answer 1";
             this.answer1RadioButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(232, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(337, 236);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // answer4RadioButton
             // 
             this.answer4RadioButton.AutoSize = true;
@@ -158,6 +148,26 @@
             this.answer4RadioButton.TabStop = true;
             this.answer4RadioButton.Text = "Answer 4";
             this.answer4RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // answer2RadioButton
+            // 
+            this.answer2RadioButton.AutoSize = true;
+            this.answer2RadioButton.Location = new System.Drawing.Point(18, 416);
+            this.answer2RadioButton.Name = "answer2RadioButton";
+            this.answer2RadioButton.Size = new System.Drawing.Size(69, 17);
+            this.answer2RadioButton.TabIndex = 4;
+            this.answer2RadioButton.TabStop = true;
+            this.answer2RadioButton.Text = "Answer 2";
+            this.answer2RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(232, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 236);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // saveQuestionButton
             // 
@@ -170,17 +180,6 @@
             this.saveQuestionButton.Text = "Save";
             this.saveQuestionButton.UseVisualStyleBackColor = false;
             this.saveQuestionButton.Click += new System.EventHandler(this.saveQuestionButton_Click);
-            // 
-            // answer2RadioButton
-            // 
-            this.answer2RadioButton.AutoSize = true;
-            this.answer2RadioButton.Location = new System.Drawing.Point(18, 416);
-            this.answer2RadioButton.Name = "answer2RadioButton";
-            this.answer2RadioButton.Size = new System.Drawing.Size(69, 17);
-            this.answer2RadioButton.TabIndex = 4;
-            this.answer2RadioButton.TabStop = true;
-            this.answer2RadioButton.Text = "Answer 2";
-            this.answer2RadioButton.UseVisualStyleBackColor = true;
             // 
             // questionLabel
             // 
@@ -311,7 +310,6 @@
             this.Controls.Add(this.testIDLabel);
             this.Controls.Add(this.examUserLabel);
             this.Controls.Add(this.examMenuStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.examMenuStrip;
             this.Name = "ExamForm";
             this.Text = "ExamForm";
