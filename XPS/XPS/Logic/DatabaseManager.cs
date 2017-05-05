@@ -104,6 +104,7 @@ namespace XPS.Logic
                                 UserType = reader.GetString("UserType").ToCharArray()[0]
                             };
 
+                            //Second level of password validation.
                             if (passWord != result.PassWord)
                             {
                                 result = null;
@@ -176,9 +177,14 @@ namespace XPS.Logic
             return result;
         }
 
+        /// <summary>
+        /// This method returns a dictionary with all of the userids and the usernames in the User table. 
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<int, string> GetUserList()
         {
             Dictionary<int, string> result = new Dictionary<int, string>();
+            //The select query.
             string query = @"
                 SELECT 
                     UserID
@@ -197,6 +203,7 @@ namespace XPS.Logic
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        //Loads the Userids and UserNames into the dictionary.
                         while (reader.Read())
                         {
                             int userID = Int32.Parse(reader.GetString("UserID"));
@@ -227,6 +234,7 @@ namespace XPS.Logic
         public List<Question> GetQuestions(int n, int[] categories)
         {
             List<Question> result = new List<Question>();
+            //Select query string.
             string query = String.Format(@"
                 SELECT 
                     QuestionID
@@ -255,6 +263,7 @@ namespace XPS.Logic
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        //Loads the questions into a list. 
                         while (reader.Read())
                         {
                             Question question = new Question()
@@ -303,6 +312,7 @@ namespace XPS.Logic
         public bool InsertQuestionResponse(QuestionResponse qr)
         {
             bool result = false;
+            //The insert query.
             string query = @"
                 INSERT INTO QuestionResponse
                 (
@@ -328,6 +338,7 @@ namespace XPS.Logic
                     command.Parameters.AddWithValue("@UserID", qr.UserID);
                     command.Parameters.AddWithValue("@Correct", (qr.Correct) ? 1 : 0);
 
+                    //If the insert was successful.
                     if (command.ExecuteNonQuery() == 1)
                     {
                         result = true;
@@ -356,6 +367,7 @@ namespace XPS.Logic
         public bool InsertTest(Test test)
         {
             bool result = false;
+            //The insert query.
             String query = @"
                 INSERT INTO Test
                 (
@@ -384,6 +396,7 @@ namespace XPS.Logic
                     command.Parameters.AddWithValue("@Correct", test.Correct);
                     command.Parameters.AddWithValue("@Time", test.Time);
 
+                    //If the insert was successful.
                     if (command.ExecuteNonQuery() == 1)
                     {
                         result = true;
@@ -408,6 +421,7 @@ namespace XPS.Logic
         public bool InsertUser(User user)
         {
             bool result = false;
+            //The insert query.
             String query = @"
 				INSERT INTO User
 				(
@@ -496,6 +510,11 @@ namespace XPS.Logic
             return result;
         }
 
+        /// <summary>
+        /// This method receives a query string and returns a dataset from the database.
+        /// </summary>
+        /// <param name="queryString"></param>
+        /// <returns></returns>
         public DataSet RunReport(string queryString)
         {
             DataSet result = new DataSet();
@@ -506,6 +525,7 @@ namespace XPS.Logic
 
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(queryString, _connection))
                 {
+                    //Fills the dataset with the query results. 
                     adapter.Fill(result);
                 }
 
