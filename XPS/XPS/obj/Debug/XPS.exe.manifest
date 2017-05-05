@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XPS.exe" size="879104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XPS.exe" size="879072">
       <assemblyIdentity name="XPS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TzXq1d3WQuC9r4OTNrI1EOVAZO7cnfFle+M++3V2HrA=</dsig:DigestValue>
+        <dsig:DigestValue>jNVEtXKbWPB2D43Yl7nHf3Kn7lKk64oa3U25vhF6jqQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

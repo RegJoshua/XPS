@@ -46,7 +46,7 @@ namespace XPS.Forms
             test.Attempted = numQuest;
             initialTime = numQuest * 120; //2 min per question
             test.UserID = user.UserID;
-            questions = new Dictionary<Question, int[]>();
+            questions = new Dictionary<Question, int[]>();//Holds key value pairs of questions and answer order
 
             try
             {
@@ -59,7 +59,7 @@ namespace XPS.Forms
                 MessageBox.Show("Error connecting to database. Try again later.", "Error");
             }
             
-
+            //initializes a list of question responses
             for (int i = 0; i < numQuest; i++)
             {
                 QuestionResponse resp = new QuestionResponse();
@@ -68,7 +68,6 @@ namespace XPS.Forms
                 response.Add(resp);
             }
 
-            //Fix bug. For some reason, sets the same permutation for all questions
             foreach (Question q in quest)
             {
                 for (int i = 0; i < 10000000; i++)
@@ -160,10 +159,10 @@ namespace XPS.Forms
          */
         private void nextButton_Click(object sender, EventArgs e)
         {
-            //saveQuestionButton.PerformClick();
             testIDLabel.Text = "test ID: " + countQuest;
             Button button = sender as Button;
 
+            //Loads information for the next question
             if (currentQuestion <= countQuest - 2)
             {
                 previousButton.Enabled = true;
@@ -200,7 +199,7 @@ namespace XPS.Forms
          */
         private void previousButton_Click(object sender, EventArgs e)
         {
-
+            //Loads information for previous question
             if (currentQuestion != 0)
             {
                 nextButton.Enabled = true;
@@ -229,6 +228,9 @@ namespace XPS.Forms
             }
         }
 
+        /* private string setQuestionCategory(int num)
+         * Displays the correct category for the current question
+         */
         private string setQuestionCategory(int num)
         {
             string ans = "";
@@ -250,14 +252,19 @@ namespace XPS.Forms
             return ans;
         }
 
+        /* private void saveQuestionButton_Click(object sender, EventArgs e)
+         * Saves the users response to the current question when they click the save button
+         * into the list of responses
+         */
         private void saveQuestionButton_Click(object sender, EventArgs e)
         {
-
+            //Checks which answer choice waas selected
             foreach (RadioButton button in questionGroupBox.Controls.OfType<RadioButton>())
             {
                 if (button.Checked)
                 {
                     response[currentQuestion].QuestionResponseID = button.Name[6] - 48;
+                    //Grades the users answer choice
                     if (button.Text == quest[currentQuestion].CorrectAnswer)
                         response[currentQuestion].Correct = true;
                     else
@@ -265,6 +272,7 @@ namespace XPS.Forms
                 }
             }
 
+            //Changes the current question's button color in the navigation panel to green
             if (response[currentQuestion].QuestionResponseID != 0)
             {
                 var buttons = navGroupBox.Controls.OfType<Button>();
@@ -280,6 +288,10 @@ namespace XPS.Forms
             }
         }
 
+        /* private void submitButton_Click(object sender, EventArgs e)
+         * Submits the test and takes the user to the Test Reports form to view the details
+         * of their test they took
+         */
         private void submitButton_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult;
@@ -287,7 +299,8 @@ namespace XPS.Forms
             
             int unanswered = 0;
             timer1.Stop();
-           
+            
+            //Counts the number of correct answers and unanswered questions
             foreach (QuestionResponse resp in response)
             {
                 if (resp.Correct == true)
@@ -296,14 +309,16 @@ namespace XPS.Forms
                     unanswered++;
             }
 
+            //If there are some unanswered questions, prompts the user if they still want to 
+            //submit the test
             if (unanswered != 0)
             {
                 dialogResult = MessageBox.Show("Are you sure you want to submit? There are " + unanswered + " questions remaining.", "Warning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    test.Time = initialTime - cdTimer;
+                    FinalizeTest();
                     test.Correct = numCorrect;
-                    
+                    test.Time = initialTime - cdTimer;
                     this.Hide();
                     ExamResultsForm ERF = new ExamResultsForm(test, testUser);
                     ERF.Show();
@@ -316,9 +331,8 @@ namespace XPS.Forms
             else
             {
                 FinalizeTest();
-                test.Time = initialTime - cdTimer;
                 test.Correct = numCorrect;
-
+                test.Time = initialTime - cdTimer;
                 this.Hide();
                 ExamResultsForm ERF = new ExamResultsForm(test, testUser);
                 ERF.Show();
@@ -334,6 +348,8 @@ namespace XPS.Forms
             answer5RadioButton.Checked = false;
         }
 
+        //If the user answered a question already and comes back to that question, the 
+        //form will display the answer choice they chose before
         public void checkAnswer()
         {
             if (response[currentQuestion].QuestionResponseID == 1)
@@ -348,6 +364,11 @@ namespace XPS.Forms
                 answer5RadioButton.Checked = true;
         }
 
+        /* public void setAnswerBtn(int i)
+         * When the user comes back to a question, the form will display the answer choices
+         * in the same configuration as they were, as well as display any image if the 
+         * current question requires it
+         */
         public void setAnswerBtn(int i)
         {
             string[] array = { quest[i].CorrectAnswer, quest[i].IncorrectAnswer1,
@@ -359,12 +380,11 @@ namespace XPS.Forms
             answer4RadioButton.Text = array[questions[quest[i]][3]];
             answer5RadioButton.Text = array[questions[quest[i]][4]];
 
-            string currentDir = Environment.CurrentDirectory;
             try
             {
+                //Gets the image if there is one from the resources
                 if (quest[currentQuestion].ImageName != "")
                 {
-
                     System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
                     string test = "XPS." + quest[currentQuestion].ImageName;
                     Stream myStream = myAssembly.GetManifestResourceStream(test);
