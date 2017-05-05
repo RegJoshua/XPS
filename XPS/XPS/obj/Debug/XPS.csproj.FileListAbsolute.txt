@@ -185,3 +185,7 @@ C:\Users\Mason\Desktop\XPS\XPS\XPS\bin\Debug\XPS.exe.manifest
 C:\Users\Mason\Desktop\XPS\XPS\XPS\bin\Debug\XPS.application
 C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.exe.manifest
 C:\Users\Mason\Desktop\XPS\XPS\XPS\obj\Debug\XPS.application
+C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.exe.manifest
+C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\bin\Debug\XPS.application
+C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.exe.manifest
+C:\Users\Joshua\Desktop\XPS\XPS\XPS\XPS\obj\Debug\XPS.application

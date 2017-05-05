@@ -236,6 +236,13 @@ namespace XPS
                 categories[7] = 0;
         }
 
+        /* private void ResetCheckBoxes() is a simple method that 
+         * resets all the checkboxes that were checked before the 
+         * user generates an exam. We need them to reset incase the user 
+         * selects a category but decides to go back home. If they click on 
+         * the home button, the checkboxes need to be cleared for the next time
+         * the user selects 'take test'.
+         */
         private void ResetCheckBoxes()
         {
             dsCheckBox.Checked = false;
@@ -248,6 +255,10 @@ namespace XPS
             
         }
 
+        /* private void profileButton_Click(object sender, EventArgs e)
+         * This method sends the current user object to the view profile form. 
+         * it will hide the current form (main menu) and show the view profile form.
+         */
         private void profileButton_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -64,6 +64,9 @@ namespace XPS.Forms
             duf.Show();
         }
 
+        /* private void viewReportButton_Click(object sender, EventArgs e)
+         * This will hide the adminForm and show the viewReports form
+         */ 
         private void viewReportButton_Click(object sender, EventArgs e)
         {
             this.Hide();
