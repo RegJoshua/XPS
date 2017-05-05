@@ -17,6 +17,7 @@ namespace XPS.Forms
 {
     public partial class ExamForm : Form
     {
+        //The database manager object.
         private DatabaseManager db = new DatabaseManager();
         private Random random = new Random();
         private Test test = new Test();
@@ -300,7 +301,6 @@ namespace XPS.Forms
                 dialogResult = MessageBox.Show("Are you sure you want to submit? There are " + unanswered + " questions remaining.", "Warning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //FinalizeTest();
                     test.Time = initialTime - cdTimer;
                     test.Correct = numCorrect;
                     
@@ -315,6 +315,7 @@ namespace XPS.Forms
             } 
             else
             {
+                FinalizeTest();
                 test.Time = initialTime - cdTimer;
                 test.Correct = numCorrect;
 
@@ -389,7 +390,7 @@ namespace XPS.Forms
 		        , Attempted = questions.Count
 		        //LINQ expression to count the correct answers.
 		        , Correct = response.Count(x => x.Correct)
-		        , Time = 0
+		        , Time = initialTime - cdTimer
 	        };
 	
 	        //Saves Test Object.

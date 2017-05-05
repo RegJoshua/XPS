@@ -373,7 +373,7 @@ namespace XPS.Logic
                 (
                     UserID
                     , Attempted
-                    , Correct
+                    , QuestionsCorrect
                     , Time
                 )
                 VALUES
