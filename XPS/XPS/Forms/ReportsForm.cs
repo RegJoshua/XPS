@@ -14,8 +14,10 @@ namespace XPS.Forms
 {
     public partial class ReportsForm : Form
     {
-        User thisUser;
+        //The user using XPS.
+        private User thisUser;
         private DatabaseManager db = null;
+        //Stores all of the userIDs and User Names. 
         private Dictionary<int, string> names = null;
 
         public ReportsForm(User adminUser)
@@ -26,6 +28,9 @@ namespace XPS.Forms
             names = db.GetUserList();
         }
 
+        /// <summary>
+        /// This method populates the Users Combo Box with the Users from the database.
+        /// </summary>
         private void FillUserComboBox()
         {
             Dictionary<int, string> names = db.GetUserList();
@@ -36,8 +41,15 @@ namespace XPS.Forms
             }
         }
 
+        /// <summary>
+        /// This method is called whenever a new report is selected from the combo box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void reportsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //If the user is running the Individual Student Results report, they are able
+            //to select a user.
             if (reportsComboBox.SelectedItem.ToString() == "Individual Student Results")
             {
                 userSelectionLabel.Visible = true;
@@ -53,11 +65,22 @@ namespace XPS.Forms
                
         }
 
+
+        /// <summary>
+        /// This button runs the report. It receives a Dataset object from the dbManager 
+        /// and uses it to populate a DataGridView.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void runReportButton_Click(object sender, EventArgs e)
         {
             string reportName ="";
+            string queryString = "";
+            int userID = 0;
+            DataSet dataSet = null;
 
-            if(reportsComboBox.SelectedItem != null)
+            //If the user failed to select a report. 
+            if (reportsComboBox.SelectedItem != null)
             {
                 reportName = reportsComboBox.SelectedItem.ToString();
             }
@@ -65,13 +88,11 @@ namespace XPS.Forms
             {
                 MessageBox.Show("Please select a report to run.");
             }
-            
-            string queryString = "";
-            int userID = 0;
-            DataSet dataSet = null;
 
+            //If the report user selects the individual student results report.
             if (reportName == "Individual Student Results")
             {
+                //Finds the UserID.
                 if (usersComboBox.SelectedItem != null)
                 {
                     foreach (KeyValuePair<int, string> pair in names)
@@ -82,7 +103,9 @@ namespace XPS.Forms
                         }
                     }
 
+                    //Formats the query string for the specific user.
                     queryString = String.Format(Queries.REPORT_INDIVIDUAL_STUDENT_RESULTS, userID);
+                    //Gets the dataset from the dbManager.
                     dataSet = db.RunReport(queryString);
                 }
                 else
@@ -92,18 +115,23 @@ namespace XPS.Forms
                 }
             }
 
+            //If the user selects the Test History report.
             else if (reportName == "Test History")
             {
                 queryString = Queries.REPORT_TEST_HISTORY;
+                //Gets the dataset from the dbManager.
                 dataSet = db.RunReport(queryString);
             }
 
+            //If the user selects the Results by Category report.
             else if (reportName == "Results by Category")
             {
                 queryString = Queries.REPORT_RESULTS_BY_CATEGORY;
+                //Gets the dataset from the dbManager.
                 dataSet = db.RunReport(queryString);
             }
 
+            //Binds the datagridview to the dataset.
             if(dataSet != null) reportDataGridView.DataSource = dataSet.Tables[0];
         }
 
@@ -112,9 +140,13 @@ namespace XPS.Forms
             Application.Exit();
         }
 
+        /// <summary>
+        /// Returns to the admin form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void arfAdminMenuBtn_Click(object sender, EventArgs e)
         {
-            
             AdminForm af = new AdminForm(thisUser);
             af.Show();
             this.Hide();
