@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.adminMenuStrip = new System.Windows.Forms.MenuStrip();
             this.addUserButton = new System.Windows.Forms.Button();
@@ -114,6 +115,7 @@
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.adminMenuStrip);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.adminMenuStrip;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

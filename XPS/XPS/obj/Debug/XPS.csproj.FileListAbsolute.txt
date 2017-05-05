@@ -181,3 +181,22 @@ C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Debug\XPS.exe.manifest
 C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\bin\Debug\XPS.application
 C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Debug\XPS.exe.manifest
 C:\Users\Johnny Tran\Desktop\XPS\XPS\XPS\obj\Debug\XPS.application
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\bin\Debug\XPS.exe.manifest
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\bin\Debug\XPS.application
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\bin\Debug\XPS.exe
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\bin\Debug\XPS.pdb
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\bin\Debug\MySql.Data.dll
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.csprojResolveAssemblyReference.cache
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.AddUserForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.AdminForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.DeleteUserForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.ExamResultsForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.LoginForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.MainMenuForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.ReportsForm.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Forms.ViewProfile.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.Properties.Resources.resources
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.csproj.GenerateResource.Cache
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.exe.manifest
+C:\Users\johnny\Documents\GitHub\XPS\XPS\XPS\obj\Debug\XPS.application
